@@ -1,0 +1,59 @@
+<!doctype html>
+<!--
+Copyright (c) 2018 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coating Designer">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#fff">
+  <!--<link rel="icon" href="manifest/favicon.ico">-->
+  <!--<link rel="manifest" href="manifest.json">-->
+  <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" async></script>
+  <script src="./src/cd-app-shell.js" type="module" async></script>
+  <script src="./node_modules/redux/dist/redux.min.js"></script>
+  <title>Coating Designer</title>
+</head>
+<style>
+  body {
+    --app-primary-color: #4c81b7;
+    --app-dark-color: #30415D;
+    --app-light-color: #88A2CC;
+    --app-highlight-color: #ED5D5D;
+    --background-color: #ececee;
+    --border-color: #dcdcdf;
+    
+    /*Text colors*/
+    --text-color: #758794;
+    --text-light-color: #acb7bf;
+    --text-disabled-color: #edeef2;
+    
+    /*Additional Colors*/
+    --white-color: #FBFCFC;
+    --gray-color: #eeeef1;
+    /*https://color.adobe.com/create/color-wheel/?copy=true&base=2&rule=Custom&selected=1&name=Copy%20of%20globalS&mode=rgb&rgbvalues=0.9294117647058824,0.36470588235294116,0.36470588235294116,0.03137254901960784,0.5568627450980392,0.38823529411764707,0.3058823529411765,0.4117647058823529,0.5882352941176471,0.39880359440579893,0.3546493563579278,0.73,0.94,0.7335686274510071,0.12164705882352939&swatchOrder=0,1,2,3,4*/
+    --yellow-color: #F0BB1F;
+    --green-color: #088E63;
+    --purple-color: #665ABA;
+    --red-color: #FE5150;
+    --black-color: #525e66;
+    
+    margin: 0px;
+    font-family: 'Roboto', 'Noto', sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    min-height: 100vh;
+    background-color: var(--background-color);
+  }
+</style>
+<body>
+    <cd-app-shell></cd-app-shell>
+</body>
+</html>
