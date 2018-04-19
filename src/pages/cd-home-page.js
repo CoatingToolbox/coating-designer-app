@@ -6,18 +6,8 @@ import '../cd-elements/cd-card-button.js';
 class CdHomePage extends PolymerElement {
   static get properties () {
     return {
+      
     };
-  }
-
-  constructor() {
-    // If you override the constructor, always call the 
-    // superconstructor first.
-    super();
-  }
-
-  ready(){
-    // If you override ready, always call super.ready() first.
-    super.ready();
   }
 
   static get template () {

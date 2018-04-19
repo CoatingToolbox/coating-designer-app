@@ -15,31 +15,24 @@ class CdAppShell extends PolymerElement {
   static get properties() {
     return {
       route: Object,
-      routeData: Object,
-      page: String
-    }
+      routeData: Object
+    };
   }
   
   static get observers() {
     return [
-      '_routePageChanged(routeData.page)',
-      '_pageChanged(page)'
-    ]
+      '_routePageChanged(routeData.page)'
+    ];
   }
   
       
+  _gotoHomePage(e) {
+    if(e.detail.value) { return; }
+    this.set('routeData.page', "home");
+  }    
+  
   _routePageChanged(page) {
-    // If no page was found in the route data, page will be an empty string.
-    this.page = page || 'home';
-  }
-  
-  _pageChanged(page) {
     // Load page import on demand. Show 404 page if fails
-    
-  }
-  
-  static get ready() {
-    super.ready()
   }
 
   static get template () {
@@ -80,7 +73,8 @@ class CdAppShell extends PolymerElement {
       <app-route
           route="{{route}}"
           pattern="/:page"
-          data="{{routeData}}">
+          data="{{routeData}}"
+          on-active-changed='_gotoHomePage'>
       </app-route>
       
       <app-header-layout fullbleed>
@@ -95,7 +89,7 @@ class CdAppShell extends PolymerElement {
           </app-toolbar>
         </app-header>
         
-        <iron-pages selected='[[page]]' attr-for-selected='page' fallback-selection='home'>
+        <iron-pages selected='[[routeData.page]]' attr-for-selected='page' fallback-selection='home'>
           <cd-home-page page='home'></cd-home-page>
           <cd-tablet-page page='tablet'></cd-tablet-page>
           <div page='two'>Two</div>
