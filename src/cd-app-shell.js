@@ -50,11 +50,25 @@ class CdAppShell extends PolymerElement {
           display: block;
         }
         app-header {
-          background-color: var(--app-primary-color);
+          background-color: var(--app-dark-color);
           color: var(--white-color);
         }
-        app-header .user-name {
+        #toolbar-title {
+          font-size: 24px;
+          font-weight: bold;
+        }
+        #toolbar-spacer {
+          flex-grow: 1;
+        }
+        #user-name {
           font-size: 16px;
+        }
+        .icon {
+          width: 24px;
+          height: 24px;
+          margin: 8px;
+          border-radius: 50%;
+          background-color: var(--light-gray-color);
         }
       </style>
       
@@ -73,9 +87,11 @@ class CdAppShell extends PolymerElement {
       
         <app-header slot='header' fixed effects='waterfall'>
           <app-toolbar>
-            <div main-title>Coating Designer</div>
-            <div spacer></div>
-            <div class='user-name'>jhansell@colorcon.com</div>
+            <div class='icon'></div>
+            <div id='toolbar-title'>Colorcon Coating Designer</div>
+            <div id='toolbar-spacer'></div>
+            <div class='icon'></div>
+            <div id='user-name'>jhansell@colorcon.com</div>
           </app-toolbar>
         </app-header>
         
