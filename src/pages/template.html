@@ -1,37 +1,12 @@
-
-import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import '../cd-elements/cd-card-with-toolbar.js';
-import '../cd-elements/cd-card-button.js';
-
-class CdHomePage extends PolymerElement {
-  static get properties () {
-    return {
-    };
-  }
-
-  constructor() {
-    // If you override the constructor, always call the 
-    // superconstructor first.
-    super();
-  }
-
-  ready(){
-    // If you override ready, always call super.ready() first.
-    super.ready();
-  }
-
-  static get template () {
-    // Template getter must return an instance of HTMLTemplateElement.
-    // The html helper function makes this easy.
-    return html`
       <style>
         :host {
           display: block;
           min-height: 100vh;
-          background: linear-gradient(to bottom, var(--app-primary-color) 0%,var(--app-primary-color) 360px, #000000 360px,var(--background-color) 0%,var(--background-color) 100%);
-          padding-bottom: 48px;
+          background: linear-gradient(to bottom, var(--app-primary-color) 0%,var(--app-primary-color) 328px, #000000 328px,var(--background-color) 0%,var(--background-color) 100%)
+        
         }
         
+        /*// Introduction section*/
         #header {
           display: flex;
           flex-direction: column;
@@ -51,10 +26,12 @@ class CdHomePage extends PolymerElement {
           margin: 0px;
         }
         
+        /*// Cards*/
         cd-card-with-toolbar {
           margin-bottom: 24px;
         }
         
+        /*// Materials & Equipment*/
         .material-layout {
           display: grid;
           grid-template-rows: auto auto;
@@ -76,31 +53,26 @@ class CdHomePage extends PolymerElement {
           color: var(--app-primary-color);
           align-self: start;
         }
-        .material-layout cd-card-button,
-        .material-layout a {
+        .material-layout cd-card-button {
           grid-row: 1 / 3;
           grid-column: 2 / 3;
           align-self: center;
         }
         
+        /*// Parameters*/
         #parameters-layout {
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-auto-rows: 1fr;
-          padding-top: 16px;
         }
         .parameter {
           display: flex;
           align-items: center;
-          height: 48px;
-          max-width: 300px;
-          padding: 0px 24px;
-          font-size: 16px;
+          font-size: 18px;
         }
         .parameter-dot {
           width: 12px;
           height: 12px;
-          margin: 0px 12px;
           border-radius: 50%;
           background-color: var(--app-primary-color);
         }
@@ -126,9 +98,7 @@ class CdHomePage extends PolymerElement {
         <div class='material-layout'>
           <div class='material-label'>Coating Substrate</div>
           <div class='material-title'>Colorcon Round Placebo</div>
-          <a href='#/tablet-overview'>
-            <cd-card-button label='Edit'></cd-card-button>
-          </a>
+          <cd-card-button label='Edit'></cd-card-button>
         </div>
         
         <div class='material-layout'>
@@ -154,50 +124,42 @@ class CdHomePage extends PolymerElement {
           <div class='parameter'>
             <div class='parameter-dot'></div>
             <div class='parameter-label'>Dispersion Solids</div>
-            <div class='parameter-value'>20%</div>
+            <div class='parmaeter-value'>20%</div>
          </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
-            <div class='parameter-label'>Pan Speed</div>
-            <div class='parameter-value'>8 rpm</div>
+            <div class='parameter-label'>Dispersion Solids</div>
+            <div class='parmaeter-value'>20%</div>
           </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
-            <div class='parameter-label'>Weight Gain</div>
-            <div class='parameter-value'>3.2%</div>
+            <div class='parameter-label'>Dispersion Solids</div>
+            <div class='parmaeter-value'>20%</div>
          </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
-            <div class='parameter-label'>Product Temperature</div>
-            <div class='parameter-value'>46&degC</div>
+            <div class='parameter-label'>Dispersion Solids</div>
+            <div class='parmaeter-value'>20%</div>
           </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
-            <div class='parameter-label'>Batch Size</div>
-            <div class='parameter-value'>140.3 kg</div>
+            <div class='parameter-label'>Dispersion Solids</div>
+            <div class='parmaeter-value'>20%</div>
           </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
-            <div class='parameter-label'>Spray Rate</div>
-            <div class='parameter-value'>365 g/min</div>
+            <div class='parameter-label'>Dispersion Solids</div>
+            <div class='parmaeter-value'>20%</div>
          </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
-            <div class='parameter-label'>Airflow</div>
-            <div class='parameter-value'>1800 cfm</div>
+            <div class='parameter-label'>Dispersion Solids</div>
+            <div class='parmaeter-value'>20%</div>
           </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
-            <div class='parameter-label'>+6 More Parameters</div>
-            <div class='parameter-value'></div>
+            <div class='parameter-label'>Dispersion Solids</div>
+            <div class='parmaeter-value'>20%</div>
          </div>
         </div>
       </cd-card-with-toolbar>
-      
-    `;
-  }
-}
-
-// Register the element with the browser.
-/* global customElements */
-customElements.define('cd-home-page', CdHomePage);

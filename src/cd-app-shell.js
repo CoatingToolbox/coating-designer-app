@@ -8,6 +8,7 @@ import '../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall
 import '../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '../node_modules/@polymer/iron-pages/iron-pages.js';
 import './pages/cd-home-page.js';
+import './pages/cd-tablet-page.js';
 
 class CdAppShell extends PolymerElement {
   
@@ -55,7 +56,6 @@ class CdAppShell extends PolymerElement {
         }
         #toolbar-title {
           font-size: 24px;
-          font-weight: bold;
         }
         #toolbar-spacer {
           flex-grow: 1;
@@ -88,7 +88,7 @@ class CdAppShell extends PolymerElement {
         <app-header slot='header' fixed effects='waterfall'>
           <app-toolbar>
             <div class='icon'></div>
-            <div id='toolbar-title'>Colorcon Coating Designer</div>
+            <div id='toolbar-title'>Coating Designer</div>
             <div id='toolbar-spacer'></div>
             <div class='icon'></div>
             <div id='user-name'>jhansell@colorcon.com</div>
@@ -97,6 +97,7 @@ class CdAppShell extends PolymerElement {
         
         <iron-pages selected='[[page]]' attr-for-selected='page'>
           <cd-home-page page='home'></cd-home-page>
+          <cd-tablet-page page='tablet'></cd-tablet-page>
           <div page='two'>Two</div>
           <div page='three'>Three</div>
         </iron-pages>

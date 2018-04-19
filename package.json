@@ -10,6 +10,7 @@
     "@polymer/app-layout": "3.0.0-pre.12",
     "@polymer/app-route": "3.0.0-pre.12",
     "@polymer/iron-pages": "3.0.0-pre.12",
+    "@polymer/paper-tabs": "3.0.0-pre.12",
     "@polymer/polymer": "3.0.0-pre.12",
     "polymer-redux": "https://github.com/tur-nr/polymer-redux.git#polymer-3",
     "redux": "^3.7.2"
