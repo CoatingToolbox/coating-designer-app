@@ -1,0 +1,21 @@
+{
+  "name": "coating-designer-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jhans3br/coating-designer-app.git",
+  "author": "Jason Hansell <jasonhansell@gmail.com>",
+  "license": "MIT",
+  "flat": true,
+  "dependencies": {
+    "@polymer/app-layout": "3.0.0-pre.12",
+    "@polymer/app-route": "3.0.0-pre.12",
+    "@polymer/iron-pages": "3.0.0-pre.12",
+    "@polymer/paper-tabs": "3.0.0-pre.12",
+    "@polymer/polymer": "3.0.0-pre.12",
+    "polymer-redux": "https://github.com/tur-nr/polymer-redux.git#polymer-3",
+    "redux": "^3.7.2"
+  },
+  "scripts": {
+    "serve": "polymer serve --hostname 0.0.0.0"
+  }
+}

@@ -1,21 +1,32 @@
 {
     "entrypoint": "index.html",
-    "shell": "src/coating-designer-app.js",
+    "shell": "src/cd-app-shell.js",
     "fragments": [
-        
+        "src/pages/cd-home-page.js",
+        "src/pages/cd-tablet-page.js"
     ],
     "sources": [
-        "src/coating-designer-app.js",
+        "src/**/*",
         "manifest/**",
         "package.json"
     ],
     "extraDependencies": [
-        "manifest.json",
-        "node_modules/@webcomponents/webcomponentsjs/**"
+        "manifest/manifest.json",
+        "node_modules/redux/dist/redux.min.js",
+        "node_modules/@webcomponents/webcomponentsjs/**",
+        "node_modules/firebase/firebase.js"
     ],
     "builds": [{
         "preset": "es6-unbundled",
-        "addServiceWorker": true
+        "addServiceWorker": true,
+        "js": {
+            "minify": {
+                "exclude": [
+                    "node_modules/redux/dist/redux.min.js", 
+                    "node_modules/firebase/firebase.js"
+                ]
+            }
+        }
     }],
     "moduleResolution": "node",
     "npm": true

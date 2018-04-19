@@ -1,51 +1,4 @@
-
-import { PolymerElement, html } from '../node_modules/@polymer/polymer/polymer-element.js';
-import '../node_modules/@polymer/app-route/app-location.js';
-import '../node_modules/@polymer/app-route/app-route.js';
-import '../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js';
-import '../node_modules/@polymer/app-layout/app-header/app-header.js';
-import '../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
-import '../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js';
-import '../node_modules/@polymer/iron-pages/iron-pages.js';
-import './pages/cd-home-page.js';
-import './pages/cd-tablet-page.js';
-
-class CdAppShell extends PolymerElement {
-  
-  static get properties() {
-    return {
-      route: Object,
-      routeData: Object,
-      page: String
-    }
-  }
-  
-  static get observers() {
-    return [
-      '_routePageChanged(routeData.page)',
-      '_pageChanged(page)'
-    ]
-  }
-  
-      
-  _routePageChanged(page) {
-    // If no page was found in the route data, page will be an empty string.
-    this.page = page || 'home';
-  }
-  
-  _pageChanged(page) {
-    // Load page import on demand. Show 404 page if fails
-    
-  }
-  
-  static get ready() {
-    super.ready()
-  }
-
-  static get template () {
-    // Template getter must return an instance of HTMLTemplateElement.
-    // The html helper function makes this easy.
-    return html`
+import{PolymerElement,html}from"../node_modules/@polymer/polymer/polymer-element.js";import"../node_modules/@polymer/app-route/app-location.js";import"../node_modules/@polymer/app-route/app-route.js";import"../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js";import"../node_modules/@polymer/app-layout/app-header/app-header.js";import"../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js";import"../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js";import"../node_modules/@polymer/iron-pages/iron-pages.js";import"./pages/cd-home-page.js";import"./pages/cd-tablet-page.js";class CdAppShell extends PolymerElement{static get properties(){return{route:Object,routeData:Object,page:String}}static get observers(){return["_routePageChanged(routeData.page)","_pageChanged(page)"]}_routePageChanged(a){this.page=a||"home"}_pageChanged(){}static get ready(){super.ready()}static get template(){return html`
       <style>
         :host {
           display: block;
@@ -103,10 +56,4 @@ class CdAppShell extends PolymerElement {
         </iron-pages>
         
       </app-header-layout>
-    `;
-  }
-}
-
-// Register the element with the browser.
-/* global customElements */
-customElements.define('cd-app-shell', CdAppShell);
+    `}}customElements.define("cd-app-shell",CdAppShell);

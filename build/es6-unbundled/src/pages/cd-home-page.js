@@ -1,29 +1,4 @@
-
-import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import '../cd-elements/cd-card-with-toolbar.js';
-import '../cd-elements/cd-card-button.js';
-
-class CdHomePage extends PolymerElement {
-  static get properties () {
-    return {
-    };
-  }
-
-  constructor() {
-    // If you override the constructor, always call the 
-    // superconstructor first.
-    super();
-  }
-
-  ready(){
-    // If you override ready, always call super.ready() first.
-    super.ready();
-  }
-
-  static get template () {
-    // Template getter must return an instance of HTMLTemplateElement.
-    // The html helper function makes this easy.
-    return html`
+import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-element.js";import"../cd-elements/cd-card-with-toolbar.js";import"../cd-elements/cd-card-button.js";class CdHomePage extends PolymerElement{static get properties(){return{}}constructor(){super()}ready(){super.ready()}static get template(){return html`
       <style>
         :host {
           display: block;
@@ -194,10 +169,4 @@ class CdHomePage extends PolymerElement {
         </div>
       </cd-card-with-toolbar>
       
-    `;
-  }
-}
-
-// Register the element with the browser.
-/* global customElements */
-customElements.define('cd-home-page', CdHomePage);
+    `}}customElements.define("cd-home-page",CdHomePage);
