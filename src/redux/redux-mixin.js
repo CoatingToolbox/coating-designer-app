@@ -145,13 +145,13 @@ function rootReducer(state = {}, action) {
             batch, coatingAmount, parameters 
         });
         
-        sessionStorage.setItem('coating-toolbox-state', JSON.stringify(newState));
+        sessionStorage.setItem('coating-designer-state', JSON.stringify(newState));
         return newState;
 }
 
 // INITIAL STATE
 const app = { isAdmin: false};
-const storedState = JSON.parse(sessionStorage.getItem('coating-toolbox-state')) || {};
+const storedState = JSON.parse(sessionStorage.getItem('coating-designer-state')) || {};
 const tablet = storedState.tablet || new Tablet({
         shape: 'round',
         length: 0.01,

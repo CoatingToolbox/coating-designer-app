@@ -13,10 +13,14 @@ export class Tablet {
         this.bulkDensity = 760000;
         // DESCRIPTION
         this.productType = '';
+        this.dosageForm = '';
         this.productName = '';
         this.formulationName = '';
+        this.active = '';
         this.companyName = '';
+        this.companyLocation = '';
         this.contactName = '';
+        this.contactEmail = '';
         this.firebaseKey = '';
         // SET PROPERTIES PASSED THROUGH
         Object.getOwnPropertyNames(this).map(name => {
@@ -36,21 +40,17 @@ export class Tablet {
         return (this.totalThickness - this.bandThickness) / 2;
     }
     get lengthCupRadius() {
-            
-        // see the link for more details on calculations
-        // http://liutaiomottola.com/formulae/sag.htm
-        let part1 = Math.pow(this.cupThickness, 2);
-        let part2 = Math.pow(this.length / 2, 2);
-        let part3 = 2 * this.cupThickness;
-        return (part1 + part2) / part3;
+        return this._cupRadius(this.cupThickness, this.length);
     }
     get widthCupRadius() {
-            
+         return this._cupRadius(this.cupThickness, this.width);
+    }
+    _cupRadius(depth, length) {
         // see the link for more details on calculations
         // http://liutaiomottola.com/formulae/sag.htm
-        let part1 = Math.pow(this.cupThickness, 2);
-        let part2 = Math.pow(this.width / 2, 2);
-        let part3 = 2 * this.cupThickness;
+        let part1 = Math.pow(depth, 2);
+        let part2 = Math.pow(length / 2, 2);
+        let part3 = 2 * depth;
         return (part1 + part2) / part3;
     }
     get perimeter() {
@@ -140,7 +140,26 @@ export class Tablet {
       return crossSection;
     }
     
-    
+    get concavity() {
+        let ratio = this.cupThickness / this.length;
+        if(ratio < 0) {
+            return 'Small';
+        } else if (ratio <= 0.04106 / 2) {
+            return 'Flat';
+        } else if (ratio <= 0.04106  + (0.05846 - 0.04106) / 2) {
+            return 'Shallow';
+        } else if (ratio <= 0.05846 + (0.07698 - 0.05846) / 2) {
+            return "Standard";
+        } else if (ratio <= 0.07698 + (0.18457 - 0.07698) / 2) {
+            return "Deep";
+        } else if (ratio <= 0.18457 + (0.31628 - 0.18457) / 2) {
+            return 'Extra-Deep';
+        } else if (ratio <= 0.31628 * 1.2) {
+            return "Modified Ball";
+        } else {
+            return 'Big';
+        }
+    }
     // SUFACE AREA
     get cupArea() {
         
@@ -223,63 +242,66 @@ export class Tablet {
         return vol;
     }
     
+    // AREA to VOLUME 
+    get areaToVolume() {
+        return this.totalArea / this.totalVolume;
+    }
     
     // DISPLAY VALUES
     get isRound() {
         return (this.shape === 'round');
     }
-    get dimensionsInMM() {
-        // values in meters and need to convert to mm.
-        let conv = 1000;
-        if (this.shape === 'round') {
-            return `${(this.length * conv).toFixed(1)}`;
-        }
-        else {
-            return `${(this.length * conv).toFixed(1)} x ${(this.width * conv).toFixed(1)}`;
-        }
+    
+    // FORMATTING HELPER FUNCTIONS
+    _displayCM3(value) {
+        return `${(value * 1000000).toFixed(2)} cm\u{000B3}`;
     }
-    get bulkDensityInGML() {
-        return (this.bulkDensity * 1e-6).toFixed(2);
+    
+    _displayCM2(value, decimals=2) {
+        return `${(value * 10000).toFixed(decimals)} cm\u{000B2}`;
     }
-    get compressedDensityInGML() {
-        return (this.compressedDensity * 1e-6).toFixed(2);
+    
+    _displayCM(value) {
+        return `${(value / 100).toFixed(2)} cm\u{0207B}\u{000B9}`;
     }
-    get weightInMG() {
-        return (this.weight * 1000).toFixed(1);
+    _displayMM(value) {
+        if(value <= 0) {return '';}
+        return `${(value * 1000).toFixed(2)} mm`;
     }
-    get batchWeightInKG() {
-        return (this.batchWeight / 1000).toFixed(1);
-    }
-    get volumeInCM3() {
-        return (this.totalVolume * 1000000).toFixed(2);
-    }
-    get surfaceAreaInCM2() {
-        return (this.totalArea * 10000).toFixed(2);
+    _displayGML(value) {
+        if(value <= 0) { return ''; }
+        return `${(value * 1e-6).toFixed(2)} g/ml`;
     }
     
     toJSON() {
-        return Object.assign({}, this, {
-            bulkDensity: this.bulkDensity,
-            compressedDensity: this.compressedDensity,
-            cupThickness: this.cupThickness,
-            lengthCupRadius: this.lengthCupRadius,
-            widthCupRadius: this.widthCupRadius,
-            perimeter: this.perimeter,
-            crossSectionArea: this.crossSectionArea,
-            cupArea: this.cupArea,
-            cupVolume: this.cupVolume,
-            bandArea: this.bandArea,
-            bandVolume: this.bandVolume,
-            totalArea: this.totalArea,
-            totalVolume: this.totalVolume,
-            isRound: this.isRound,
-            dimensionsInMM: this.dimensionsInMM,
-            bulkDensityInGML: this.bulkDensityInGML,
-            compressedDensityInGML: this.compressedDensityInGML,
-            weightInMG: this.weightInMG,
-            batchWeightInKG: this.batchWeightInKG,
-            volumeInCM3: this.volumeInCM3,
-            surfaceAreaInCM2: this.surfaceAreaInCM2
-        });
+        return Object.assign({}, this, 
+            {
+                totalArea: this.totalArea,
+                isRound: this.isRound,
+                concavity: this.concavity,
+                bandThickness: this.bandThickness,
+                lengthCupRadius: this.lengthCupRadius,
+                widthCupRadius: this.widthCupRadius,
+                formatted: {
+                    length: this._displayMM(this.length),
+                    width: this._displayMM(this.width),
+                    totalThickness: this._displayMM(this.totalThickness),
+                    weight: `${(this.weight * 1000).toFixed(1)} mg`,
+                    bulkDensity: this._displayGML(this.bulkDensity),
+                    compressedDensity: this._displayGML(this.compressedDensity),
+                    totalArea: this._displayCM2(this.totalArea),
+                    totalVolume: this._displayCM3(this.totalVolume),
+                    areaToVolume: this._displayCM(this.areaToVolume),
+                    cupDepth: this._displayMM(this.cupThickness),
+                    lengthCupRadius: this._displayMM(this.lengthCupRadius),
+                    widthCupRadius: this._displayMM(this.widthCupRadius),
+                    perimeter: this._displayMM(this.perimeter),
+                    crossSectionArea: this._displayCM2(this.crossSectionArea),
+                    cupArea: this._displayCM2(this.cupArea),
+                    cupVolume: this._displayCM2(this.cupVolume, 4)
+                    
+                }
+            }
+        );
     }
 }

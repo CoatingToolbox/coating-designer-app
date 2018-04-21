@@ -9,10 +9,6 @@ class CdTabletLayout extends PolymerElement {
       noWidthView: Boolean
     };
   }
-
-  _isRound(shape) {
-    return (shape.toLowerCase() === 'round');
-  }
   
   static get template () {
     // Template getter must return an instance of HTMLTemplateElement.
@@ -59,7 +55,7 @@ class CdTabletLayout extends PolymerElement {
         <div class='schematic-label'>Length View</div>
       </div>
       
-      <div class='graphic-layout' hidden$='[[_isRound(tablet.shape)]]'>
+      <div class='graphic-layout' hidden$='[[tablet.isRound]]'>
         <cd-tablet-graphic width-view tablet='[[tablet]]'></cd-tablet-graphic>
         <div class='schematic-label'>Width View</div>
       </div>        
