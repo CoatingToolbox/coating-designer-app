@@ -15,16 +15,13 @@ export class CoatingAmount {
             });
         }
         
-        // DISPLAY VAlues
-        get weightGainPercent() {
-            return (this.weightGain * 100).toFixed(2);
-        }
         get coatingWeight() {
             return this.tabletWeight * this.weightGain;
         }
         set coatingWeight(val) {
             this.weightGain = val / this.tabletWeight;
         }
+        
         get filmThickness() {
             // (grams / meters^2) / (grams / meters^3) = meters
             return this.coatingCoverage / this.filmDensity;
@@ -32,6 +29,7 @@ export class CoatingAmount {
         set filmThickness(val) {
             this.coatingCoverage = val * this.filmDensity;
         }
+        
         get coatingCoverage() {
             // grams * percent / meters^2 = grams / meters^2
             return this.coatingWeight / this.tabletArea;
@@ -41,12 +39,17 @@ export class CoatingAmount {
         }
         
         toJSON() {
-            return Object.assign({}, this, {
-                weightGainPercent: this.weightGainPercent,
-                densityInGML: this.densityInGML,
-                coatingWeight: this.coatingWeight,
-                filmThickness: this.filmThickness,
-                coatingCoverage: this.coatingCoverage
-            });
+            return Object.assign({}, this, 
+                {
+                    coatingWeight: this.coatingWeight,
+                    filmThickness: this.filmThickness,
+                    coatingCoverage: this.coatingCoverage,
+                    formatted: {
+                        weightGain: `${(this.weightGain * 100).toFixed(2)}%`,
+                        coatingWeight: `${(this.coatingWeight * 1000).toFixed(2)} mg`,
+                        filmThickness: `${(this.filmThickness * 1000000).toFixed(2)} \u{000B5}m`,
+                        coatingCoverage: `${(this.coatingCoverage * 1000 / 10000).toFixed(2)} mg/cm2`
+                    }
+                });
         }
     }

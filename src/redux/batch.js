@@ -135,7 +135,8 @@ export class Batch extends Pan {
   }
   
   toJSON() {
-      return {
+      return Object.assign({}, this, 
+        {
           batchWeight: this.batchWeight,
           bulkDensity: this.bulkDensity,
           tabletWeight: this.tabletWeight,
@@ -147,11 +148,18 @@ export class Batch extends Pan {
           batchFillVolumePercent: this.batchFillVolumePercent,
           batchVolume: this.batchVolume,
           tabletCount: this.tabletCount,
-          panRangeWeightVsFillHeight: this.panRangeWeightVsFillHeight,
-          workingFillWeightVsFillHeight: this.workingFillWeightVsFillHeight,
-          batchWeightVsHeight: this.batchWeightVsHeight,
-          referencePointsWeightVsHeight: this.referencePointsWeightVsHeight,
-          batchWeightInKG: (this.batchWeight / 1000).toFixed(1)
-      };
+          
+          charts: {
+            panRangeWeightVsFillHeight: this.panRangeWeightVsFillHeight,
+            workingFillWeightVsFillHeight: this.workingFillWeightVsFillHeight,
+            batchWeightVsHeight: this.batchWeightVsHeight,
+            referencePointsWeightVsHeight: this.referencePointsWeightVsHeight,
+          },
+          
+          formatted: {
+             batchWeight: `${(this.batchWeight / 1000).toFixed(1)} kg`
+          }
+        }
+      );
   }
 }

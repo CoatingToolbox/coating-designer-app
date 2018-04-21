@@ -106,6 +106,11 @@ function parametersReducer(state = {}, action, pan) {
     let params = new Parameters(state);
     params.panDiameter = pan.panDiameter;
     switch(action.type) {
+        case "SET_PRODUCT_TEMP": params.productTemp = action.value; break;
+        case "SET_EXHAUST_TEMP": params.exhuastTemp = action.value; break;
+        case "SET_INLET_TEMP": params.inletTemp = action.value; break;
+        case "SET_AIRFLOW": params.airflow = action.value; break;
+        case "SET_SPRAY_RATE": params.sprayRate = action.value; break;
         case "SET_PAN_SPEED": params.panSpeedRPM = action.value; break;
         case "SET_LINEAR_VELOCITY": params.linearVelocity = action.value; break;
         case "SET_MAX_PAN_SPEED": params.linearVelocity = 80 / 3.28084; break;
@@ -207,5 +212,5 @@ const initialState = { app, tablet, pan, coating, batch, coatingAmount, paramete
 // CREATE STORE AND MIXIN
 const store = Redux.createStore(rootReducer, initialState);
 const ReduxMixin = PolymerRedux(store); 
-    
-export default ReduxMixin;
+
+export { ReduxMixin };

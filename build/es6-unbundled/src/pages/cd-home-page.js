@@ -1,4 +1,4 @@
-import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-element.js";import"../cd-elements/cd-card-with-toolbar.js";import"../cd-elements/cd-card-button.js";class CdHomePage extends PolymerElement{static get properties(){return{}}constructor(){super()}ready(){super.ready()}static get template(){return html`
+import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-element.js";import"../cd-elements/cd-card-with-toolbar.js";import"../cd-elements/cd-card-button.js";class CdHomePage extends PolymerElement{static get properties(){return{}}static get template(){return html`
       <style>
         :host {
           display: block;
@@ -27,7 +27,9 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
         }
         
         cd-card-with-toolbar {
-          margin-bottom: 24px;
+          max-width: 964px;
+          margin-left: auto;
+          margin-right: auto;
         }
         
         .material-layout {
@@ -40,7 +42,7 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
           margin-top: 24px;
         }
         .material-layout + .material-layout {
-          border-top: 1px solid var(--border-color);
+          border-top: var(--border-line);
         }
         .material-layout .material-label {
           font-size: 18px;

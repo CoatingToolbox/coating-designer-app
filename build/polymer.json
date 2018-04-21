@@ -3,7 +3,8 @@
   "shell": "src/cd-app-shell.js",
   "fragments": [
     "src/pages/cd-home-page.js",
-    "src/pages/cd-tablet-page.js"
+    "src/pages/cd-tablet-pages.js",
+    "src/pages/cd-tablet-overview-page.js"
   ],
   "sources": [
     "src/**/*",
@@ -12,7 +13,8 @@
     "index.html",
     "src/cd-app-shell.js",
     "src/pages/cd-home-page.js",
-    "src/pages/cd-tablet-page.js"
+    "src/pages/cd-tablet-pages.js",
+    "src/pages/cd-tablet-overview-page.js"
   ],
   "extraDependencies": [
     "bower_components/webcomponentsjs/*.js",
