@@ -4,8 +4,11 @@ import '../cd-elements/cd-card-with-toolbar.js';
 import '../cd-elements/cd-card-button.js';
 import '../cd-elements/cd-card-info-section.js';
 import '../cd-elements/cd-tablet-layout.js';
-import '../cd-elements/cd-text-input.js';
-import '../cd-elements/cd-list-input.js';
+import '../cd-inputs/cd-text-input.js';
+import '../cd-inputs/cd-dropdown-input.js';
+import '../cd-inputs/cd-length-input.js';
+import '../cd-inputs/cd-mass-input.js';
+import '../cd-inputs/cd-density-input.js';
 import { ReduxMixin } from '../redux/redux-mixin.js';
 
 class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
@@ -17,7 +20,8 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
         value: function() {
           return ["Tablet", "Softgel", "Hard Capsule"];
         }
-      }
+      },
+      dimensionUnits: {type: String, value: 'mm'}
     };
   }
   
@@ -26,6 +30,7 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
       type: "LOAD_TABLET_FROM_LIBRARY",
       value: this.tablet
     });
+    window.location = '#/tablet/overview';
   }
   static get template () {
     // Template getter must return an instance of HTMLTemplateElement.
@@ -62,8 +67,8 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
           <cd-text-input wide label='Product' value='{{tablet.productName}}'></cd-text-input>
           <cd-text-input label='Active Ingredient' value='{{tablet.activeName}}'></cd-text-input>
           <cd-text-input label='Formulation' value='{{tablet.formulationName}}'></cd-text-input>
-          <cd-list-input label='Dosage Form' selected-value='{{tablet.dosageForm}}' values=[[dosageOptions]]></cd-list-input>
-          <cd-list-input label='Industry'></cd-list-input>
+          <cd-dropdown-input label='Dosage Form' selected-value='{{tablet.dosageForm}}' values=[[dosageOptions]]></cd-dropdown-input>
+          <cd-dropdown-input label='Industry'></cd-dropdown-input>
         </cd-card-info-section>
         
         <cd-card-info-section title='Company Information' icon=''>
@@ -75,22 +80,29 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
       </cd-card-with-toolbar>
       
       <cd-card-with-toolbar title='Shape & Size'>
-        <cd-card-button slot='toolbar' label='Save'></cd-card-button>
+        <cd-card-button slot='toolbar' label='Save' on-click='_saveChanges'></cd-card-button>
         
         <cd-card-info-section title='Tablet Shape' icon=''>
+        
         </cd-card-info-section>
         
         <cd-card-info-section title='Tablet Dimensions' icon=''>
+          <cd-length-input label='Length' value='{{tablet.length}}' unit='{{dimensionUnits}}'></cd-length-input>
+          <cd-length-input label='Width' value='{{tablet.width}}' unit='{{dimensionUnits}}'></cd-length-input>
+          <cd-length-input label='Total Thickness' value='{{tablet.totalThickness}}' unit='{{dimensionUnits}}'></cd-length-input>
+          <cd-length-input label='Band Thickness' value='{{tablet.bandThickness}}' unit='{{dimensionUnits}}'></cd-length-input>
         </cd-card-info-section>
       </cd-card-with-toolbar>
       
       <cd-card-with-toolbar title='Weight & Density'>
-        <cd-card-button slot='toolbar' label='Save'></cd-card-button>
+        <cd-card-button slot='toolbar' label='Save' on-click='_saveChanges'></cd-card-button>
         
         <cd-card-info-section title='Tablet Weight' icon=''>
+          <cd-mass-input label='Length' value='{{tablet.weight}}' unit='mg'></cd-mass-input>
         </cd-card-info-section>
         
         <cd-card-info-section title='Bulk Density' icon=''>
+          <cd-density-input label='Length' value='{{tablet.bulkDensity}}' unit='g/ml'></cd-density-input>
         </cd-card-info-section>
       </cd-card-with-toolbar>
       
@@ -102,6 +114,7 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
         </cd-card-info-section>
         
         <cd-card-info-section title='Save' icon=''>
+          <cd-card-button label='Save' on-click='_saveChanges'></cd-card-button>
         </cd-card-info-section>
       </cd-card-with-toolbar>
     `;

@@ -10,7 +10,7 @@ export class Tablet {
         this.bandThickness = 0.00275;
         this.weight = 0.4;
         // BATCH 
-        this.bulkDensity = 760000;
+        this.bulkDensity = 760000; 
         // DESCRIPTION
         this.productType = '';
         this.dosageForm = '';

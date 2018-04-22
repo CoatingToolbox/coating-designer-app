@@ -2,7 +2,7 @@
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
 import '../../node_modules/@polymer/polymer/lib/elements/dom-repeat.js';
 
-class CdListInput extends PolymerElement {
+class CdDropdownInput extends PolymerElement {
   static get properties () {
     return {
       label: String,
@@ -70,11 +70,9 @@ class CdListInput extends PolymerElement {
       <div id='label'>[[label]]</div>
       
       <select on-change='_valueSelected'>
-        <dom-repeat items='[[values]]'>
           <template is='dom-repeat' items='[[values]]'>
             <option value='[[item]]'>[[item]]</option>
           </template>
-        </dom-repeat>
       </select>
       
       <div id='arrow'>></div>
@@ -85,4 +83,4 @@ class CdListInput extends PolymerElement {
 
 // Register the element with the browser.
 /* global customElements */
-customElements.define('cd-list-input', CdListInput);
+customElements.define('cd-dropdown-input', CdDropdownInput);

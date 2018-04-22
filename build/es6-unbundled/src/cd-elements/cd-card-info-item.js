@@ -4,7 +4,6 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
           display: flex;
           flex-direction: row;
           align-items: baseline;
-          padding-bottom: 10px;
           font-size: 14px;
         }
         #label {

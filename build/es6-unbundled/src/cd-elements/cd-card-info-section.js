@@ -14,6 +14,7 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
           grid-column: 2 / 3;
           display: grid;
           grid-template-columns: 1fr 1fr;
+          grid-gap: 16px;
         }
         #right-layout ::slotted([wide]) {
           grid-column: 1 / 3;

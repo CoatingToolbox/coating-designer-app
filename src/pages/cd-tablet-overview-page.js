@@ -44,7 +44,9 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
       <div id='page-title'>Coating Substrate Overview</div>
       
       <cd-card-with-toolbar title='General Information'>
-        <cd-card-button slot='toolbar' label='Edit'></cd-card-button>
+        <a href='#/tablet/design' slot='toolbar'>
+         <cd-card-button label='Edit'></cd-card-button>
+        </a>
         <cd-card-info-section title='Product Information' icon=''>
           <cd-card-info-item wide label='Name' class='capitalize'>[[tablet.productName]]</cd-card-info-item>
           <cd-card-info-item wide label='Brand' class='capitalize'></cd-card-info-item>
@@ -63,7 +65,9 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
       
       
       <cd-card-with-toolbar title='Tablet Information'>
-        <cd-card-button slot='toolbar' label='Edit'></cd-card-button>
+        <a href='#/tablet/design' slot='toolbar'>
+         <cd-card-button label='Edit'></cd-card-button>
+        </a>
         
         <cd-card-info-section title='Shape & Size' icon=''>
           <cd-card-info-item wide label='Shape' class='capitalize'>[[tablet.shape]]</cd-card-info-item>

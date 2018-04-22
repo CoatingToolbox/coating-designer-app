@@ -1,4 +1,4 @@
-import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-element.js";import"../../node_modules/@polymer/app-route/app-location.js";import"../../node_modules/@polymer/app-route/app-route.js";import"../../node_modules/@polymer/paper-tabs/paper-tabs.js";import"../../node_modules/@polymer/paper-tabs/paper-tab.js";import"../../node_modules/@polymer/iron-pages/iron-pages.js";import"../cd-elements/cd-card-with-toolbar.js";import"../cd-elements/cd-card-button.js";import"./cd-tablet-overview-page.js";class CdTabletPages extends PolymerElement{static get properties(){return{route:Object,routeData:Object}}static get template(){return html`
+import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-element.js";import"../../node_modules/@polymer/app-route/app-location.js";import"../../node_modules/@polymer/app-route/app-route.js";import"../../node_modules/@polymer/paper-tabs/paper-tabs.js";import"../../node_modules/@polymer/paper-tabs/paper-tab.js";import"../../node_modules/@polymer/iron-pages/iron-pages.js";import"../cd-elements/cd-card-with-toolbar.js";import"../cd-elements/cd-card-button.js";import"./cd-tablet-overview-page.js";import"./cd-tablet-design-page.js";class CdTabletPages extends PolymerElement{static get properties(){return{route:Object,routeData:Object}}static get template(){return html`
       <style>
         :host {
           display: block;
@@ -69,7 +69,7 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
       
       <iron-pages selected='[[routeData.tab]]' attr-for-selected='tab' fallback-selection='overview'>
         <cd-tablet-overview-page tab='overview'></cd-tablet-overview-page>
-        <div tab='design'>Design</div>
+        <cd-tablet-design-page tab='design'>Design</cd-tablet-design-page>
         <div tab='library'>Library</div>
       </iron-pages>
       

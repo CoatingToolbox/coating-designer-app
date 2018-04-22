@@ -30,8 +30,7 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
           <cd-card-info-item wide label='Name' class='capitalize'>[[tablet.productName]]</cd-card-info-item>
           <cd-card-info-item wide label='Brand' class='capitalize'></cd-card-info-item>
           <cd-card-info-item wide label='Market' class='capitalize'>[[tablet.productType]]</cd-card-info-item>
-          <cd-card-info-item wide label='Dosage Form' class='capitalize'>Tablet</cd-card-info-item>
-          <cd-card-info-item wide label='Active' class='capitalize'>[[talet.active]]</cd-card-info-item>
+          <cd-card-info-item wide label='Dosage Form' class='capitalize'>[[tablet.dosageForm]]</cd-card-info-item>
           <cd-card-info-item wide label='Formulation' class='capitalize'>[[tablet.formulationName]]</cd-card-info-item>
         </cd-card-info-section>
         
