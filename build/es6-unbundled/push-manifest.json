@@ -300,6 +300,38 @@
       "type": "script",
       "weight": 1
     },
+    "src/redux/redux-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/polymer-redux/polymer-redux.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/tablet.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/pan.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/batch.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating-amount.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/parameters.js": {
+      "type": "script",
+      "weight": 1
+    },
     "src/pages/cd-tablet-pages.js": {
       "type": "script",
       "weight": 1
@@ -395,38 +427,6 @@
     "src/cd-elements/cd-tablet-graphic.js": {
       "type": "script",
       "weight": 1
-    },
-    "src/redux/redux-mixin.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/polymer-redux/polymer-redux.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/tablet.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/pan.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/batch.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/coating-amount.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/coating.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/parameters.js": {
-      "type": "script",
-      "weight": 1
     }
   },
   "src/pages/cd-home-page.js": {
@@ -503,6 +503,38 @@
       "weight": 1
     },
     "src/cd-elements/cd-card-button.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/redux-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/polymer-redux/polymer-redux.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/tablet.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/pan.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/batch.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating-amount.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/parameters.js": {
       "type": "script",
       "weight": 1
     }

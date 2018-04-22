@@ -16,7 +16,7 @@ export class Tablet {
         this.dosageForm = '';
         this.productName = '';
         this.formulationName = '';
-        this.active = '';
+        this.activeName = '';
         this.companyName = '';
         this.companyLocation = '';
         this.contactName = '';

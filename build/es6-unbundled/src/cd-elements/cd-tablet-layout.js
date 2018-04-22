@@ -1,4 +1,4 @@
-import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-element.js";import"./cd-tablet-graphic.js";class CdTabletLayout extends PolymerElement{static get properties(){return{tablet:Object,noWidthView:Boolean}}_isRound(a){return"round"===a.toLowerCase()}static get template(){return html`
+import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-element.js";import"./cd-tablet-graphic.js";class CdTabletLayout extends PolymerElement{static get properties(){return{tablet:Object,noWidthView:Boolean}}static get template(){return html`
       <style>
         /*Schematic Styles*/
         :host {
@@ -40,7 +40,7 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
         <div class='schematic-label'>Length View</div>
       </div>
       
-      <div class='graphic-layout' hidden$='[[_isRound(tablet.shape)]]'>
+      <div class='graphic-layout' hidden$='[[tablet.isRound]]'>
         <cd-tablet-graphic width-view tablet='[[tablet]]'></cd-tablet-graphic>
         <div class='schematic-label'>Width View</div>
       </div>        

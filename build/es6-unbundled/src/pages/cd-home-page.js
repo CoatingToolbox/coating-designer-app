@@ -1,4 +1,4 @@
-import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-element.js";import"../cd-elements/cd-card-with-toolbar.js";import"../cd-elements/cd-card-button.js";class CdHomePage extends PolymerElement{static get properties(){return{}}static get template(){return html`
+import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-element.js";import"../cd-elements/cd-card-with-toolbar.js";import"../cd-elements/cd-card-button.js";import{ReduxMixin}from"../redux/redux-mixin.js";class CdHomePage extends ReduxMixin(PolymerElement){static get properties(){return{tablet:{type:Object,statePath:"tablet"},pan:{type:Object,statePath:"pan"},parameters:{type:Object,statePath:"parameters"},coatingAmount:{type:Object,statePath:"coatingAmount"},coating:{type:Object,statePath:"coating"},batch:{type:Object,statePath:"batch"}}}_displayAsPercent(a){let b=(100*a).toFixed(1);return`${b}%`}_displayAsKilo(a){let b=(a/1e3).toFixed(1);return`${b} kg`}static get template(){return html`
       <style>
         :host {
           display: block;
@@ -102,7 +102,7 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
         
         <div class='material-layout'>
           <div class='material-label'>Coating Substrate</div>
-          <div class='material-title'>Colorcon Round Placebo</div>
+          <div class='material-title'>[[tablet.productName]]</div>
           <a href='#/tablet/overview'>
             <cd-card-button label='Edit'></cd-card-button>
           </a>
@@ -110,13 +110,13 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
         
         <div class='material-layout'>
           <div class='material-label'>Coating Pan</div>
-          <div class='material-title'>O'Hara Fastcoat 48"</div>
+          <div class='material-title'>[[pan.manufacturer]] [[pan.model]]</div>
           <cd-card-button label='Edit'></cd-card-button>
         </div>
         
         <div class='material-layout'>
           <div class='material-label'>Coating Formula</div>
-          <div class='material-title'>Opadry II 85F Pigmented</div>
+          <div class='material-title'>[[coating.productName]]</div>
           <cd-card-button label='Edit'></cd-card-button>
         </div>
       </cd-card-with-toolbar>
@@ -131,37 +131,37 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
           <div class='parameter'>
             <div class='parameter-dot'></div>
             <div class='parameter-label'>Dispersion Solids</div>
-            <div class='parameter-value'>20%</div>
+            <div class='parameter-value'>[[coating.formatted.solids]]</div>
          </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
             <div class='parameter-label'>Pan Speed</div>
-            <div class='parameter-value'>8 rpm</div>
+            <div class='parameter-value'>[[parameters.formatted.panSpeed]]</div>
           </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
             <div class='parameter-label'>Weight Gain</div>
-            <div class='parameter-value'>3.2%</div>
+            <div class='parameter-value'>[[coatingAmount.formatted.weightGain]]</div>
          </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
             <div class='parameter-label'>Product Temperature</div>
-            <div class='parameter-value'>46&degC</div>
+            <div class='parameter-value'>[[parameters.formatted.productTemp]]</div>
           </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
             <div class='parameter-label'>Batch Size</div>
-            <div class='parameter-value'>140.3 kg</div>
+            <div class='parameter-value'>[[batch.formatted.batchWeight]]</div>
           </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
             <div class='parameter-label'>Spray Rate</div>
-            <div class='parameter-value'>365 g/min</div>
+            <div class='parameter-value'>[[parameters.formatted.sprayRate]]</div>
          </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>
             <div class='parameter-label'>Airflow</div>
-            <div class='parameter-value'>1800 cfm</div>
+            <div class='parameter-value'>[[parameters.formatted.airflow]]</div>
           </div>
           <div class='parameter'>
             <div class='parameter-dot'></div>

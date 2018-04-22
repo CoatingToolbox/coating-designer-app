@@ -27,6 +27,7 @@ class CdCardInfoSection extends PolymerElement {
           grid-column: 2 / 3;
           display: grid;
           grid-template-columns: 1fr 1fr;
+          grid-gap: 16px;
         }
         #right-layout ::slotted([wide]) {
           grid-column: 1 / 3;

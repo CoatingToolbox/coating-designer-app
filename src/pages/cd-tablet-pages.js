@@ -8,6 +8,7 @@ import '../../node_modules/@polymer/iron-pages/iron-pages.js';
 import '../cd-elements/cd-card-with-toolbar.js';
 import '../cd-elements/cd-card-button.js';
 import './cd-tablet-overview-page.js';
+import './cd-tablet-design-page.js';
 
 class CdTabletPages extends PolymerElement {
   static get properties () {
@@ -92,7 +93,7 @@ class CdTabletPages extends PolymerElement {
       
       <iron-pages selected='[[routeData.tab]]' attr-for-selected='tab' fallback-selection='overview'>
         <cd-tablet-overview-page tab='overview'></cd-tablet-overview-page>
-        <div tab='design'>Design</div>
+        <cd-tablet-design-page tab='design'>Design</cd-tablet-design-page>
         <div tab='library'>Library</div>
       </iron-pages>
       
