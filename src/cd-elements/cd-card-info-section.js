@@ -1,10 +1,13 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import '../../node_modules/@polymer/iron-icon/iron-icon.js';
+import '../cd-icons.js';
 
 class CdCardInfoSection extends PolymerElement {
   static get properties () {
     return {
-      title: String
+      title: String,
+      icon: String
     };
   }
 
@@ -38,11 +41,8 @@ class CdCardInfoSection extends PolymerElement {
           align-items: center
         }
         #title-layout #title-icon {
-          width: 18px;
-          height: 18px;
           margin-right: 12px;
-          border-radius: 50%;
-          background-color: var(--app-light-color);
+          color: var(--app-light-color);
         }
         #title-layout #title {
           font-size: 18px;
@@ -53,7 +53,7 @@ class CdCardInfoSection extends PolymerElement {
       
       <div id='left-layout'>
         <div id='title-layout'>
-          <div id='title-icon'></div>
+          <iron-icon id='title-icon' icon='[[icon]]'></iron-icon>
           <div id='title'>[[title]]</div>
         </div>
       </div>

@@ -63,7 +63,7 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
       
       <cd-card-with-toolbar title='General Information'>
         <cd-card-button slot='toolbar' label='Save' on-click='_saveChanges'></cd-card-button>
-        <cd-card-info-section title='Product Information' icon=''>
+        <cd-card-info-section title='Product Information' icon='cd-icons:product-info'>
           <cd-text-input wide label='Product' value='{{tablet.productName}}'></cd-text-input>
           <cd-text-input label='Active Ingredient' value='{{tablet.activeName}}'></cd-text-input>
           <cd-text-input label='Formulation' value='{{tablet.formulationName}}'></cd-text-input>
@@ -71,7 +71,7 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
           <cd-dropdown-input label='Industry'></cd-dropdown-input>
         </cd-card-info-section>
         
-        <cd-card-info-section title='Company Information' icon=''>
+        <cd-card-info-section title='Company Information'  icon='cd-icons:company-info'>
           <cd-text-input label='Company' value='{{tablet.companyName}}'></cd-text-input>
           <cd-text-input label='Location' value='{{tablet.companyLocation}}'></cd-text-input>
           <cd-text-input label='Contact' value='{{tablet.contactName}}'></cd-text-input>
@@ -82,11 +82,11 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
       <cd-card-with-toolbar title='Shape & Size'>
         <cd-card-button slot='toolbar' label='Save' on-click='_saveChanges'></cd-card-button>
         
-        <cd-card-info-section title='Tablet Shape' icon=''>
+        <cd-card-info-section title='Tablet Shape' icon='cd-icons:shape'>
         
         </cd-card-info-section>
         
-        <cd-card-info-section title='Tablet Dimensions' icon=''>
+        <cd-card-info-section title='Tablet Dimensions' icon='cd-icons:ruler'>
           <cd-length-input label='Length' value='{{tablet.length}}' unit='{{dimensionUnits}}'></cd-length-input>
           <cd-length-input label='Width' value='{{tablet.width}}' unit='{{dimensionUnits}}'></cd-length-input>
           <cd-length-input label='Total Thickness' value='{{tablet.totalThickness}}' unit='{{dimensionUnits}}'></cd-length-input>
@@ -97,11 +97,11 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
       <cd-card-with-toolbar title='Weight & Density'>
         <cd-card-button slot='toolbar' label='Save' on-click='_saveChanges'></cd-card-button>
         
-        <cd-card-info-section title='Tablet Weight' icon=''>
+        <cd-card-info-section title='Tablet Weight' icon='cd-icons:weight'>
           <cd-mass-input label='Length' value='{{tablet.weight}}' unit='mg'></cd-mass-input>
         </cd-card-info-section>
         
-        <cd-card-info-section title='Bulk Density' icon=''>
+        <cd-card-info-section title='Bulk Density' icon='cd-icons:density'>
           <cd-density-input label='Length' value='{{tablet.bulkDensity}}' unit='g/ml'></cd-density-input>
         </cd-card-info-section>
       </cd-card-with-toolbar>
@@ -109,11 +109,11 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
       <cd-card-with-toolbar title='Review & Save'>
         <cd-card-button slot='toolbar' label='Save'></cd-card-button>
         
-        <cd-card-info-section title='Tablet Schematic' icon=''>
+        <cd-card-info-section title='Tablet Schematic' icon='cd-icons:tablet'>
           <cd-tablet-layout wide tablet='[[tablet]]'></cd-tablet-layout>
         </cd-card-info-section>
         
-        <cd-card-info-section title='Save' icon=''>
+        <cd-card-info-section title='Save' icon='cd-icons:save'>
           <cd-card-button label='Save' on-click='_saveChanges'></cd-card-button>
         </cd-card-info-section>
       </cd-card-with-toolbar>

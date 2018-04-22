@@ -3,6 +3,8 @@ import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polyme
 import '../../node_modules/@polymer/polymer/lib/elements/dom-repeat.js';
 import '../../node_modules/@polymer/iron-dropdown/iron-dropdown.js';
 import '../../node_modules/@polymer/iron-selector/iron-selector.js';
+import '../../node_modules/@polymer/iron-icon/iron-icon.js';
+import '../cd-icons.js';
 
 class CdUnitInput extends PolymerElement {
   static get properties () {
@@ -11,8 +13,18 @@ class CdUnitInput extends PolymerElement {
       unit: { type: String, notify: true },
       label: String,
       _units: Array,
-      _multiplier: { type: Number, value: 1 }
+      _multiplier: { type: Number, computed: '_computeMultiplier(unit, _units)'}
     };
+  }
+  
+  _computeMultiplier(unit, units) {
+    if(!unit || !units) { return 1; }
+    let selected = units.filter(item => item.unit == unit);
+    if(selected[0]) {
+      return selected[0].multiplier || 1;
+    } else {
+      return 1;
+    }
   }
   
   static get observers() {
@@ -27,7 +39,7 @@ class CdUnitInput extends PolymerElement {
   
   _unitSelected(e) {
     this.unit = e.model.item.unit;
-    this._multiplier = e.model.item.multiplier;
+    // this._multiplier = e.model.item.multiplier;
     this._toggleDropdown();
   }
   
@@ -36,6 +48,10 @@ class CdUnitInput extends PolymerElement {
   }
   _userInputValue(e) {
     this.value = parseFloat(e.target.value) * this._multiplier;
+  }
+  
+  ironChanged(e) {
+    console.log(e);
   }
   
   static get template () {
@@ -91,17 +107,15 @@ class CdUnitInput extends PolymerElement {
           grid-row: 2 / 3;
           grid-column: 2 / 3;
           min-width: 32px;
-          padding: 8px 16px;
+          padding: 8px 4px 8px 12px;
           background-color: var(--white-color);
           font-size: 14px;
           color: #828282;
           border: 1px solid #828282;
           border-radius: 0px 4px 4px 0px;
+          cursor: pointer;
         }
-        #arrow {
-          display: flex;
-          padding-bottom: 8px;
-          transform: rotate(90deg);
+        #icon {
           cursor: pointer;
         }
         
@@ -117,6 +131,10 @@ class CdUnitInput extends PolymerElement {
         #dropdown .item {
           padding: 8px;
         }
+        #dropdown .item:hover {
+          cursor: pointer;
+          background-color: var(--background-color);
+        }
         #dropdown .item.iron-selected {
           color: var(--accent-color);
           font-weight: bold;
@@ -127,7 +145,7 @@ class CdUnitInput extends PolymerElement {
       <input id='input' type="number" step='0.01' min='0' on-change='_userInputValue' size='1'>
       <div id='unit-layout' on-click='_toggleDropdown'>
         <div>[[unit]]</div>
-        <div id='arrow'>></div>
+        <iron-icon id='icon' icon='cd-icons:chevron-down'></iron-icon>
       </div>
         
           

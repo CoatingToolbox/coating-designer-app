@@ -432,11 +432,71 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-text-input.js": {
+    "src/cd-inputs/cd-text-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-list-input.js": {
+    "src/cd-inputs/cd-dropdown-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-length-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-unit-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-dropdown/iron-dropdown.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-overlay-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-fit-behavior/iron-fit-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-overlay-manager.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-overlay-backdrop.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-scroll-manager.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-focusables-helper.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/neon-animation/neon-animation-runner-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/neon-animation/neon-animatable-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-dropdown/iron-dropdown-scroll-manager.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-selector/iron-selector.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-mass-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-density-input.js": {
       "type": "script",
       "weight": 1
     }
@@ -944,11 +1004,71 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-text-input.js": {
+    "src/cd-inputs/cd-text-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-list-input.js": {
+    "src/cd-inputs/cd-dropdown-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-length-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-unit-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-dropdown/iron-dropdown.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-overlay-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-fit-behavior/iron-fit-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-overlay-manager.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-overlay-backdrop.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-scroll-manager.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-focusables-helper.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/neon-animation/neon-animation-runner-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/neon-animation/neon-animatable-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-dropdown/iron-dropdown-scroll-manager.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-selector/iron-selector.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-mass-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-density-input.js": {
       "type": "script",
       "weight": 1
     }
@@ -1208,15 +1328,223 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-text-input.js": {
+    "src/cd-inputs/cd-text-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-list-input.js": {
+    "src/cd-inputs/cd-dropdown-input.js": {
       "type": "script",
       "weight": 1
     },
     "node_modules/%40polymer/polymer/lib/elements/dom-repeat.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-length-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-unit-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-dropdown/iron-dropdown.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/polymer-legacy.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/legacy-element-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/entrypoints/apply-shim.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/apply-shim.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/style-util.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/style-settings.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/css-parse.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/common-regex.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/unscoped-style-handler.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/common-utils.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/template-map.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/apply-shim-utils.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/document-wait.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/custom-style-interface.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/gesture-event-listeners.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/gestures.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/dir-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/import-href.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/render-status.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/unresolved.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/polymer.dom.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/flattened-nodes-observer.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/array-splice.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/polymer-fn.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/class.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/templatizer-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/dom-bind.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/array-selector.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/custom-style.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/entrypoints/custom-style-interface.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/mutable-data-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-behaviors/iron-control-state.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-overlay-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-fit-behavior/iron-fit-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-resizable-behavior/iron-resizable-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-overlay-manager.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-a11y-keys-behavior/iron-a11y-keys-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-overlay-backdrop.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-scroll-manager.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-overlay-behavior/iron-focusables-helper.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/neon-animation/neon-animation-runner-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/neon-animation/neon-animatable-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-dropdown/iron-dropdown-scroll-manager.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-selector/iron-selector.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-selector/iron-multi-selectable.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-selector/iron-selectable.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-selector/iron-selection.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-mass-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-density-input.js": {
       "type": "script",
       "weight": 1
     },
