@@ -1,4 +1,4 @@
-import{PolymerElement,html}from"../node_modules/@polymer/polymer/polymer-element.js";import"../node_modules/@polymer/app-route/app-location.js";import"../node_modules/@polymer/app-route/app-route.js";import"../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js";import"../node_modules/@polymer/app-layout/app-header/app-header.js";import"../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js";import"../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js";import"../node_modules/@polymer/iron-pages/iron-pages.js";import"./pages/cd-home-page.js";import"./pages/cd-tablet-pages.js";class CdAppShell extends PolymerElement{static get properties(){return{route:Object,routeData:Object,page:String}}static get observers(){return["_routePageChanged(routeData.page)"]}_routeActiveChanged(a){!a.detail.value}_routePageChanged(a){window.scrollTo(0,0),this.page=a||"home"}static get template(){return html`
+import{PolymerElement,html}from"../node_modules/@polymer/polymer/polymer-element.js";import"../node_modules/@polymer/app-route/app-location.js";import"../node_modules/@polymer/app-route/app-route.js";import"../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js";import"../node_modules/@polymer/app-layout/app-header/app-header.js";import"../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js";import"../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js";import"../node_modules/@polymer/iron-pages/iron-pages.js";import"../node_modules/@polymer/paper-icon-button/paper-icon-button.js";import"./pages/cd-home-page.js";import"./pages/cd-tablet-pages.js";import"./cd-icons.js";class CdAppShell extends PolymerElement{static get properties(){return{route:Object,routeData:Object,page:String}}static get observers(){return["_routePageChanged(routeData.page)"]}_routeActiveChanged(a){!a.detail.value}_routePageChanged(a){window.scrollTo(0,0),this.page=a||"home"}static get template(){return html`
       <style>
         :host {
           display: block;
@@ -17,11 +17,9 @@ import{PolymerElement,html}from"../node_modules/@polymer/polymer/polymer-element
           font-size: 16px;
         }
         .icon {
-          width: 24px;
-          height: 24px;
           margin: 8px;
           border-radius: 50%;
-          background-color: var(--light-gray-color);
+          color: var(--white-color);
         }
       </style>
       
@@ -41,8 +39,8 @@ import{PolymerElement,html}from"../node_modules/@polymer/polymer/polymer-element
       
         <app-header slot='header' fixed effects='waterfall'>
           <app-toolbar>
-            <a href='#/home'>
-              <div class='icon'></div>
+            <a href='#/home' tabindex='-1'>
+              <paper-icon-button class='icon' icon='cd-icons:arrow-left'></paper-icon-button>
             </a>
             <div id='toolbar-title'>Coating Designer</div>
             <div id='toolbar-spacer'></div>

@@ -288,6 +288,50 @@
       "type": "script",
       "weight": 1
     },
+    "node_modules/%40polymer/paper-icon-button/paper-icon-button.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-icon/iron-icon.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-meta/iron-meta.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/paper-behaviors/paper-inky-focus-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-behaviors/iron-button-state.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-a11y-keys-behavior/iron-a11y-keys-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-behaviors/iron-control-state.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/paper-behaviors/paper-ripple-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/paper-ripple/paper-ripple.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/paper-styles/default-theme.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/paper-styles/color.js": {
+      "type": "script",
+      "weight": 1
+    },
     "src/pages/cd-home-page.js": {
       "type": "script",
       "weight": 1
@@ -340,14 +384,6 @@
       "type": "script",
       "weight": 1
     },
-    "node_modules/%40polymer/iron-icon/iron-icon.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/iron-meta/iron-meta.js": {
-      "type": "script",
-      "weight": 1
-    },
     "node_modules/%40polymer/iron-menu-behavior/iron-menubar-behavior.js": {
       "type": "script",
       "weight": 1
@@ -357,42 +393,6 @@
       "weight": 1
     },
     "node_modules/%40polymer/iron-selector/iron-multi-selectable.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/iron-a11y-keys-behavior/iron-a11y-keys-behavior.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/paper-icon-button/paper-icon-button.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/paper-behaviors/paper-inky-focus-behavior.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/iron-behaviors/iron-button-state.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/iron-behaviors/iron-control-state.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/paper-behaviors/paper-ripple-behavior.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/paper-ripple/paper-ripple.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/paper-styles/default-theme.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/paper-styles/color.js": {
       "type": "script",
       "weight": 1
     },
@@ -413,6 +413,10 @@
       "weight": 1
     },
     "src/cd-elements/cd-card-info-section.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-icons.js": {
       "type": "script",
       "weight": 1
     },
@@ -956,6 +960,10 @@
       "type": "script",
       "weight": 1
     },
+    "src/cd-icons.js": {
+      "type": "script",
+      "weight": 1
+    },
     "src/cd-elements/cd-card-info-item.js": {
       "type": "script",
       "weight": 1
@@ -1154,19 +1162,119 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-info-item.js": {
+    "node_modules/%40polymer/iron-icon/iron-icon.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-tablet-layout.js": {
+    "node_modules/%40polymer/polymer/polymer-legacy.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-tablet-graphic.js": {
+    "node_modules/%40polymer/polymer/lib/legacy/legacy-element-mixin.js": {
       "type": "script",
       "weight": 1
     },
-    "node_modules/%40polymer/polymer/lib/elements/dom-if.js": {
+    "node_modules/%40webcomponents/shadycss/entrypoints/apply-shim.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/apply-shim.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/style-util.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/style-settings.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/css-parse.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/common-regex.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/unscoped-style-handler.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/common-utils.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/template-map.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/apply-shim-utils.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/document-wait.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/custom-style-interface.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/gesture-event-listeners.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/gestures.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/debounce.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/dir-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/import-href.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/render-status.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/unresolved.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/polymer.dom.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/flattened-nodes-observer.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/array-splice.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/flush.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/polymer-fn.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/class.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/templatizer-behavior.js": {
       "type": "script",
       "weight": 1
     },
@@ -1178,11 +1286,59 @@
       "type": "script",
       "weight": 1
     },
-    "node_modules/%40polymer/polymer/lib/utils/debounce.js": {
+    "node_modules/%40polymer/polymer/lib/elements/dom-bind.js": {
       "type": "script",
       "weight": 1
     },
-    "node_modules/%40polymer/polymer/lib/utils/flush.js": {
+    "node_modules/%40polymer/polymer/lib/elements/dom-repeat.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/dom-if.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/array-selector.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/custom-style.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/entrypoints/custom-style-interface.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/mutable-data-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-meta/iron-meta.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-flex-layout/iron-flex-layout.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-icons.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-iconset-svg/iron-iconset-svg.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-elements/cd-card-info-item.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-elements/cd-tablet-layout.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-elements/cd-tablet-graphic.js": {
       "type": "script",
       "weight": 1
     },
@@ -1300,55 +1456,7 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-tablet-layout.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-elements/cd-tablet-graphic.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/polymer/lib/elements/dom-if.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/polymer/lib/utils/templatize.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/polymer/lib/mixins/mutable-data.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/polymer/lib/utils/debounce.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/polymer/lib/utils/flush.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-inputs/cd-text-input.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-inputs/cd-dropdown-input.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/polymer/lib/elements/dom-repeat.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-inputs/cd-length-input.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-inputs/cd-unit-input.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/iron-dropdown/iron-dropdown.js": {
+    "node_modules/%40polymer/iron-icon/iron-icon.js": {
       "type": "script",
       "weight": 1
     },
@@ -1416,6 +1524,10 @@
       "type": "script",
       "weight": 1
     },
+    "node_modules/%40polymer/polymer/lib/utils/debounce.js": {
+      "type": "script",
+      "weight": 1
+    },
     "node_modules/%40polymer/polymer/lib/mixins/dir-mixin.js": {
       "type": "script",
       "weight": 1
@@ -1444,6 +1556,10 @@
       "type": "script",
       "weight": 1
     },
+    "node_modules/%40polymer/polymer/lib/utils/flush.js": {
+      "type": "script",
+      "weight": 1
+    },
     "node_modules/%40polymer/polymer/lib/legacy/polymer-fn.js": {
       "type": "script",
       "weight": 1
@@ -1456,7 +1572,23 @@
       "type": "script",
       "weight": 1
     },
+    "node_modules/%40polymer/polymer/lib/utils/templatize.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/mutable-data.js": {
+      "type": "script",
+      "weight": 1
+    },
     "node_modules/%40polymer/polymer/lib/elements/dom-bind.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/dom-repeat.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/dom-if.js": {
       "type": "script",
       "weight": 1
     },
@@ -1473,6 +1605,50 @@
       "weight": 1
     },
     "node_modules/%40polymer/polymer/lib/legacy/mutable-data-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-meta/iron-meta.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-flex-layout/iron-flex-layout.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-icons.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-iconset-svg/iron-iconset-svg.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-elements/cd-tablet-layout.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-elements/cd-tablet-graphic.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-text-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-dropdown-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-length-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-unit-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-dropdown/iron-dropdown.js": {
       "type": "script",
       "weight": 1
     },

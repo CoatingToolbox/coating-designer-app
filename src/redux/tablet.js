@@ -143,21 +143,21 @@ export class Tablet {
     get concavity() {
         let ratio = this.cupThickness / this.length;
         if(ratio < 0) {
-            return 'Small';
-        } else if (ratio <= 0.04106 / 2) {
+            return 'Error';
+        } else if (ratio <= 0) {
             return 'Flat';
-        } else if (ratio <= 0.04106  + (0.05846 - 0.04106) / 2) {
+        } else if (ratio <= 0.04106  + 0.00383) {
             return 'Shallow';
-        } else if (ratio <= 0.05846 + (0.07698 - 0.05846) / 2) {
+        } else if (ratio <= 0.05846 + 0.35701) {
             return "Standard";
-        } else if (ratio <= 0.07698 + (0.18457 - 0.07698) / 2) {
+        } else if (ratio <= 0.07698 + 0.53399) {
             return "Deep";
-        } else if (ratio <= 0.18457 + (0.31628 - 0.18457) / 2) {
+        } else if (ratio <= 0.18457 + 0.11046) {
             return 'Extra-Deep';
-        } else if (ratio <= 0.31628 * 1.2) {
+        } else if (ratio <= 0.31628 - 0.00697) {
             return "Modified Ball";
         } else {
-            return 'Big';
+            return 'Ball';
         }
     }
     // SUFACE AREA
