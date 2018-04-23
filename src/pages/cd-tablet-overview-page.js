@@ -1,9 +1,9 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import '../cd-elements/cd-card-with-toolbar.js';
-import '../cd-elements/cd-card-button.js';
-import '../cd-elements/cd-card-info-section.js';
-import '../cd-elements/cd-card-info-item.js';
+import '../cd-card/cd-card-with-toolbar.js';
+import '../cd-card/cd-card-button.js';
+import '../cd-card/cd-card-info-section.js';
+import '../cd-card/cd-card-info-item.js';
 import '../cd-elements/cd-tablet-layout.js';
 import { ReduxMixin } from '../redux/redux-mixin.js';
 
@@ -32,6 +32,9 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
         }
         cd-card-info-section + cd-card-info-section {
           border-top: var(--border-line);
+        }
+        cd-tablet-layout {
+          margin: 32px auto 24px;
         }
         .capitalize {
           text-transform: capitalize;
@@ -76,10 +79,6 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
           <cd-card-info-item wide label='Thickness'>[[tablet.formatted.totalThickness]]</cd-card-info-item>
         </cd-card-info-section>
         
-        <cd-card-info-section title='Tablet Schematic' icon='cd-icons:tablet'>
-          <cd-tablet-layout wide tablet='[[tablet]]'></cd-tablet-layout>
-        </cd-card-info-section>
-        
         <cd-card-info-section title='Weight & Density' icon='cd-icons:weight'>
           <cd-card-info-item wide label='Weight'>[[tablet.formatted.weight]]</cd-card-info-item>
           <cd-card-info-item wide label='Compressed Density'>[[tablet.formatted.compressedDensity]]</cd-card-info-item>
@@ -91,6 +90,10 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
           <cd-card-info-item wide label='Volume'>[[tablet.formatted.totalVolume]]</cd-card-info-item>
           <cd-card-info-item wide label='Area / Volume'>[[tablet.formatted.areaToVolume]]</cd-card-info-item>
         </cd-card-info-section>
+      </cd-card-with-toolbar>
+      
+      <cd-card-with-toolbar title='Tablet Schematic'>
+          <cd-tablet-layout tablet='[[tablet]]'></cd-tablet-layout>
       </cd-card-with-toolbar>
       
       <cd-card-with-toolbar title='Tooling Information'>

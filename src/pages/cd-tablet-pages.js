@@ -5,8 +5,6 @@ import '../../node_modules/@polymer/app-route/app-route.js';
 import '../../node_modules/@polymer/paper-tabs/paper-tabs.js';
 import '../../node_modules/@polymer/paper-tabs/paper-tab.js';
 import '../../node_modules/@polymer/iron-pages/iron-pages.js';
-import '../cd-elements/cd-card-with-toolbar.js';
-import '../cd-elements/cd-card-button.js';
 import './cd-tablet-overview-page.js';
 import './cd-tablet-design-page.js';
 

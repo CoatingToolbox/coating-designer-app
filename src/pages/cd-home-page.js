@@ -1,7 +1,7 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import '../cd-elements/cd-card-with-toolbar.js';
-import '../cd-elements/cd-card-button.js';
+import '../cd-card/cd-card-with-toolbar.js';
+import '../cd-card/cd-card-button.js';
 import { ReduxMixin } from '../redux/redux-mixin.js';
 
 class CdHomePage extends ReduxMixin(PolymerElement) {

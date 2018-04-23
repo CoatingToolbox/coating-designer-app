@@ -13,10 +13,9 @@ export class Tablet {
         this.bulkDensity = 760000; 
         // DESCRIPTION
         this.productType = '';
-        this.dosageForm = '';
+        this.dosageForm = 'Tablet';
         this.productName = '';
         this.formulationName = '';
-        this.activeName = '';
         this.companyName = '';
         this.companyLocation = '';
         this.contactName = '';

@@ -35,6 +35,9 @@ class CdTextInput extends PolymerElement {
           outline: none;
           text-align: start;
           text-overflow: ellipsis;
+          font-size: 16px;
+          color: var(--text-color);
+          line-height: 24px;
         }
         
         #input:focus {

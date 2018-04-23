@@ -36,7 +36,7 @@ class CdTabletLayout extends PolymerElement {
           height: 175px;
         }
         .schematic-label {
-          @apply --paper-font-subhead;
+          color: var(--text-light-color);
           text-align: center;
         }
         

@@ -39,7 +39,6 @@ class CdUnitInput extends PolymerElement {
   
   _unitSelected(e) {
     this.unit = e.model.item.unit;
-    // this._multiplier = e.model.item.multiplier;
     this._toggleDropdown();
   }
   
@@ -86,6 +85,11 @@ class CdUnitInput extends PolymerElement {
           outline: none;
           text-align: start;
           text-overflow: ellipsis;
+          font-size: 16px;
+          color: var(--text-color);
+          line-height: 24px;
+          align-self: flex-end;
+          width: 100%;
         }
         #input[type=number]::-webkit-inner-spin-button,
         #input[type=number]::-webkit-outer-spin-button {
@@ -106,7 +110,7 @@ class CdUnitInput extends PolymerElement {
           justify-content: center;
           grid-row: 2 / 3;
           grid-column: 2 / 3;
-          min-width: 32px;
+          min-width: 64px;
           padding: 8px 4px 8px 12px;
           background-color: var(--white-color);
           font-size: 14px;
@@ -123,13 +127,16 @@ class CdUnitInput extends PolymerElement {
           background-color: var(--white-color);
           font-size: 16px;
           color: var(--text-light-color);
-          padding: 16px 24px;
+          padding: 16px 8px;
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
                     0 1px 5px 0 rgba(0, 0, 0, 0.12),
                     0 3px 1px -2px rgba(0, 0, 0, 0.2);
         }
         #dropdown .item {
-          padding: 8px;
+          padding: 8px 16px;
+        }
+        #dropdown .item + .item {
+          margin-top: 4px;
         }
         #dropdown .item:hover {
           cursor: pointer;

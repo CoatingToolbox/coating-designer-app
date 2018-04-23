@@ -1,28 +1,43 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import '../cd-elements/cd-card-with-toolbar.js';
-import '../cd-elements/cd-card-button.js';
-import '../cd-elements/cd-card-info-section.js';
+import '../../node_modules/@polymer/iron-selector/iron-selector.js';
+import '../../node_modules/@polymer/iron-icon/iron-icon.js';
+import '../cd-card/cd-card-with-toolbar.js';
+import '../cd-card/cd-card-button.js';
+import '../cd-card/cd-card-info-section.js';
 import '../cd-elements/cd-tablet-layout.js';
 import '../cd-inputs/cd-text-input.js';
 import '../cd-inputs/cd-dropdown-input.js';
 import '../cd-inputs/cd-length-input.js';
 import '../cd-inputs/cd-mass-input.js';
 import '../cd-inputs/cd-density-input.js';
+import '../cd-icons.js';
+
 import { ReduxMixin } from '../redux/redux-mixin.js';
 
 class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
   static get properties () {
     return {
       tablet: { type: Object, statePath: 'tablet' },
+      isRound: {type: Boolean, computed: '_computeIsRound(tablet.shape)'},
       dosageOptions: { 
         type: Array, 
         value: function() {
-          return ["Tablet", "Softgel", "Hard Capsule"];
+          return ["", "Tablet", "Softgel", "Hard Capsule"];
+        }
+      },
+      marketOptions: {
+        type: Array,
+        value: function() {
+          return ["", "Pharmaceutical", "Nutritional", "Other"];
         }
       },
       dimensionUnits: {type: String, value: 'mm'}
     };
+  }
+  
+  _computeIsRound(shape) {
+    return shape === 'round';
   }
   
   _saveChanges() {
@@ -48,6 +63,42 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
           font-size: 36px;
           font-weight: lighter;
         }
+        #shape-selector {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        #shape-selector [shape] {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--background-color);
+          border: 3px solid var(--border-color);
+          border-radius: 12px;
+          color: var(--text-light-color);
+          font-size: 14px;
+          padding: 16px 24px;
+        }
+        #shape-selector iron-icon {
+          --iron-icon-width: 96px;
+          --iron-icon-height: 96px;
+          --iron-icon-fill-color: var(--border-color);
+          --iron-icon-stroke-color: var(--border-color);
+        }
+        #shape-selector .iron-selected {
+          border-color: var(--app-primary-color);
+          color: var(--app-primary-color);
+        }
+        #shape-selector .iron-selected iron-icon {
+          --iron-icon-fill-color: var(--app-primary-color);
+          --iron-icon-stroke-color: var(--app-primary-color);
+        }
+        
+        #review-save-button {
+          grid-column: 1 / 2;
+          justify-self: start;
+        }
         cd-card-info-section + cd-card-info-section {
           border-top: var(--border-line);
         }
@@ -55,7 +106,7 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
           text-transform: capitalize;
         }
         [hidden] {
-          display: none !important;
+          visibility: hidden !important;
         }
       </style>
       
@@ -67,8 +118,8 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
           <cd-text-input wide label='Product' value='{{tablet.productName}}'></cd-text-input>
           <cd-text-input label='Active Ingredient' value='{{tablet.activeName}}'></cd-text-input>
           <cd-text-input label='Formulation' value='{{tablet.formulationName}}'></cd-text-input>
-          <cd-dropdown-input label='Dosage Form' selected-value='{{tablet.dosageForm}}' values=[[dosageOptions]]></cd-dropdown-input>
-          <cd-dropdown-input label='Industry'></cd-dropdown-input>
+          <cd-dropdown-input label='Dosage Form' selected='{{tablet.dosageForm}}' options='[[dosageOptions]]'></cd-dropdown-input>
+          <cd-dropdown-input label='Market' selected='{{tablet.productType}}' options='[[marketOptions]]'></cd-dropdown-input>
         </cd-card-info-section>
         
         <cd-card-info-section title='Company Information'  icon='cd-icons:company-info'>
@@ -83,12 +134,25 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
         <cd-card-button slot='toolbar' label='Save' on-click='_saveChanges'></cd-card-button>
         
         <cd-card-info-section title='Tablet Shape' icon='cd-icons:shape'>
-        
+          <iron-selector id='shape-selector' wide selected='{{tablet.shape}}' attr-for-selected='shape'>
+            <div shape='round'>
+              <iron-icon icon='cd-icons:round-tablet'></iron-icon>
+              <div>Round</div>
+            </div>
+            <div shape='oval'>
+              <iron-icon icon='cd-icons:oval-tablet'></iron-icon>
+              <div>Oval</div>
+            </div>
+            <div shape='caplet'>
+              <iron-icon icon='cd-icons:caplet-tablet'></iron-icon>
+              <div>Caplet</div>
+            </div>
+          </iron-selector>
         </cd-card-info-section>
         
         <cd-card-info-section title='Tablet Dimensions' icon='cd-icons:ruler'>
           <cd-length-input label='Length' value='{{tablet.length}}' unit='{{dimensionUnits}}'></cd-length-input>
-          <cd-length-input label='Width' value='{{tablet.width}}' unit='{{dimensionUnits}}'></cd-length-input>
+          <cd-length-input hidden$='{{isRound}}' label='Width' value='{{tablet.width}}' unit='{{dimensionUnits}}'></cd-length-input>
           <cd-length-input label='Total Thickness' value='{{tablet.totalThickness}}' unit='{{dimensionUnits}}'></cd-length-input>
           <cd-length-input label='Band Thickness' value='{{tablet.bandThickness}}' unit='{{dimensionUnits}}'></cd-length-input>
         </cd-card-info-section>
@@ -107,14 +171,16 @@ class CdTabletDesignPage extends ReduxMixin(PolymerElement) {
       </cd-card-with-toolbar>
       
       <cd-card-with-toolbar title='Review & Save'>
-        <cd-card-button slot='toolbar' label='Save'></cd-card-button>
-        
         <cd-card-info-section title='Tablet Schematic' icon='cd-icons:tablet'>
           <cd-tablet-layout wide tablet='[[tablet]]'></cd-tablet-layout>
         </cd-card-info-section>
         
         <cd-card-info-section title='Save' icon='cd-icons:save'>
-          <cd-card-button label='Save' on-click='_saveChanges'></cd-card-button>
+          <p wide>
+            With the above information other tablet properties are calculated. This includes
+            properties useful for coating such as tablet surface area and batch volume.
+          </p>
+          <cd-card-button id='review-save-button' label='Save & Calculate' on-click='_saveChanges'></cd-card-button>
         </cd-card-info-section>
       </cd-card-with-toolbar>
     `;

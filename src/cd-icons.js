@@ -53,7 +53,17 @@ $_documentContainer.innerHTML = `
               <g id='shape'>
                 <path d="M11,13.5V21.5H3V13.5H11M12,2L17.5,11H6.5L12,2M17.5,13C20,13 22,15 22,17.5C22,20 20,22 17.5,22C15,22 13,20 13,17.5C13,15 15,13 17.5,13Z" />
               </g>
-             
+              
+              <g id='round-tablet' style='fill-opacity: 0.4; stroke-width: 0.75px;'>
+                  <circle cx='12' cy='12' r='8'></circle>
+              </g>
+              <g id='oval-tablet' style='fill-opacity: 0.4; stroke-width: 0.75'>
+                  <path d="m 2 12 a 10 7 0 0 0 20 0 a 10 7 0 0 0 -20 0 z"></path>
+              </g>
+              <g id='caplet-tablet' style='fill-opacity: 0.4; stroke-width: 0.75px;'>
+                  <path d="m 12 12 m 5.999999999999999 5.4 l -11.999999999999998 0 a 5.4 5.4 0 0 1 0 -10.8 l 11.999999999999998 0 a 5.4 5.4 0 0 1 0 10.8 z"></path>
+              </g>
+              
               <g id='tablet' style='fill-opacity: 0.4; stroke-width: 2.5px;'>
                   <path d="m 2 9 l 20 0 l 0 6 l -20 0 l 0 -6"></path>
                   <path d="m 2 9 a 33.524 33.524 0 0 1 20 0"></path>
