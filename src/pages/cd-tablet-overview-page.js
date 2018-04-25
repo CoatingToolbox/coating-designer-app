@@ -26,10 +26,33 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
           margin: auto;
           padding: 48px 0px;
         }
-        #page-title {
-          font-size: 36px;
+        #header-card {
+          border-radius: 4px;
+          background-color: var(--app-primary-color);
+          color: var(--white-color);
+          margin-bottom: 24px;
+        }
+        #header-card #title-layout {
+          display: flex;
+          align-items: center;
+          padding: 16px 24px;
+        }
+        #header-card #title-icon {
+          height: 48px;
+          width: 48px;
+          margin-right: 24px;
+          background-color: var(--app-light-color);
+          border: 2px solid var(--light-gray-color);
+          border-radius: 8px;
+        }
+        #header-card #header-title {
+          font-size: 48px;
           font-weight: lighter;
         }
+        #header-card #content {
+          height: 124px;
+        }
+        
         cd-card-info-section + cd-card-info-section {
           border-top: var(--border-line);
         }
@@ -44,7 +67,13 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
         }
       </style>
       
-      <div id='page-title'>Coating Substrate Overview</div>
+      <div id='header-card'>
+        <div id='title-layout'>
+          <div id='title-icon'></div>
+          <div id='header-title'>Tablet Details</div>
+        </div>
+        <div id='content'></div>
+      </div>
       
       <cd-card-with-toolbar title='General Information'>
         <a href='#/tablet/design' slot='toolbar'>

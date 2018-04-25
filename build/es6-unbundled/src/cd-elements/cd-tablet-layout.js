@@ -21,7 +21,7 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
           height: 175px;
         }
         .schematic-label {
-          @apply --paper-font-subhead;
+          color: var(--text-light-color);
           text-align: center;
         }
         

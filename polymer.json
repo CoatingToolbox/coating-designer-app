@@ -3,7 +3,7 @@
     "shell": "src/cd-app-shell.js",
     "fragments": [
         "src/pages/cd-home-page.js",
-        "src/pages/cd-tablet-pages.js",
+        "src/pages/cd-materials-pages.js",
         "src/pages/cd-tablet-overview-page.js",
         "src/pages/cd-tablet-design-page.js"
     ],

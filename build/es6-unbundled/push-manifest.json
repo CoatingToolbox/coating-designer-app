@@ -336,11 +336,11 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-with-toolbar.js": {
+    "src/cd-card/cd-card-with-toolbar.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-button.js": {
+    "src/cd-card/cd-card-button.js": {
       "type": "script",
       "weight": 1
     },
@@ -412,7 +412,7 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-info-section.js": {
+    "src/cd-card/cd-card-info-section.js": {
       "type": "script",
       "weight": 1
     },
@@ -420,7 +420,7 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-info-item.js": {
+    "src/cd-card/cd-card-info-item.js": {
       "type": "script",
       "weight": 1
     },
@@ -436,19 +436,15 @@
       "type": "script",
       "weight": 1
     },
+    "node_modules/%40polymer/iron-selector/iron-selector.js": {
+      "type": "script",
+      "weight": 1
+    },
     "src/cd-inputs/cd-text-input.js": {
       "type": "script",
       "weight": 1
     },
     "src/cd-inputs/cd-dropdown-input.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-inputs/cd-length-input.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-inputs/cd-unit-input.js": {
       "type": "script",
       "weight": 1
     },
@@ -492,7 +488,11 @@
       "type": "script",
       "weight": 1
     },
-    "node_modules/%40polymer/iron-selector/iron-selector.js": {
+    "src/cd-inputs/cd-length-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-unit-input.js": {
       "type": "script",
       "weight": 1
     },
@@ -574,11 +574,11 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-with-toolbar.js": {
+    "src/cd-card/cd-card-with-toolbar.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-button.js": {
+    "src/cd-card/cd-card-button.js": {
       "type": "script",
       "weight": 1
     },
@@ -944,19 +944,19 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-with-toolbar.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-elements/cd-card-button.js": {
-      "type": "script",
-      "weight": 1
-    },
     "src/pages/cd-tablet-overview-page.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-info-section.js": {
+    "src/cd-card/cd-card-with-toolbar.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-card/cd-card-button.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-card/cd-card-info-section.js": {
       "type": "script",
       "weight": 1
     },
@@ -964,7 +964,7 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-info-item.js": {
+    "src/cd-card/cd-card-info-item.js": {
       "type": "script",
       "weight": 1
     },
@@ -1012,19 +1012,15 @@
       "type": "script",
       "weight": 1
     },
+    "node_modules/%40polymer/iron-selector/iron-selector.js": {
+      "type": "script",
+      "weight": 1
+    },
     "src/cd-inputs/cd-text-input.js": {
       "type": "script",
       "weight": 1
     },
     "src/cd-inputs/cd-dropdown-input.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-inputs/cd-length-input.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-inputs/cd-unit-input.js": {
       "type": "script",
       "weight": 1
     },
@@ -1068,7 +1064,11 @@
       "type": "script",
       "weight": 1
     },
-    "node_modules/%40polymer/iron-selector/iron-selector.js": {
+    "src/cd-inputs/cd-length-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-inputs/cd-unit-input.js": {
       "type": "script",
       "weight": 1
     },
@@ -1150,15 +1150,15 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-with-toolbar.js": {
+    "src/cd-card/cd-card-with-toolbar.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-button.js": {
+    "src/cd-card/cd-card-button.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-info-section.js": {
+    "src/cd-card/cd-card-info-section.js": {
       "type": "script",
       "weight": 1
     },
@@ -1330,7 +1330,7 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-info-item.js": {
+    "src/cd-card/cd-card-info-item.js": {
       "type": "script",
       "weight": 1
     },
@@ -1444,19 +1444,7 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-elements/cd-card-with-toolbar.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-elements/cd-card-button.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-elements/cd-card-info-section.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/iron-icon/iron-icon.js": {
+    "node_modules/%40polymer/iron-selector/iron-selector.js": {
       "type": "script",
       "weight": 1
     },
@@ -1608,11 +1596,39 @@
       "type": "script",
       "weight": 1
     },
+    "node_modules/%40polymer/iron-selector/iron-multi-selectable.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-selector/iron-selectable.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-selector/iron-selection.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-icon/iron-icon.js": {
+      "type": "script",
+      "weight": 1
+    },
     "node_modules/%40polymer/iron-meta/iron-meta.js": {
       "type": "script",
       "weight": 1
     },
     "node_modules/%40polymer/iron-flex-layout/iron-flex-layout.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-card/cd-card-with-toolbar.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-card/cd-card-button.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/cd-card/cd-card-info-section.js": {
       "type": "script",
       "weight": 1
     },
@@ -1637,14 +1653,6 @@
       "weight": 1
     },
     "src/cd-inputs/cd-dropdown-input.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-inputs/cd-length-input.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/cd-inputs/cd-unit-input.js": {
       "type": "script",
       "weight": 1
     },
@@ -1700,19 +1708,11 @@
       "type": "script",
       "weight": 1
     },
-    "node_modules/%40polymer/iron-selector/iron-selector.js": {
+    "src/cd-inputs/cd-length-input.js": {
       "type": "script",
       "weight": 1
     },
-    "node_modules/%40polymer/iron-selector/iron-multi-selectable.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/iron-selector/iron-selectable.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/%40polymer/iron-selector/iron-selection.js": {
+    "src/cd-inputs/cd-unit-input.js": {
       "type": "script",
       "weight": 1
     },
