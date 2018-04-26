@@ -24,7 +24,6 @@ class CdCardButton extends PolymerElement {
           cursor: pointer;
         }
         #label {
-          font-weight:  light;
           font-size: 14px;
         }
       </style>

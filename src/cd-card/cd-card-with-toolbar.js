@@ -16,8 +16,11 @@ class CdCardWithToolbar extends PolymerElement {
         :host {
           display: block;
           background-color: var(--white-color);
-          width: calc(100% - 64px);
           padding: 24px 32px 16px 32px;
+          width: calc(100% - 64px);
+          max-width: 964px;
+          margin-left: auto;
+          margin-right: auto;
           margin-bottom: 24px;
           border-radius: 4px;
           border: 1px solid var(--border-color);

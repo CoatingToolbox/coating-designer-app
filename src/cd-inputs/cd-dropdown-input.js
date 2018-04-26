@@ -4,7 +4,7 @@ import '../../node_modules/@polymer/polymer/lib/elements/dom-repeat.js';
 import '../../node_modules/@polymer/iron-dropdown/iron-dropdown.js';
 import '../../node_modules/@polymer/iron-selector/iron-selector.js';
 import '../../node_modules/@polymer/iron-icon/iron-icon.js';
-import '../cd-icons.js';
+import '../cd-elements/cd-icons.js';
 
 class CdDropdownInput extends PolymerElement {
   static get properties () {

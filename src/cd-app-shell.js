@@ -5,6 +5,7 @@ import '../node_modules/@polymer/app-route/app-route.js';
 import '../node_modules/@polymer/iron-pages/iron-pages.js';
 import './pages/cd-home-page.js';
 import './pages/cd-materials-pages.js';
+import './pages/cd-tablet-design-page.js';
 
 class CdAppShell extends PolymerElement {
   
@@ -54,6 +55,7 @@ class CdAppShell extends PolymerElement {
       <iron-pages selected='[[page]]' attr-for-selected='page' fallback-selection='home'>
         <cd-home-page page='home'></cd-home-page>
         <cd-materials-pages page='materials'></cd-materials-pages>
+        <cd-tablet-design-page page='tablet-design'><cd-tablet-design-page>
         <div page='two'>Two</div>
         <div page='three'>Three</div>
       </iron-pages>

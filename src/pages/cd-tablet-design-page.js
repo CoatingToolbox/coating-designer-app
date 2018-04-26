@@ -11,7 +11,7 @@ import '../cd-inputs/cd-dropdown-input.js';
 import '../cd-inputs/cd-length-input.js';
 import '../cd-inputs/cd-mass-input.js';
 import '../cd-inputs/cd-density-input.js';
-import '../cd-icons.js';
+import '../cd-elements/cd-icons.js';
 
 import { ReduxMixin } from '../redux/redux-mixin.js';
 

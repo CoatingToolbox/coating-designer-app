@@ -10,6 +10,8 @@ import '../../node_modules/@polymer/iron-selector/iron-selector.js';
 import '../../node_modules/@polymer/paper-tabs/paper-tabs.js';
 import '../../node_modules/@polymer/paper-tabs/paper-tab.js';
 import '../../node_modules/@polymer/iron-pages/iron-pages.js';
+import '../../node_modules/@polymer/paper-icon-button/paper-icon-button.js';
+import '../cd-elements/cd-icons.js';
 import './cd-tablet-overview-page.js';
 
 class CdMaterialsPages extends PolymerElement {
@@ -45,6 +47,10 @@ class CdMaterialsPages extends PolymerElement {
         app-header #user-name {
           font-size: 16px;
         }
+        app-header a {
+          text-decoration: none;
+          color: inherit;
+        }
         app-header .icon {
           margin: 8px;
           border-radius: 50%;
@@ -56,7 +62,7 @@ class CdMaterialsPages extends PolymerElement {
         
         paper-tabs {
           --paper-tabs-selection-bar-color: var(--app-accent-color);
-          font-size: 18px;
+          font-size: 16px;
         }
         paper-tab {
           padding: 0px 16px;
@@ -67,25 +73,6 @@ class CdMaterialsPages extends PolymerElement {
           color: inherit;
           height: initial;
           text-align: center;
-        }
-        
-        #intro-section {
-          background-color: var(--app-primary-color);
-          color: var(--white-color);
-          padding: 96px 0px 48px 0px;
-        }
-        #intro-section h1 {
-          font-size: 48px;
-          font-weight: bold;
-          max-width: 900px;
-          text-align: center;
-          margin: 0px auto;
-        }
-        #intro-section p {
-          max-width: 600px;
-          margin: auto;
-          text-align: center;
-          margin: 0px auto;
         }
       </style>
       
@@ -104,7 +91,9 @@ class CdMaterialsPages extends PolymerElement {
       
         <app-header slot='header' fixed effects='waterfall'>
           <app-toolbar>
-            <div class='icon'></div>
+            <a href='#/home'>
+              <paper-icon-button icon='cd-icons:arrow-left'></paper-icon-button>
+            </a>
             <div class='toolbar-title'>Materials & Equipment</div>
             <div id='toolbar-spacer'></div>
             <paper-tabs selected='[[routeData.tab]]' attr-for-selected='tab' fallback-selection='overview'>

@@ -4,6 +4,7 @@ import '../../node_modules/@polymer/app-layout/app-header-layout/app-header-layo
 import '../../node_modules/@polymer/app-layout/app-header/app-header.js';
 import '../../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
 import '../../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js';
+import '../cd-header/cd-page-header.js';
 import '../cd-card/cd-card-with-toolbar.js';
 import '../cd-card/cd-card-button.js';
 
@@ -62,25 +63,6 @@ class CdHomePage extends ReduxMixin(PolymerElement) {
           width: 24px;
           border: 2px solid var(--white-color);
           background-color: var(--app-light-color);
-        }
-        
-        #intro-section {
-          background-color: var(--app-primary-color);
-          color: var(--white-color);
-          padding: 96px 0px 48px 0px;
-        }
-        #intro-section h1 {
-          font-size: 48px;
-          font-weight: bold;
-          max-width: 900px;
-          text-align: center;
-          margin: 0px auto;
-        }
-        #intro-section p {
-          max-width: 600px;
-          margin: auto;
-          text-align: center;
-          margin: 0px auto;
         }
         
         #materials-section {
@@ -142,11 +124,6 @@ class CdHomePage extends ReduxMixin(PolymerElement) {
           flex-grow: 1;
         }
         
-        cd-card-with-toolbar {
-          max-width: 964px;
-          margin-left: auto;
-          margin-right: auto;
-        }
       </style>
       
       <app-header-layout fullbleed>
@@ -161,13 +138,13 @@ class CdHomePage extends ReduxMixin(PolymerElement) {
           </app-toolbar>
         </app-header>
       
-        <section id='intro-section'>
-          <h1>Let's design your coating process.</h1>
-          <p>
+        <cd-page-header>
+          <div slot='title'>Let's design your coating process.</div>
+          <p slot='description'>
             Use the Colorcon Coating Designer to get recommendations on coating conditions and process
             parameters. Or audit your coating process with key coating metrics.
           </p>
-        </section>
+        </cd-page-header>
         
         <section id='materials-section'>
       

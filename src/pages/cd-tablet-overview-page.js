@@ -5,6 +5,7 @@ import '../cd-card/cd-card-button.js';
 import '../cd-card/cd-card-info-section.js';
 import '../cd-card/cd-card-info-item.js';
 import '../cd-elements/cd-tablet-layout.js';
+import '../cd-header/cd-page-header.js';
 import { ReduxMixin } from '../redux/redux-mixin.js';
 
 class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
@@ -21,38 +22,21 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
-          width: 100%;
-          max-width: 964px;
-          margin: auto;
-          padding: 48px 0px;
         }
-        #header-card {
-          border-radius: 4px;
-          background-color: var(--app-primary-color);
+        cd-page-header cd-card-button {
+          transition: 0.2s all;
+          color: var(--text-light-color);
+          background-color: var(--light-gray-color);
+          transition: 0.2s all;
+        }
+        cd-page-header cd-card-button:hover {
           color: var(--white-color);
-          margin-bottom: 24px;
+          background-color: var(--app-accent-color);
+          transition: 0.3s all;
         }
-        #header-card #title-layout {
-          display: flex;
-          align-items: center;
-          padding: 16px 24px;
+        #background-wrapper {
+          background: linear-gradient(to bottom, var(--app-primary-color) 0%,var(--app-primary-color) 124px, #000000 124px,var(--background-color) 0%,var(--background-color) 100%);
         }
-        #header-card #title-icon {
-          height: 48px;
-          width: 48px;
-          margin-right: 24px;
-          background-color: var(--app-light-color);
-          border: 2px solid var(--light-gray-color);
-          border-radius: 8px;
-        }
-        #header-card #header-title {
-          font-size: 48px;
-          font-weight: lighter;
-        }
-        #header-card #content {
-          height: 124px;
-        }
-        
         cd-card-info-section + cd-card-info-section {
           border-top: var(--border-line);
         }
@@ -67,37 +51,46 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
         }
       </style>
       
-      <div id='header-card'>
-        <div id='title-layout'>
-          <div id='title-icon'></div>
-          <div id='header-title'>Tablet Details</div>
-        </div>
-        <div id='content'></div>
-      </div>
       
-      <cd-card-with-toolbar title='General Information'>
-        <a href='#/tablet/design' slot='toolbar'>
-         <cd-card-button label='Edit'></cd-card-button>
+      <cd-page-header>
+        <div slot='title'>Tablet Core Overview</div>
+        <p slot='description'>
+          Review the current selected tablet and make changes with the tablet designer
+          or load a tablet from the library.
+        </p>
+        <a href='#/tablet-designer' slot='button'>
+          <cd-card-button label='Tablet Designer'></cd-card-button>
         </a>
-        <cd-card-info-section title='Product Information' icon='cd-icons:product-info'>
-          <cd-card-info-item wide label='Name' class='capitalize'>[[tablet.productName]]</cd-card-info-item>
-          <cd-card-info-item wide label='Brand' class='capitalize'></cd-card-info-item>
-          <cd-card-info-item wide label='Market' class='capitalize'>[[tablet.productType]]</cd-card-info-item>
-          <cd-card-info-item wide label='Dosage Form' class='capitalize'>[[tablet.dosageForm]]</cd-card-info-item>
-          <cd-card-info-item wide label='Formulation' class='capitalize'>[[tablet.formulationName]]</cd-card-info-item>
-        </cd-card-info-section>
-        
-        <cd-card-info-section title='Company Information' icon='cd-icons:company-info'>
-          <cd-card-info-item wide label='Company' class='capitalize'>[[tablet.companyName]]</cd-card-info-item>
-          <cd-card-info-item wide label='Location' class='capitalize'>[[tablet.companyLocation]]</cd-card-info-item>
-          <cd-card-info-item wide label='Contact' class='capitalize'>[[tablet.contactName]]</cd-card-info-item>
-          <cd-card-info-item wide label='Email'>[[tablet.contactEmail]]</cd-card-info-item>
-        </cd-card-info-section>
-      </cd-card-with-toolbar>
+        <a href='#/tablet-library' slot='button'>
+          <cd-card-button label='Tablet Library'></cd-card-button>
+        </a>
+      </cd-page-header>
+      
+      <div id='background-wrapper'>
+        <cd-card-with-toolbar title='General Information'>
+          <a href='#/tablet-design/description' slot='toolbar'>
+           <cd-card-button label='Edit'></cd-card-button>
+          </a>
+          <cd-card-info-section title='Product Information' icon='cd-icons:product-info'>
+            <cd-card-info-item wide label='Name' class='capitalize'>[[tablet.productName]]</cd-card-info-item>
+            <cd-card-info-item wide label='Brand' class='capitalize'></cd-card-info-item>
+            <cd-card-info-item wide label='Market' class='capitalize'>[[tablet.productType]]</cd-card-info-item>
+            <cd-card-info-item wide label='Dosage Form' class='capitalize'>[[tablet.dosageForm]]</cd-card-info-item>
+            <cd-card-info-item wide label='Formulation' class='capitalize'>[[tablet.formulationName]]</cd-card-info-item>
+          </cd-card-info-section>
+          
+          <cd-card-info-section title='Company Information' icon='cd-icons:company-info'>
+            <cd-card-info-item wide label='Company' class='capitalize'>[[tablet.companyName]]</cd-card-info-item>
+            <cd-card-info-item wide label='Location' class='capitalize'>[[tablet.companyLocation]]</cd-card-info-item>
+            <cd-card-info-item wide label='Contact' class='capitalize'>[[tablet.contactName]]</cd-card-info-item>
+            <cd-card-info-item wide label='Email'>[[tablet.contactEmail]]</cd-card-info-item>
+          </cd-card-info-section>
+        </cd-card-with-toolbar>
+      </div>
       
       
       <cd-card-with-toolbar title='Tablet Information'>
-        <a href='#/tablet/design' slot='toolbar'>
+        <a href='#/tablet-design/dimensions' slot='toolbar'>
          <cd-card-button label='Edit'></cd-card-button>
         </a>
         
