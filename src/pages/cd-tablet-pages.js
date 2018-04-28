@@ -11,10 +11,11 @@ import '../../node_modules/@polymer/paper-tabs/paper-tabs.js';
 import '../../node_modules/@polymer/paper-tabs/paper-tab.js';
 import '../../node_modules/@polymer/iron-pages/iron-pages.js';
 import '../../node_modules/@polymer/paper-icon-button/paper-icon-button.js';
-import '../cd-elements/cd-icons.js';
-import './cd-tablet-overview-page.js';
+import '../cd-icons.js';
+import '../cd-tablet/cd-tablet-overview-page.js';
+import '../cd-tablet/cd-tablet-designer-page.js';
 
-class CdMaterialsPages extends PolymerElement {
+class CdTabletPages extends PolymerElement {
   static get properties () {
     return {
       route: Object,
@@ -83,7 +84,7 @@ class CdMaterialsPages extends PolymerElement {
   
       <app-route
         route="{{route}}"
-        pattern="/materials/:tab"
+        pattern="/tablet/:tab"
         data="{{routeData}}">
       </app-route>
       
@@ -94,17 +95,17 @@ class CdMaterialsPages extends PolymerElement {
             <a href='#/home'>
               <paper-icon-button icon='cd-icons:arrow-left'></paper-icon-button>
             </a>
-            <div class='toolbar-title'>Materials & Equipment</div>
+            <cd-page-title class='toolbar-title'>Tablet Core</cd-page-title>
             <div id='toolbar-spacer'></div>
             <paper-tabs selected='[[routeData.tab]]' attr-for-selected='tab' fallback-selection='overview'>
-              <paper-tab tab='tablet' link>
-                <a href="#/materials/tablet" tabindex="-1">Tablet</a>
+              <paper-tab tab='overview' link>
+                <a href="#/tablet/overview" tabindex="-1">Overview</a>
               </paper-tab>
-              <paper-tab tab='pan' link>
-                <a href="#/materials/pan" tabindex="-1">Pan</a>
+              <paper-tab tab='designer' link>
+                <a href="#/tablet/designer" tabindex="-1">Designer</a>
               </paper-tab>
-              <paper-tab tab='coating' link>
-                <a href="#/materials/coating" tabindex="-1">Coating</a>
+              <paper-tab tab='library' link>
+                <a href="#/tablet/library" tabindex="-1">Library</a>
               </paper-tab>
             </paper-tabs>
             
@@ -112,9 +113,9 @@ class CdMaterialsPages extends PolymerElement {
         </app-header>
       
         <iron-pages selected='[[routeData.tab]]' attr-for-selected='tab' fallback-selection='overview'>
-          <cd-tablet-overview-page tab='tablet'></cd-tablet-overview-page>
-          <div tab='pan'>Library</div>
-          <div tab='coating'>Library</div>
+          <cd-tablet-overview-page tab='overview'></cd-tablet-overview-page>
+          <cd-tablet-designer-page tab='designer'></cd-tablet-designer-page>
+          <div tab='library'>Library</div>
         </iron-pages>
       </app-header-layout>
       
@@ -124,4 +125,4 @@ class CdMaterialsPages extends PolymerElement {
 
 // Register the element with the browser.
 /* global customElements */
-customElements.define('cd-materials-pages', CdMaterialsPages);
+customElements.define('cd-tablet-pages', CdTabletPages);

@@ -5,6 +5,7 @@ import '../../node_modules/@polymer/app-layout/app-header/app-header.js';
 import '../../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
 import '../../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '../cd-header/cd-page-header.js';
+import '../cd-header/cd-page-title.js';
 import '../cd-card/cd-card-with-toolbar.js';
 import '../cd-card/cd-card-button.js';
 
@@ -131,8 +132,7 @@ class CdHomePage extends ReduxMixin(PolymerElement) {
         <app-header slot='header' fixed effects='waterfall'>
           <app-toolbar>
             <div class='icon'></div>
-            <div id='toolbar-title'>Coating Designer</div>
-            <div id='toolbar-spacer'></div>
+            <cd-page-title>Coating Designer</cd-page-title>
             <div class='icon'></div>
             <div id='user-name'>jhansell@colorcon.com</div>
           </app-toolbar>
@@ -157,7 +157,7 @@ class CdHomePage extends ReduxMixin(PolymerElement) {
             <div class='material-layout'>
               <div class='material-label'>Coating Substrate</div>
               <div class='material-title'>[[tablet.productName]]</div>
-              <a href='#/materials/tablet'>
+              <a href='#/tablet/overview'>
                 <cd-card-button label='Details'></cd-card-button>
               </a>
             </div>
@@ -165,7 +165,7 @@ class CdHomePage extends ReduxMixin(PolymerElement) {
             <div class='material-layout'>
               <div class='material-label'>Coating Pan</div>
               <div class='material-title'>[[pan.manufacturer]] [[pan.model]]</div>
-              <a href='#/materials/pan'>
+              <a href='#/pan/overview'>
                 <cd-card-button label='Details'></cd-card-button>
               </a>
             </div>
@@ -173,7 +173,7 @@ class CdHomePage extends ReduxMixin(PolymerElement) {
             <div class='material-layout'>
               <div class='material-label'>Coating Formula</div>
               <div class='material-title'>[[coating.productName]]</div>
-              <a href='#/materials/coating'>
+              <a href='#/coating/overview'>
                 <cd-card-button label='Details'></cd-card-button>
               </a>
             </div>

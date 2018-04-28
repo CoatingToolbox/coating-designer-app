@@ -1,12 +1,13 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import { ReduxMixin } from '../redux/redux-mixin.js';
 import '../cd-card/cd-card-with-toolbar.js';
 import '../cd-card/cd-card-button.js';
 import '../cd-card/cd-card-info-section.js';
 import '../cd-card/cd-card-info-item.js';
-import '../cd-elements/cd-tablet-layout.js';
 import '../cd-header/cd-page-header.js';
-import { ReduxMixin } from '../redux/redux-mixin.js';
+import '../cd-header/cd-page-header-button.js';
+import './cd-tablet-layout.js';
 
 class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
   static get properties () {
@@ -22,17 +23,6 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
-        }
-        cd-page-header cd-card-button {
-          transition: 0.2s all;
-          color: var(--text-light-color);
-          background-color: var(--light-gray-color);
-          transition: 0.2s all;
-        }
-        cd-page-header cd-card-button:hover {
-          color: var(--white-color);
-          background-color: var(--app-accent-color);
-          transition: 0.3s all;
         }
         #background-wrapper {
           background: linear-gradient(to bottom, var(--app-primary-color) 0%,var(--app-primary-color) 124px, #000000 124px,var(--background-color) 0%,var(--background-color) 100%);
@@ -58,17 +48,17 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
           Review the current selected tablet and make changes with the tablet designer
           or load a tablet from the library.
         </p>
-        <a href='#/tablet-designer' slot='button'>
-          <cd-card-button label='Tablet Designer'></cd-card-button>
+        <a href='#/tablet/designer/description' slot='button'>
+          <cd-page-header-button label='Tablet Designer'></cd-page-header-button>
         </a>
-        <a href='#/tablet-library' slot='button'>
-          <cd-card-button label='Tablet Library'></cd-card-button>
+        <a href='#/tablet/library' slot='button'>
+          <cd-page-header-button label='Tablet Library'></cd-page-header-button>
         </a>
       </cd-page-header>
       
       <div id='background-wrapper'>
         <cd-card-with-toolbar title='General Information'>
-          <a href='#/tablet-design/description' slot='toolbar'>
+          <a href='#/tablet/designer/description' slot='toolbar'>
            <cd-card-button label='Edit'></cd-card-button>
           </a>
           <cd-card-info-section title='Product Information' icon='cd-icons:product-info'>
@@ -90,7 +80,7 @@ class CdTabletOverviewPage extends ReduxMixin(PolymerElement) {
       
       
       <cd-card-with-toolbar title='Tablet Information'>
-        <a href='#/tablet-design/dimensions' slot='toolbar'>
+        <a href='#/tablet/designer/dimensions' slot='toolbar'>
          <cd-card-button label='Edit'></cd-card-button>
         </a>
         

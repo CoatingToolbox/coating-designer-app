@@ -54,6 +54,7 @@ class CdPageHeader extends PolymerElement {
         <div id='buttons'>
           <slot name='button'></slot>
         </div>
+        <slot></slot>
         
     `;
   }

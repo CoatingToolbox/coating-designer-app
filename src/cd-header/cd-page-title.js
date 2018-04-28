@@ -1,23 +1,7 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import '../redux/redux-mixin.js';
 
-class CdTemplateElement extends PolymerElement {
-  static get properties () {
-    return {
-    };
-  }
-
-  constructor() {
-    // If you override the constructor, always call the 
-    // superconstructor first.
-    super();
-  }
-
-  ready(){
-    // If you override ready, always call super.ready() first.
-    super.ready();
-  }
+class CdPageTitle extends PolymerElement {
 
   static get template () {
     // Template getter must return an instance of HTMLTemplateElement.
@@ -26,8 +10,14 @@ class CdTemplateElement extends PolymerElement {
       <style>
         :host {
           display: block;
+          font-size: 24px;
+          margin: 0px 16px;
+          color: var(--white-color);
+          flex-grow: 1;
         }
       </style>
+      
+      <slot></slot>
       
     `;
   }
@@ -35,4 +25,4 @@ class CdTemplateElement extends PolymerElement {
 
 // Register the element with the browser.
 /* global customElements */
-customElements.define('cd-template-element', CdTemplateElement);
+customElements.define('cd-page-title', CdPageTitle);
