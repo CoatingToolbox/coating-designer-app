@@ -1,11 +1,11 @@
 {
     "entrypoint": "index.html",
-    "shell": "src/cd-app-shell.js",
+    "shell": "src/app-shell.js",
     "fragments": [
-        "src/pages/cd-home-page.js",
-        "src/pages/cd-tablet-pages.js",
-        "src/pages/cd-tablet-overview-page.js",
-        "src/pages/cd-tablet-design-page.js"
+        "src/pages/home-page.js",
+        "src/pages/tablet-pages.js",
+        "src/tablet/tablet-overview-page.js",
+        "src/tablet/tablet-designer-page.js"
     ],
     "sources": [
         "src/**/*",

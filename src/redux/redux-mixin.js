@@ -15,9 +15,13 @@ function tabletReducer(state = {}, action) {
     switch(action.type) {
         case "SET_TABLET_PRODUCT_NAME": tablet.productName = action.value; break;
         case "SET_TABLET_FORMULATION_NAME": tablet.formulationName = action.value; break;
+        case "SET_TABLET_ACTIVE_NAME": tablet.activeName = action.value; break;
         case "SET_TABLET_CONTACT_NAME": tablet.contactName = action.value; break;
+        case "SET_TABLET_CONTACT_EMAIL": tablet.contactEmail = action.value; break;
         case "SET_TABLET_COMPANY_NAME": tablet.companyName = action.value; break;
+        case "SET_TABLET_COMPANY_LOCATION": tablet.companyLocation = action.value; break;
         case "SET_TABLET_PRODUCT_TYPE": tablet.productType = action.value; break;
+        case "SET_TABLET_DOSAGE_FORM": tablet.dosageForm = action.value; break;
         case "SET_TABLET_SHAPE": tablet.shape = action.value; break;
         case "SET_TABLET_WIDTH": tablet.width = action.value; break;
         case "SET_TABLET_LENGTH": tablet.length = action.value; break;

@@ -4,8 +4,8 @@
   "fragments": [
     "src/pages/cd-home-page.js",
     "src/pages/cd-tablet-pages.js",
-    "src/pages/cd-tablet-overview-page.js",
-    "src/pages/cd-tablet-design-page.js"
+    "src/cd-tablet/cd-tablet-overview-page.js",
+    "src/cd-tablet/cd-tablet-designer-page.js"
   ],
   "sources": [
     "src/**/*",
@@ -15,8 +15,8 @@
     "src/cd-app-shell.js",
     "src/pages/cd-home-page.js",
     "src/pages/cd-tablet-pages.js",
-    "src/pages/cd-tablet-overview-page.js",
-    "src/pages/cd-tablet-design-page.js"
+    "src/cd-tablet/cd-tablet-overview-page.js",
+    "src/cd-tablet/cd-tablet-designer-page.js"
   ],
   "extraDependencies": [
     "bower_components/webcomponentsjs/*.js",

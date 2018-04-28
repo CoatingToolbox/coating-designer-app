@@ -1,4 +1,41 @@
-import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-element.js";import"../../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js";import"../../node_modules/@polymer/app-layout/app-header/app-header.js";import"../../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js";import"../../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js";import"../cd-header/cd-page-header.js";import"../cd-header/cd-page-title.js";import"../cd-card/cd-card-with-toolbar.js";import"../cd-card/cd-card-button.js";import{ReduxMixin}from"../redux/redux-mixin.js";class CdHomePage extends ReduxMixin(PolymerElement){static get properties(){return{tablet:{type:Object,statePath:"tablet"},pan:{type:Object,statePath:"pan"},parameters:{type:Object,statePath:"parameters"},coatingAmount:{type:Object,statePath:"coatingAmount"},coating:{type:Object,statePath:"coating"},batch:{type:Object,statePath:"batch"}}}_displayAsPercent(a){let b=(100*a).toFixed(1);return`${b}%`}_displayAsKilo(a){let b=(a/1e3).toFixed(1);return`${b} kg`}static get template(){return html`
+
+import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import '../../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js';
+import '../../node_modules/@polymer/app-layout/app-header/app-header.js';
+import '../../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
+import '../../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js';
+import '../header/page-header.js';
+import '../header/page-title.js';
+import '../card/card-with-toolbar.js';
+import '../card/card-button.js';
+
+import { ReduxMixin } from '../redux/redux-mixin.js';
+
+class HomePage extends ReduxMixin(PolymerElement) {
+  static get properties () {
+    return {
+      tablet: {type: Object, statePath: 'tablet'},
+      pan: {type: Object, statePath: 'pan'},
+      parameters: {type: Object, statePath: "parameters"},
+      coatingAmount: {type: Object, statePath: "coatingAmount"},
+      coating: {type: Object, statePath: "coating"},
+      batch: {type: Object, statePath: 'batch'}
+    };
+  }
+
+  _displayAsPercent(value) {
+    let percent = (value * 100).toFixed(1);
+    return `${percent}%`;
+  }
+  _displayAsKilo(value) {
+    let kg = (value / 1000).toFixed(1);
+    return `${kg} kg`;
+  }
+  
+  static get template () {
+    // Template getter must return an instance of HTMLTemplateElement.
+    // The html helper function makes this easy.
+    return html`
       <style>
         :host {
           display: block;
@@ -53,7 +90,7 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
           color: var(--app-primary-color);
           align-self: start;
         }
-        #materials-section .material-layout cd-card-button,
+        #materials-section .material-layout card-button,
         #materials-section .material-layout a {
           grid-row: 1 / 3;
           grid-column: 2 / 3;
@@ -95,23 +132,23 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
         <app-header slot='header' fixed effects='waterfall'>
           <app-toolbar>
             <div class='icon'></div>
-            <cd-page-title>Coating Designer</cd-page-title>
+            <page-title>Coating Designer</page-title>
             <div class='icon'></div>
             <div id='user-name'>jhansell@colorcon.com</div>
           </app-toolbar>
         </app-header>
       
-        <cd-page-header>
+        <page-header>
           <div slot='title'>Let's design your coating process.</div>
           <p slot='description'>
             Use the Colorcon Coating Designer to get recommendations on coating conditions and process
             parameters. Or audit your coating process with key coating metrics.
           </p>
-        </cd-page-header>
+        </page-header>
         
         <section id='materials-section'>
       
-          <cd-card-with-toolbar title='Materials & Equipment'>
+          <card-with-toolbar title='Materials & Equipment'>
             <p slot='card-description'>
               To get started choose a tablet, coating pan and coating formula
               from the library or design your own.
@@ -121,7 +158,7 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
               <div class='material-label'>Coating Substrate</div>
               <div class='material-title'>[[tablet.productName]]</div>
               <a href='#/tablet/overview'>
-                <cd-card-button label='Details'></cd-card-button>
+                <card-button label='Details'></card-button>
               </a>
             </div>
             
@@ -129,7 +166,7 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
               <div class='material-label'>Coating Pan</div>
               <div class='material-title'>[[pan.manufacturer]] [[pan.model]]</div>
               <a href='#/pan/overview'>
-                <cd-card-button label='Details'></cd-card-button>
+                <card-button label='Details'></card-button>
               </a>
             </div>
             
@@ -137,16 +174,16 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
               <div class='material-label'>Coating Formula</div>
               <div class='material-title'>[[coating.productName]]</div>
               <a href='#/coating/overview'>
-                <cd-card-button label='Details'></cd-card-button>
+                <card-button label='Details'></card-button>
               </a>
             </div>
-          </cd-card-with-toolbar>
+          </card-with-toolbar>
         </section>
         
         <section id='parameters-section'>
       
-          <cd-card-with-toolbar title='Coating Conditions & Process Parameters'>
-            <cd-card-button slot='toolbar' label='Details'></cd-card-button>
+          <card-with-toolbar title='Coating Conditions & Process Parameters'>
+            <card-button slot='toolbar' label='Details'></card-button>
             <p slot='card-description'>
               Get recommended coating conditions and process parameters and set
               your target values.
@@ -193,9 +230,15 @@ import{PolymerElement,html}from"../../node_modules/@polymer/polymer/polymer-elem
                 <div class='parameter-value'></div>
              </div>
             </div>
-          </cd-card-with-toolbar>
+          </card-with-toolbar>
         </section>
         
       </app-header-layout>
       
-    `}}customElements.define("cd-home-page",CdHomePage);
+    `;
+  }
+}
+
+// Register the element with the browser.
+/* global customElements */
+customElements.define('home-page', HomePage);
