@@ -1,22 +1,15 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import { ReduxMixin } from '../redux/redux-mixin.js';
 import '../card/card-with-toolbar.js';
 import '../card/card-info-section.js';
 import '../inputs/mass-input.js';
+import '../inputs/density-input.js';
 
-class TabletDesignerWeight extends ReduxMixin(PolymerElement) {
+class TabletDesignerWeight extends PolymerElement {
   static get properties () {
     return {
       tablet: { type: Object, statePath: 'tablet' },
     };
-  }
-  
-  _saveValue(e) {
-    this.dispatch({
-      type: "SET_TABLET_WEIGHT",
-      value: e.detail.value
-    });
   }
   static get template () {
     // Template getter must return an instance of HTMLTemplateElement.
@@ -40,9 +33,16 @@ class TabletDesignerWeight extends ReduxMixin(PolymerElement) {
             <mass-input 
               label='Tablet Weight' 
               value='{{tablet.weight}}' 
-              unit='mg' 
-              on-value-changed='_saveValue'>
+              unit='mg'>
             </mass-input>
+          </card-info-section>
+          
+          <card-info-section title='Bulk Density' icon='app-icons:density'>
+            <density-input
+              label='Bulk Density' 
+              value='{{tablet.bulkDensity}}' 
+              unit='g/ml'>
+            </density-input>
           </card-info-section>
           
         </card-with-toolbar>

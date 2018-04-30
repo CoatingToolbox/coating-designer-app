@@ -6,8 +6,13 @@ class TabletLayout extends PolymerElement {
   static get properties () {
     return {
       tablet: Object,
-      noWidthView: Boolean
+      noWidthView: Boolean,
+      isRound: {type: Boolean, computed: '_computeIsRound(tablet.shape)'}
     };
+  }
+  
+  _computeIsRound(shape) {
+    return shape === 'round';
   }
   
   static get template () {
@@ -55,7 +60,7 @@ class TabletLayout extends PolymerElement {
         <div class='schematic-label'>Length View</div>
       </div>
       
-      <div class='graphic-layout' hidden$='[[tablet.isRound]]'>
+      <div class='graphic-layout' hidden$='[[isRound]]'>
         <tablet-graphic width-view tablet='[[tablet]]'></tablet-graphic>
         <div class='schematic-label'>Width View</div>
       </div>        

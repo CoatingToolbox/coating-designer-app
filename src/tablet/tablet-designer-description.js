@@ -1,16 +1,15 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import { ReduxMixin } from '../redux/redux-mixin.js';
 import '../card/card-with-toolbar.js';
 import '../card/card-info-section.js';
 import '../card/card-button.js';
 import '../inputs/text-input.js';
 import '../inputs/dropdown-input.js';
 
-class TabletDesignerDescription extends ReduxMixin(PolymerElement) {
+class TabletDesignerDescription extends PolymerElement {
   static get properties () {
     return {
-      tablet: { type: Object, statePath: 'tablet' },
+      tablet: { type: Object, notify: true },
       dosageOptions: { 
         type: Array, 
         value: function() {
@@ -24,12 +23,6 @@ class TabletDesignerDescription extends ReduxMixin(PolymerElement) {
         }
       }
     };
-  }
-  _saveValue(e) {
-    this.dispatch({
-      type: e.target.dataset.redux,
-      value: e.detail.value
-    });
   }
   static get template () {
     // Template getter must return an instance of HTMLTemplateElement.
@@ -51,39 +44,29 @@ class TabletDesignerDescription extends ReduxMixin(PolymerElement) {
             <text-input 
               wide 
               label='Product' 
-              value='{{tablet.productName}}' 
-              data-redux='SET_TABLET_PRODUCT_NAME' 
-              on-value-changed='_saveValue'>
+              value='{{tablet.productName}}'>
             </text-input>
             
             <text-input 
               label='Active Ingredient' 
-              value='{{tablet.activeName}}'
-              data-redux='SET_TABLET_ACTIVE_NAME' 
-              on-value-changed='_saveValue'>
+              value='{{tablet.activeName}}'>
             </text-input>
             
             <text-input 
               label='Formulation' 
-              value='{{tablet.formulationName}}'
-              data-redux='SET_TABLET_FORMULATION_NAME' 
-              on-value-changed='_saveValue'>
+              value='{{tablet.formulationName}}'>
             </text-input>
           
             <dropdown-input 
               label='Dosage Form' 
               selected='{{tablet.dosageForm}}' 
-              options='[[dosageOptions]]'
-              data-redux='SET_TABLET_DOSAGE_FORM' 
-              on-selected-changed='_saveValue'>
+              options='[[dosageOptions]]'>
             </dropdown-input>
             
             <dropdown-input 
               label='Market' 
               selected='{{tablet.productType}}' 
-              options='[[marketOptions]]'
-              data-redux='SET_TABLET_PRODUCT_TYPE' 
-              on-selected-changed='_saveValue'>
+              options='[[marketOptions]]'>
             </dropdown-input>
           
           </card-info-section>
@@ -92,30 +75,22 @@ class TabletDesignerDescription extends ReduxMixin(PolymerElement) {
            
             <text-input 
               label='Company' 
-              value='{{tablet.companyName}}'
-              data-redux='SET_TABLET_COMPANY_NAME' 
-              on-value-changed='_saveValue'>
+              value='{{tablet.companyName}}'>
             </text-input>
             
             <text-input 
               label='Location' 
-              value='{{tablet.companyLocation}}'
-              data-redux='SET_TABLET_COMPANY_LOCATION' 
-              on-value-changed='_saveValue'>
+              value='{{tablet.companyLocation}}'>
             </text-input>
             
             <text-input 
               label='Contact' 
-              value='{{tablet.contactName}}'
-              data-redux='SET_TABLET_CONTACT_NAME' 
-              on-value-changed='_saveValue'>
+              value='{{tablet.contactName}}'>
             </text-input>
             
             <text-input 
               label='Email' 
-              value='{{tablet.contactEmail}}'
-              data-redux='SET_TABLET_CONTACT_EMAIL' 
-              on-value-changed='_saveValue'>
+              value='{{tablet.contactEmail}}'>
             </text-input>
          
          </card-info-section>

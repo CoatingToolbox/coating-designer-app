@@ -1,5 +1,6 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import { ReduxMixin } from '../redux/redux-mixin.js';
 import '../../node_modules/@polymer/app-route/app-location.js';
 import '../../node_modules/@polymer/app-route/app-route.js';
 import '../../node_modules/@polymer/iron-pages/iron-pages.js';
@@ -9,15 +10,24 @@ import './tablet-designer-description.js';
 import './tablet-designer-shape.js';
 import './tablet-designer-dimensions.js';
 import './tablet-designer-weight.js';
-import './tablet-designer-density.js';
 import '../app-icons.js';
 
-class TabletDesignerPage extends PolymerElement {
+class TabletDesignerPage extends ReduxMixin(PolymerElement) {
   static get properties () {
     return {
+      tablet: {type: Object, statePath: 'tablet'},
       route: Object,
       routeData: Object
     };
+  }
+  static get observers() {
+    return [
+      '_scrollPageToTop(routeData.section)'
+    ];
+  }
+  
+  _scrollPageToTop() {
+    window.scrollTo(0, 0);
   }
   
   static get template () {
@@ -27,13 +37,15 @@ class TabletDesignerPage extends PolymerElement {
       <style>
         :host {
           display: block;
-          background: linear-gradient(to bottom, var(--app-primary-color) 0%,var(--app-primary-color) 55vh, #000000 55vh, var(--background-color) 0%,var(--background-color) 100%);
         }
         page-header {
-          padding: 72px 0px 0px 0px;
+          padding: 48px 0px 0px 0px;
         }
         tablet-designer-stepper {
-          margin-top: 24px;
+          margin-top: 48px;
+        }
+        iron-pages {
+          margin-top: 48px;
         }
       </style>
       
@@ -54,16 +66,19 @@ class TabletDesignerPage extends PolymerElement {
           Measure a compressed tablets dimensions, weight and bulk density
           and we can estimate important tablet properties for coating.
         </p>
-      
         <tablet-designer-stepper></tablet-designer-stepper>
       </page-header>
       
       <iron-pages selected='[[routeData.section]]' attr-for-selected='section' fallback-selection='description'>
-        <tablet-designer-description section='description'></tablet-designer-description>
-        <tablet-designer-shape section='shape'></tablet-designer-shape>
-        <tablet-designer-dimensions section='dimensions'></tablet-designer-dimensions>
-        <tablet-designer-weight section='weight'></tablet-designer-weight>
-        <tablet-designer-density section='density'></tablet-designer-density>
+        <tablet-designer-description section='description' tablet='{{tablet}}'></tablet-designer-description>
+        <tablet-designer-shape section='shape'shape='{{tablet.shape}}'></tablet-designer-shape>
+        <tablet-designer-dimensions section='dimensions' tablet='{{tablet}}'></tablet-designer-dimensions>
+        <tablet-designer-weight section='weight' tablet='{{tablet}}'></tablet-designer-weight>
+        <tablet-designer-calculate 
+          section='calculate' 
+          on-save-tablet='_saveTablet'
+          on-cancel-tablet='_cancelTablet'>
+        </tablet-designer-calculate>
       </iron-pages>
       
     `;

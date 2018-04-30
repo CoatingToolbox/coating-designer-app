@@ -1,15 +1,14 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import { ReduxMixin } from '../redux/redux-mixin.js';
 import '../card/card-with-toolbar.js';
 import '../card/card-info-section.js';
 import '../inputs/length-input.js';
 import '../app-icons.js';
 
-class CdTabletDesignerDimensions extends ReduxMixin(PolymerElement) {
+class CdTabletDesignerDimensions extends PolymerElement {
   static get properties () {
     return {
-      tablet: { type: Object, statePath: 'tablet' },
+      tablet: { type: Object, notify: true },
       isRound: {type: Boolean, computed: '_computeIsRound(tablet.shape)'},
       dimensionUnits: {type: String, value: 'mm'}
     };
@@ -19,12 +18,6 @@ class CdTabletDesignerDimensions extends ReduxMixin(PolymerElement) {
     return shape === 'round';
   }
   
-  _saveValue(e) {
-    this.dispatch({
-      type: e.target.dataset.redux,
-      value: e.detail.value
-    });
-  }
   static get template () {
     // Template getter must return an instance of HTMLTemplateElement.
     // The html helper function makes this easy.
@@ -52,34 +45,26 @@ class CdTabletDesignerDimensions extends ReduxMixin(PolymerElement) {
             <length-input 
               label='Length' 
               value='{{tablet.length}}' 
-              unit='{{dimensionUnits}}'
-              data-redux='SET_TABLET_LENGTH' 
-              on-value-changed='_saveValue'>
+              unit='{{dimensionUnits}}'>
             </length-input>
             
             <length-input 
               hidden$='{{isRound}}' 
               label='Width' 
               value='{{tablet.width}}' 
-              unit='{{dimensionUnits}}'
-              data-redux='SET_TABLET_WIDTH' 
-              on-value-changed='_saveValue'>
+              unit='{{dimensionUnits}}'>
             </length-input>
             
             <length-input 
               label='Total Thickness' 
               value='{{tablet.totalThickness}}' 
-              unit='{{dimensionUnits}}'
-              data-redux='SET_TABLET_TOTAL_THICKNESS' 
-              on-value-changed='_saveValue'>
+              unit='{{dimensionUnits}}'>
             </length-input>
             
             <length-input 
               label='Band Thickness' 
               value='{{tablet.bandThickness}}' 
-              unit='{{dimensionUnits}}'
-              data-redux='SET_TABLET_BAND_THICKNESS' 
-              on-value-changed='_saveValue'>
+              unit='{{dimensionUnits}}'>
             </length-input>
           
           </card-info-section>

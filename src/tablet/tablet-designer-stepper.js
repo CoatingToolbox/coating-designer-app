@@ -7,7 +7,8 @@ import '../../node_modules/@polymer/iron-selector/iron-selector.js';
 class TabletDesignerStepper extends PolymerElement {
   static get properties () {
     return {
-      label: String
+      routeData: Object,
+      route: Object
     };
   }
 
@@ -18,8 +19,8 @@ class TabletDesignerStepper extends PolymerElement {
       <style>
         :host {
           display: block;
-          background-color: var(--app-primary-color);
-          color: var(--white-color);
+          background-color: var(--white-color);
+          color: var(--text-light-color);
         }
         #layout {
           display: grid;
@@ -46,10 +47,11 @@ class TabletDesignerStepper extends PolymerElement {
           margin-right: 6px;
           background-color: var(--app-light-color);
           border-radius: 50%;
-          border: 2px solid var(--white-color);
+          border: 2px solid var(--app-primary-color);
         }
-        .iron-selected .item-icon {
-          background-color: var(--app-accent-color);
+        .iron-selected ~ .item-layout .item-icon {
+          background-color: var(--light-gray-color);
+          border-color: var(--border-color);
         }
         .item-label {
           font-size: 14px;
@@ -63,7 +65,7 @@ class TabletDesignerStepper extends PolymerElement {
         .line {
           flex-grow: 1;
           max-height: 1px;
-          background-color: var(--white-color);
+          background-color: var(--border-color);
         }
       </style>
       
@@ -109,16 +111,16 @@ class TabletDesignerStepper extends PolymerElement {
         
         <a section='weight' class='item-layout' href='#/tablet/designer/weight'>
           <div class='item-icon'></div>
-          <div class='item-label'>Weight</div>
+          <div class='item-label'>Weight & Density</div>
         </a>
         
         <div class='line-layout'>
           <div class='line'></div>
         </div>
         
-        <a section='density' class='item-layout' href='#/tablet/designer/density'>
+        <a section='density' class='item-layout' href='#/tablet/designer/calculate'>
           <div class='item-icon'></div>
-          <div class='item-label'>Bulk Density</div>
+          <div class='item-label'>Calculate</div>
         </a>
         
       </iron-selector>

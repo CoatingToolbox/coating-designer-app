@@ -1,6 +1,5 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import { ReduxMixin } from '../redux/redux-mixin.js';
 import '../../node_modules/@polymer/iron-selector/iron-selector.js';
 import '../../node_modules/@polymer/iron-icon/iron-icon.js';
 import '../card/card-with-toolbar.js';
@@ -8,18 +7,11 @@ import '../card/card-info-section.js';
 import '../app-icons.js';
 import './tablet-layout.js';
 
-class CdTabletDesignerShape extends ReduxMixin(PolymerElement) {
+class CdTabletDesignerShape extends PolymerElement {
   static get properties () {
     return {
-      tablet: { type: Object, statePath: 'tablet' },
+      shape: { type: String, notify: true },
     };
-  }
-  
-  _saveValue(e) {
-    this.dispatch({
-      type: "SET_TABLET_SHAPE",
-      value: e.detail.value
-    });
   }
   
   static get template () {
@@ -70,7 +62,7 @@ class CdTabletDesignerShape extends ReduxMixin(PolymerElement) {
           <p slot='card-description'>
             Select the shape that best describes the tablet.
           </p>
-          <iron-selector on-selected-changed='_saveValue' id='shape-selector' wide selected='{{tablet.shape}}' attr-for-selected='shape'>
+          <iron-selector id='shape-selector' wide selected='{{shape}}' attr-for-selected='shape'>
          
           <div shape='round'>
             <iron-icon icon='app-icons:round-tablet'></iron-icon>

@@ -23,6 +23,10 @@ class TabletPages extends PolymerElement {
     };
   }
   
+  _goHome() {
+    window.location = '#/home';
+  }
+  
   static get template () {
     // Template getter must return an instance of HTMLTemplateElement.
     // The html helper function makes this easy.
@@ -92,9 +96,7 @@ class TabletPages extends PolymerElement {
       
         <app-header slot='header' fixed effects='waterfall'>
           <app-toolbar>
-            <a href='#/home'>
-              <paper-icon-button icon='app-icons:arrow-left'></paper-icon-button>
-            </a>
+            <paper-icon-button on-click='_goHome' icon='app-icons:home'></paper-icon-button>
             <page-title class='toolbar-title'>Tablet Core</page-title>
             <div id='toolbar-spacer'></div>
             <paper-tabs selected='[[routeData.tab]]' attr-for-selected='tab' fallback-selection='overview'>
@@ -102,7 +104,7 @@ class TabletPages extends PolymerElement {
                 <a href="#/tablet/overview" tabindex="-1">Overview</a>
               </paper-tab>
               <paper-tab tab='designer' link>
-                <a href="#/tablet/designer" tabindex="-1">Designer</a>
+                <a href="#/tablet/designer/description" tabindex="-1">Designer</a>
               </paper-tab>
               <paper-tab tab='library' link>
                 <a href="#/tablet/library" tabindex="-1">Library</a>

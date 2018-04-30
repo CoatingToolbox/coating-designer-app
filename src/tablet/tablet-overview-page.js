@@ -58,7 +58,7 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
       
       <div id='background-wrapper'>
         <card-with-toolbar title='General Information'>
-          <a href='#/tablet/designer/description' slot='toolbar'>
+          <a href='#/tablet/designer' slot='toolbar'>
            <card-button label='Edit'></card-button>
           </a>
           <card-info-section title='Product Information' icon='app-icons:product-info'>

@@ -1,5 +1,5 @@
 {
-  "src/cd-app-shell.js": {
+  "src/app-shell.js": {
     "node_modules/%40polymer/polymer/polymer-element.js": {
       "type": "script",
       "weight": 1
@@ -252,7 +252,7 @@
       "type": "script",
       "weight": 1
     },
-    "src/pages/cd-home-page.js": {
+    "src/pages/home-page.js": {
       "type": "script",
       "weight": 1
     },
@@ -292,19 +292,19 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-header/cd-page-header.js": {
+    "src/header/page-header.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-header/cd-page-title.js": {
+    "src/header/page-title.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-with-toolbar.js": {
+    "src/card/card-with-toolbar.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-button.js": {
+    "src/card/card-button.js": {
       "type": "script",
       "weight": 1
     },
@@ -340,7 +340,7 @@
       "type": "script",
       "weight": 1
     },
-    "src/pages/cd-tablet-pages.js": {
+    "src/pages/tablet-pages.js": {
       "type": "script",
       "weight": 1
     },
@@ -420,51 +420,51 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-icons.js": {
+    "src/app-icons.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-overview-page.js": {
+    "src/tablet/tablet-overview-page.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-info-section.js": {
+    "src/card/card-info-section.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-info-item.js": {
+    "src/card/card-info-item.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-header/cd-page-header-button.js": {
+    "src/header/page-header-button.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-layout.js": {
+    "src/tablet/tablet-layout.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-graphic.js": {
+    "src/tablet/tablet-graphic.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-page.js": {
+    "src/tablet/tablet-designer-page.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-stepper.js": {
+    "src/tablet/tablet-designer-stepper.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-description.js": {
+    "src/tablet/tablet-designer-description.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-text-input.js": {
+    "src/inputs/text-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-dropdown-input.js": {
+    "src/inputs/dropdown-input.js": {
       "type": "script",
       "weight": 1
     },
@@ -508,36 +508,40 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-dimensions.js": {
+    "src/tablet/tablet-designer-shape.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-length-input.js": {
+    "src/tablet/tablet-designer-dimensions.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-unit-input.js": {
+    "src/inputs/length-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-weight.js": {
+    "src/inputs/unit-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-mass-input.js": {
+    "src/tablet/tablet-designer-weight.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-density-input.js": {
+    "src/inputs/mass-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-review.js": {
+    "src/tablet/tablet-designer-density.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/inputs/density-input.js": {
       "type": "script",
       "weight": 1
     }
   },
-  "src/pages/cd-home-page.js": {
+  "src/pages/home-page.js": {
     "node_modules/%40polymer/polymer/polymer-element.js": {
       "type": "script",
       "weight": 1
@@ -794,19 +798,19 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-header/cd-page-header.js": {
+    "src/header/page-header.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-header/cd-page-title.js": {
+    "src/header/page-title.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-with-toolbar.js": {
+    "src/card/card-with-toolbar.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-button.js": {
+    "src/card/card-button.js": {
       "type": "script",
       "weight": 1
     },
@@ -843,7 +847,7 @@
       "weight": 1
     }
   },
-  "src/pages/cd-tablet-pages.js": {
+  "src/pages/tablet-pages.js": {
     "node_modules/%40polymer/polymer/polymer-element.js": {
       "type": "script",
       "weight": 1
@@ -1208,11 +1212,11 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-icons.js": {
+    "src/app-icons.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-overview-page.js": {
+    "src/tablet/tablet-overview-page.js": {
       "type": "script",
       "weight": 1
     },
@@ -1248,55 +1252,55 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-with-toolbar.js": {
+    "src/card/card-with-toolbar.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-button.js": {
+    "src/card/card-button.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-info-section.js": {
+    "src/card/card-info-section.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-info-item.js": {
+    "src/card/card-info-item.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-header/cd-page-header.js": {
+    "src/header/page-header.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-header/cd-page-header-button.js": {
+    "src/header/page-header-button.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-layout.js": {
+    "src/tablet/tablet-layout.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-graphic.js": {
+    "src/tablet/tablet-graphic.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-page.js": {
+    "src/tablet/tablet-designer-page.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-stepper.js": {
+    "src/tablet/tablet-designer-stepper.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-description.js": {
+    "src/tablet/tablet-designer-description.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-text-input.js": {
+    "src/inputs/text-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-dropdown-input.js": {
+    "src/inputs/dropdown-input.js": {
       "type": "script",
       "weight": 1
     },
@@ -1340,36 +1344,40 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-dimensions.js": {
+    "src/tablet/tablet-designer-shape.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-length-input.js": {
+    "src/tablet/tablet-designer-dimensions.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-unit-input.js": {
+    "src/inputs/length-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-weight.js": {
+    "src/inputs/unit-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-mass-input.js": {
+    "src/tablet/tablet-designer-weight.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-density-input.js": {
+    "src/inputs/mass-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-review.js": {
+    "src/tablet/tablet-designer-density.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/inputs/density-input.js": {
       "type": "script",
       "weight": 1
     }
   },
-  "src/cd-tablet/cd-tablet-overview-page.js": {
+  "src/tablet/tablet-overview-page.js": {
     "node_modules/%40polymer/polymer/polymer-element.js": {
       "type": "script",
       "weight": 1
@@ -1470,15 +1478,15 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-with-toolbar.js": {
+    "src/card/card-with-toolbar.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-button.js": {
+    "src/card/card-button.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-info-section.js": {
+    "src/card/card-info-section.js": {
       "type": "script",
       "weight": 1
     },
@@ -1642,32 +1650,32 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-icons.js": {
+    "src/app-icons.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-info-item.js": {
+    "src/card/card-info-item.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-header/cd-page-header.js": {
+    "src/header/page-header.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-header/cd-page-header-button.js": {
+    "src/header/page-header-button.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-layout.js": {
+    "src/tablet/tablet-layout.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-graphic.js": {
+    "src/tablet/tablet-graphic.js": {
       "type": "script",
       "weight": 1
     }
   },
-  "src/cd-tablet/cd-tablet-designer-page.js": {
+  "src/tablet/tablet-designer-page.js": {
     "node_modules/%40polymer/polymer/polymer-element.js": {
       "type": "script",
       "weight": 1
@@ -1920,11 +1928,11 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-header/cd-page-header.js": {
+    "src/header/page-header.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-stepper.js": {
+    "src/tablet/tablet-designer-stepper.js": {
       "type": "script",
       "weight": 1
     },
@@ -1936,7 +1944,7 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-description.js": {
+    "src/tablet/tablet-designer-description.js": {
       "type": "script",
       "weight": 1
     },
@@ -1972,11 +1980,11 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-with-toolbar.js": {
+    "src/card/card-with-toolbar.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-card/cd-card-info-section.js": {
+    "src/card/card-info-section.js": {
       "type": "script",
       "weight": 1
     },
@@ -1992,15 +2000,19 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-icons.js": {
+    "src/app-icons.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-text-input.js": {
+    "src/card/card-button.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-dropdown-input.js": {
+    "src/inputs/text-input.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/inputs/dropdown-input.js": {
       "type": "script",
       "weight": 1
     },
@@ -2052,39 +2064,43 @@
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-dimensions.js": {
+    "src/tablet/tablet-designer-shape.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-length-input.js": {
+    "src/tablet/tablet-layout.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-unit-input.js": {
+    "src/tablet/tablet-graphic.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-layout.js": {
+    "src/tablet/tablet-designer-dimensions.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-graphic.js": {
+    "src/inputs/length-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-weight.js": {
+    "src/inputs/unit-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-mass-input.js": {
+    "src/tablet/tablet-designer-weight.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-inputs/cd-density-input.js": {
+    "src/inputs/mass-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/cd-tablet/cd-tablet-designer-review.js": {
+    "src/tablet/tablet-designer-density.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/inputs/density-input.js": {
       "type": "script",
       "weight": 1
     }

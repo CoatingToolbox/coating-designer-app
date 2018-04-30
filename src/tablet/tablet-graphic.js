@@ -1,6 +1,7 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
 import '../../node_modules/@polymer/polymer/lib/elements/dom-if.js';
+import { Tablet } from '../redux/tablet.js';
 
 class TabletGraphic extends PolymerElement {
   static get properties () {
@@ -8,7 +9,8 @@ class TabletGraphic extends PolymerElement {
       topView: Boolean,
       lengthView: Boolean,
       widthView: Boolean,
-      tablet: {type: Object},
+      tablet: Object,
+      _tablet: Object,
       tabletSVG: {
         type: Object,
         notify: true,
@@ -43,43 +45,53 @@ class TabletGraphic extends PolymerElement {
       pathLengthSideTablet: {
         type: String,
         notify: true,
-        computed: "computePathSideTablet(tablet.shape, tablet.length, tablet.lengthCupRadius, tablet.bandThickness)"
+        computed: "computePathSideTablet(_tablet.shape, _tablet.length, _tablet.lengthCupRadius, _tablet.bandThickness)"
       },
       pathLengthTopCup: {
         type: String,
-        computed: 'computePathTopCup(tablet.shape, tablet.length, tablet.lengthCupRadius, tablet.bandThickness)'
+        computed: 'computePathTopCup(_tablet.shape, _tablet.length, _tablet.lengthCupRadius, _tablet.bandThickness)'
       },
       pathLengthBottomCup: {
         type: String,
-        computed: 'computePathBottomCup(tablet.shape, tablet.length, tablet.lengthCupRadius, tablet.bandThickness)'
+        computed: 'computePathBottomCup(_tablet.shape, _tablet.length, _tablet.lengthCupRadius, _tablet.bandThickness)'
       },
       pathLengthBand: {
         type: String,
-        computed: 'computePathBand(tablet.shape, tablet.length, tablet.bandThickness)'
+        computed: 'computePathBand(_tablet.shape, _tablet.length, _tablet.bandThickness)'
       },
       pathWidthSideTablet: {
         type: String,
-        computed: "computePathSideTablet(tablet.shape, tablet.width, tablet.widthCupRadius, tablet.bandThickness)"
+        computed: "computePathSideTablet(_tablet.shape, _tablet.width, _tablet.widthCupRadius, _tablet.bandThickness)"
       },
       pathWidthTopCup: {
         type: String,
-        computed: 'computePathTopCup(tablet.shape, tablet.width, tablet.widthCupRadius, tablet.bandThickness)'
+        computed: 'computePathTopCup(_tablet.shape, _tablet.width, _tablet.widthCupRadius, _tablet.bandThickness)'
       },
       pathWidthBottomCup: {
         type: String,
-        computed: 'computePathBottomCup(tablet.shape, tablet.width, tablet.widthCupRadius, tablet.bandThickness)'
+        computed: 'computePathBottomCup(_tablet.shape, _tablet.width, _tablet.widthCupRadius, _tablet.bandThickness)'
       },
       pathWidthBand: {
         type: String,
-        computed: 'computePathBand(tablet.shape, tablet.width, tablet.bandThickness)'
+        computed: 'computePathBand(_tablet.shape, _tablet.width, _tablet.bandThickness)'
       },
       pathTopTablet: {
         type: String,
-        computed: 'computePathTopTablet(tablet.shape, tablet.width, tablet.length)'
+        computed: 'computePathTopTablet(_tablet.shape, _tablet.width, _tablet.length)'
       }
     };
   }
 
+  static get observers() {
+    return [
+      "_setTablet(tablet.*)"
+    ];
+  }
+  _setTablet(changeRecord) {
+    if(!changeRecord.base) { return }
+    this._tablet =  new Tablet(changeRecord.base);
+  }
+  
   // SVG Path function
   computePathSideTablet(shape, length, cupRadius, bandThickness) {
     //scale is used to shrink or grow the value as needed
