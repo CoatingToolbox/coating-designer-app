@@ -10,16 +10,24 @@ import './tablet-designer-description.js';
 import './tablet-designer-shape.js';
 import './tablet-designer-dimensions.js';
 import './tablet-designer-weight.js';
+import './tablet-designer-calculate.js';
 import '../app-icons.js';
 
 class TabletDesignerPage extends ReduxMixin(PolymerElement) {
   static get properties () {
     return {
-      tablet: {type: Object, statePath: 'tablet'},
+      tablet: {type: Object,  computed: '_computeTablet(_tablet)'},
+      _tablet: { Object, statePath: 'tablet'},
       route: Object,
       routeData: Object
     };
   }
+  
+  _computeTablet(tablet) {
+    // we create a copy to prevent data binding and direct changes to the redux state
+    return Object.assign({}, tablet);
+  }
+  
   static get observers() {
     return [
       '_scrollPageToTop(routeData.section)'
@@ -37,12 +45,6 @@ class TabletDesignerPage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
-        }
-        page-header {
-          padding: 48px 0px 0px 0px;
-        }
-        tablet-designer-stepper {
-          margin-top: 48px;
         }
         iron-pages {
           margin-top: 48px;
@@ -66,19 +68,16 @@ class TabletDesignerPage extends ReduxMixin(PolymerElement) {
           Measure a compressed tablets dimensions, weight and bulk density
           and we can estimate important tablet properties for coating.
         </p>
-        <tablet-designer-stepper></tablet-designer-stepper>
       </page-header>
+      
+      <tablet-designer-stepper></tablet-designer-stepper>
       
       <iron-pages selected='[[routeData.section]]' attr-for-selected='section' fallback-selection='description'>
         <tablet-designer-description section='description' tablet='{{tablet}}'></tablet-designer-description>
-        <tablet-designer-shape section='shape'shape='{{tablet.shape}}'></tablet-designer-shape>
+        <tablet-designer-shape section='shape' shape='{{tablet.shape}}'></tablet-designer-shape>
         <tablet-designer-dimensions section='dimensions' tablet='{{tablet}}'></tablet-designer-dimensions>
         <tablet-designer-weight section='weight' tablet='{{tablet}}'></tablet-designer-weight>
-        <tablet-designer-calculate 
-          section='calculate' 
-          on-save-tablet='_saveTablet'
-          on-cancel-tablet='_cancelTablet'>
-        </tablet-designer-calculate>
+        <tablet-designer-calculate section='calculate' tablet='[[tablet]]'></tablet-designer-calculate>
       </iron-pages>
       
     `;

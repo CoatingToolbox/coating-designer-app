@@ -1,5 +1,6 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import { ReduxMixin } from '../redux/redux-mixin.js';
 import '../../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js';
 import '../../node_modules/@polymer/app-layout/app-header/app-header.js';
 import '../../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
@@ -9,7 +10,6 @@ import '../header/page-title.js';
 import '../card/card-with-toolbar.js';
 import '../card/card-button.js';
 
-import { ReduxMixin } from '../redux/redux-mixin.js';
 
 class HomePage extends ReduxMixin(PolymerElement) {
   static get properties () {
@@ -19,7 +19,8 @@ class HomePage extends ReduxMixin(PolymerElement) {
       parameters: {type: Object, statePath: "parameters"},
       coatingAmount: {type: Object, statePath: "coatingAmount"},
       coating: {type: Object, statePath: "coating"},
-      batch: {type: Object, statePath: 'batch'}
+      batch: {type: Object, statePath: 'batch'},
+      user: {type: Object, statePath: 'app.user'}
     };
   }
 
@@ -64,6 +65,9 @@ class HomePage extends ReduxMixin(PolymerElement) {
           width: 24px;
           border: 2px solid var(--white-color);
           background-color: var(--app-light-color);
+        }
+        page-header {
+          padding-top: 96px;
         }
         
         #materials-section {
@@ -134,7 +138,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
             <div class='icon'></div>
             <page-title>Coating Designer</page-title>
             <div class='icon'></div>
-            <div id='user-name'>jhansell@colorcon.com</div>
+            <div id='user-name'>[[user.email]]</div>
           </app-toolbar>
         </app-header>
       

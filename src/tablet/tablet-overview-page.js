@@ -58,7 +58,7 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
       
       <div id='background-wrapper'>
         <card-with-toolbar title='General Information'>
-          <a href='#/tablet/designer' slot='toolbar'>
+          <a href='#/tablet/designer/description' slot='toolbar'>
            <card-button label='Edit'></card-button>
           </a>
           <card-info-section title='Product Information' icon='app-icons:product-info'>
@@ -80,7 +80,7 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
       
       
       <card-with-toolbar title='Tablet Information'>
-        <a href='#/tablet/designer/dimensions' slot='toolbar'>
+        <a href='#/tablet/designer/shape' slot='toolbar'>
          <card-button label='Edit'></card-button>
         </a>
         

@@ -14,6 +14,7 @@ import '../../node_modules/@polymer/paper-icon-button/paper-icon-button.js';
 import '../app-icons.js';
 import '../tablet/tablet-overview-page.js';
 import '../tablet/tablet-designer-page.js';
+import '../tablet/tablet-library-page.js';
 
 class TabletPages extends PolymerElement {
   static get properties () {
@@ -117,7 +118,7 @@ class TabletPages extends PolymerElement {
         <iron-pages selected='[[routeData.tab]]' attr-for-selected='tab' fallback-selection='overview'>
           <tablet-overview-page tab='overview'></tablet-overview-page>
           <tablet-designer-page tab='designer'></tablet-designer-page>
-          <div tab='library'>Library</div>
+          <tablet-library-page tab='library'></tablet-library-page>
         </iron-pages>
       </app-header-layout>
       

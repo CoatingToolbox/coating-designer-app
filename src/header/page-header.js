@@ -17,7 +17,7 @@ class PageHeader extends PolymerElement {
           display: block;
           background-color: var(--app-primary-color);
           color: var(--white-color);
-          padding: 96px 0px 48px 0px;
+          padding: 48px 0px 48px 0px;
         }
         #title ::slotted(*) {
           font-size: 48px;

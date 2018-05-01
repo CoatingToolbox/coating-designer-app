@@ -15,6 +15,7 @@
     "@polymer/iron-pages": "3.0.0-pre.12",
     "@polymer/iron-selector": "3.0.0-pre.12",
     "@polymer/paper-icon-button": "3.0.0-pre.12",
+    "@polymer/paper-input": "3.0.0-pre.12",
     "@polymer/paper-tabs": "3.0.0-pre.12",
     "@polymer/polymer": "3.0.0-pre.12",
     "polymer-redux": "https://github.com/tur-nr/polymer-redux.git#polymer-3",

@@ -1,21 +1,47 @@
 
 import { PolymerElement, html } from '../node_modules/@polymer/polymer/polymer-element.js';
+import { ReduxMixin } from './redux/redux-mixin.js';
 import '../node_modules/@polymer/app-route/app-location.js';
 import '../node_modules/@polymer/app-route/app-route.js';
 import '../node_modules/@polymer/iron-pages/iron-pages.js';
 import './pages/home-page.js';
 import './pages/tablet-pages.js';
 
-class AppShell extends PolymerElement {
+class AppShell extends ReduxMixin(PolymerElement) {
   
   static get properties() {
     return {
       route: Object,
       routeData: Object,
-      page: String
+      page: String,
+      user: Object
     };
   }
   
+  firebaseLogin(email, password) {
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      console.error('Error signing into firebase.');
+    });
+  }
+  
+  ready() {
+    super.ready();
+    firebase.auth().onAuthStateChanged(user => {
+      if (user != null) {
+        this.user = user;
+        this.dispatch({
+          type: "SET_USER",
+          value: this.user
+        });
+        
+        this.dispatch({
+          type: "SET_ADMIN",
+          value: (this.user.email === 'jhansell@colorcon.com')
+        });
+      } 
+      
+    });
+  }
   static get observers() {
     return [
       '_routePageChanged(routeData.page)'

@@ -5,7 +5,8 @@
         "src/pages/home-page.js",
         "src/pages/tablet-pages.js",
         "src/tablet/tablet-overview-page.js",
-        "src/tablet/tablet-designer-page.js"
+        "src/tablet/tablet-designer-page.js",
+        "src/tablet/tablet-library-page.js"
     ],
     "sources": [
         "src/**/*",
