@@ -72,7 +72,7 @@ class TabletDesignerCalculate extends ReduxMixin(PolymerElement) {
         .gray-button {
           background-color: var(--text-light-color);
         }
-        hidden {
+        [hidden] {
           display: none;
         }
       </style>

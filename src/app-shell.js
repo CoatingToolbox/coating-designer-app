@@ -42,6 +42,7 @@ class AppShell extends ReduxMixin(PolymerElement) {
       
     });
   }
+  
   static get observers() {
     return [
       '_routePageChanged(routeData.page)'

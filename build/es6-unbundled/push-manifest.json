@@ -68,6 +68,38 @@
       "type": "script",
       "weight": 1
     },
+    "src/redux/redux-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/polymer-redux/polymer-redux.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/tablet.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/pan.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/batch.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating-amount.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/parameters.js": {
+      "type": "script",
+      "weight": 1
+    },
     "node_modules/%40polymer/app-route/app-location.js": {
       "type": "script",
       "weight": 1
@@ -308,38 +340,6 @@
       "type": "script",
       "weight": 1
     },
-    "src/redux/redux-mixin.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/polymer-redux/polymer-redux.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/tablet.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/pan.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/batch.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/coating-amount.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/coating.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/parameters.js": {
-      "type": "script",
-      "weight": 1
-    },
     "src/pages/tablet-pages.js": {
       "type": "script",
       "weight": 1
@@ -532,11 +532,15 @@
       "type": "script",
       "weight": 1
     },
-    "src/tablet/tablet-designer-density.js": {
+    "src/inputs/density-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/inputs/density-input.js": {
+    "src/tablet/tablet-designer-calculate.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/tablet/tablet-library-page.js": {
       "type": "script",
       "weight": 1
     }
@@ -607,6 +611,38 @@
       "weight": 1
     },
     "node_modules/%40polymer/polymer/lib/utils/html-tag.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/redux-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/polymer-redux/polymer-redux.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/tablet.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/pan.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/batch.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating-amount.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/parameters.js": {
       "type": "script",
       "weight": 1
     },
@@ -811,38 +847,6 @@
       "weight": 1
     },
     "src/card/card-button.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/redux-mixin.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/polymer-redux/polymer-redux.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/tablet.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/pan.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/batch.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/coating-amount.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/coating.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/parameters.js": {
       "type": "script",
       "weight": 1
     }
@@ -1368,11 +1372,15 @@
       "type": "script",
       "weight": 1
     },
-    "src/tablet/tablet-designer-density.js": {
+    "src/inputs/density-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/inputs/density-input.js": {
+    "src/tablet/tablet-designer-calculate.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/tablet/tablet-library-page.js": {
       "type": "script",
       "weight": 1
     }
@@ -1744,6 +1752,38 @@
       "type": "script",
       "weight": 1
     },
+    "src/redux/redux-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/polymer-redux/polymer-redux.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/tablet.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/pan.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/batch.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating-amount.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/parameters.js": {
+      "type": "script",
+      "weight": 1
+    },
     "node_modules/%40polymer/app-route/app-location.js": {
       "type": "script",
       "weight": 1
@@ -1948,38 +1988,6 @@
       "type": "script",
       "weight": 1
     },
-    "src/redux/redux-mixin.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/polymer-redux/polymer-redux.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/tablet.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/pan.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/batch.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/coating-amount.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/coating.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/redux/parameters.js": {
-      "type": "script",
-      "weight": 1
-    },
     "src/card/card-with-toolbar.js": {
       "type": "script",
       "weight": 1
@@ -2096,11 +2104,281 @@
       "type": "script",
       "weight": 1
     },
-    "src/tablet/tablet-designer-density.js": {
+    "src/inputs/density-input.js": {
       "type": "script",
       "weight": 1
     },
-    "src/inputs/density-input.js": {
+    "src/tablet/tablet-designer-calculate.js": {
+      "type": "script",
+      "weight": 1
+    }
+  },
+  "src/tablet/tablet-library-page.js": {
+    "node_modules/%40polymer/polymer/polymer-element.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/element-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/boot.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/settings.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/resolve-url.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/style-gather.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/dom-module.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/property-effects.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/path.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/case-map.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/property-accessors.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/properties-changed.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/async.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/template-stamp.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/properties-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/html-tag.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/redux-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/polymer-redux/polymer-redux.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/tablet.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/pan.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/batch.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating-amount.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/coating.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/redux/parameters.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-icon/iron-icon.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/polymer-legacy.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/legacy-element-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/entrypoints/apply-shim.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/apply-shim.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/style-util.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/style-settings.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/css-parse.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/common-regex.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/unscoped-style-handler.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/common-utils.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/template-map.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/apply-shim-utils.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/document-wait.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/src/custom-style-interface.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/gesture-event-listeners.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/gestures.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/debounce.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/dir-mixin.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/import-href.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/render-status.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/unresolved.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/polymer.dom.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/flattened-nodes-observer.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/array-splice.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/flush.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/polymer-fn.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/class.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/templatizer-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/utils/templatize.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/mixins/mutable-data.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/dom-bind.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/dom-repeat.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/dom-if.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/array-selector.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/elements/custom-style.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40webcomponents/shadycss/entrypoints/custom-style-interface.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/polymer/lib/legacy/mutable-data-behavior.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-meta/iron-meta.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/%40polymer/iron-flex-layout/iron-flex-layout.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/header/page-header.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/app-icons.js": {
       "type": "script",
       "weight": 1
     }
