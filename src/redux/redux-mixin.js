@@ -159,11 +159,11 @@ const pan = storedState.pan || new Pan({
         openingDiameter: 0.4826,
         wallWidth: 0.508,
         brimWidth: 0.93345,
-        model: "Fastcoat",
-        manufacturer: "O'Hara",
-        nickname: "O'Hara Fastcoat 48\" Room",
-        company: 'Colorcon',
-        locationName: 'Harlyesville, PA',
+        modelName: "Fastcoat",
+        manufacturerName: "O'Hara",
+        nickname: '48" Room',
+        companyName: 'Colorcon',
+        companyLocation: 'Harlyesville, PA',
         baffleType: 'Ploughshare',
         baffleCount: '4',
         baffleHeight: '',
@@ -172,7 +172,8 @@ const pan = storedState.pan || new Pan({
         gunCount: '3',
         gunToGunDistance: '0.1524',
         maxAirflow: '2000',
-        perforations: 'Fully',
+        perforationType: 'Fully',
+        inletType: 'Upper Right Plenum',
         firebaseKey: ''
     });
 const coating = storedState.coating || new Coating({

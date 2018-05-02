@@ -45,9 +45,8 @@ class TabletDesignerStepper extends PolymerElement {
           height: 18px;
           width: 18px;
           margin-right: 6px;
-          background-color: var(--app-light-color);
+          background-color: var(--app-accent-color);
           border-radius: 50%;
-          border: 2px solid var(--app-primary-color);
         }
         .iron-selected ~ .item-layout .item-icon {
           background-color: var(--light-gray-color);

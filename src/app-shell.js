@@ -6,6 +6,7 @@ import '../node_modules/@polymer/app-route/app-route.js';
 import '../node_modules/@polymer/iron-pages/iron-pages.js';
 import './pages/home-page.js';
 import './pages/tablet-pages.js';
+import './pages/pan-pages.js';
 
 class AppShell extends ReduxMixin(PolymerElement) {
   
@@ -81,6 +82,7 @@ class AppShell extends ReduxMixin(PolymerElement) {
       <iron-pages selected='[[page]]' attr-for-selected='page' fallback-selection='home'>
         <home-page page='home'></home-page>
         <tablet-pages page='tablet'></tablet-pages>
+        <pan-pages page='pan'></pan-pages>
       </iron-pages>
         
     `;

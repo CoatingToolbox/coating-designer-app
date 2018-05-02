@@ -15,14 +15,15 @@ class PageHeader extends PolymerElement {
       <style>
         :host {
           display: block;
-          background-color: var(--app-primary-color);
-          color: var(--white-color);
+          background-color: var(--background-color);
+          color: var(--text-light-color);
           padding: 48px 0px 48px 0px;
         }
         #title ::slotted(*) {
           font-size: 48px;
           font-weight: bold;
           text-align: center;
+          color: var(--app-dark-color);
         }
         #description ::slotted(*) {
           max-width: 600px;

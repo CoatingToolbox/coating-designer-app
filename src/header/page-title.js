@@ -12,7 +12,7 @@ class PageTitle extends PolymerElement {
           display: block;
           font-size: 24px;
           margin: 0px 16px;
-          color: var(--white-color);
+          color: var(--app-dark-color);
           flex-grow: 1;
         }
       </style>

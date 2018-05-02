@@ -6,7 +6,11 @@
         "src/pages/tablet-pages.js",
         "src/tablet/tablet-overview-page.js",
         "src/tablet/tablet-designer-page.js",
-        "src/tablet/tablet-library-page.js"
+        "src/tablet/tablet-library-page.js",
+        "src/pages/pan-pages.js",
+        "src/pan/pan-overview-page.js",
+        "src/pan/pan-designer-page.js",
+        "src/pan/pan-library-page.js"
     ],
     "sources": [
         "src/**/*",

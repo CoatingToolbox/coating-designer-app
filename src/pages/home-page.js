@@ -43,27 +43,19 @@ class HomePage extends ReduxMixin(PolymerElement) {
         }
         
         app-header {
-          background-color: var(--app-primary-color);
-          color: var(--white-color);
-        }
-        app-header app-toolbar {
-          background-color: var(--app-dark-color);
-        }
-        app-header #toolbar-title {
-          font-size: 24px;
-        }
-        app-header #toolbar-spacer {
-          flex-grow: 1;
+          background-color: var(--white-color);
+          color: var(--text-color);
         }
         app-header #user-name {
           font-size: 16px;
+          color: var(--text-light-color);
         }
         app-header .icon {
           margin: 8px;
           border-radius: 50%;
           height: 24px;
           width: 24px;
-          border: 2px solid var(--white-color);
+          border: 2px solid var(--app-dark-color);
           background-color: var(--app-light-color);
         }
         page-header {
@@ -71,7 +63,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
         }
         
         #materials-section {
-          background: linear-gradient(to bottom, var(--app-primary-color) 0%,var(--app-primary-color) 72px, #000000 72px,var(--background-color) 0%,var(--background-color) 100%);
+          background: linear-gradient(to bottom, var(--background-color) 0%, var(--background-color) 72px, #000000 72px,var(--white-color) 0%,var(--white-color) 100%);
         }
         #materials-section .material-layout {
           display: grid;
@@ -143,7 +135,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
         </app-header>
       
         <page-header>
-          <div slot='title'>Let's design your coating process.</div>
+          <div slot='title'>Let's setup your coating process.</div>
           <p slot='description'>
             Use the Colorcon Coating Designer to get recommendations on coating conditions and process
             parameters. Or audit your coating process with key coating metrics.
@@ -168,7 +160,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
             
             <div class='material-layout'>
               <div class='material-label'>Coating Pan</div>
-              <div class='material-title'>[[pan.manufacturer]] [[pan.model]]</div>
+              <div class='material-title'>[[pan.manufacturerName]] [[pan.modelName]]</div>
               <a href='#/pan/overview'>
                 <card-button label='Details'></card-button>
               </a>

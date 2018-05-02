@@ -6,11 +6,13 @@ export class Pan {
     this.openingDiameter = 0.4826;
     this.wallWidth = 0.508;
     this.brimWidth = 0.93345;
-    this.model = "";
-    this.manufacturer = "";
+    this.modelName = "";
+    this.manufacturerName = "";
     this.nickname = "";
-    this.company = '';
-    this.locationName = '';
+    this.companyName = '';
+    this.contactName = '';
+    this.contactEmail = '';
+    this.companyLocation = '';
     this.baffleType = '';
     this.baffleCount = '';
     this.baffleHeight = '';
@@ -19,7 +21,8 @@ export class Pan {
     this.gunCount = '';
     this.gunToGunDistance = '';
     this.maxAirflow = '';
-    this.perforations = '';
+    this.inletType = '';
+    this.perforationType = '';
     this.firebaseKey = '';
     
     Object.getOwnPropertyNames(this).map(prop => {
@@ -91,46 +94,7 @@ export class Pan {
     return this.calcChordLength(this.minFillHeight);
   }
   
-  
-  // GETTERS FOR DISPLAYING VALUES AS STRINGS
-  get baffleString() {
-    if(this.baffleType && this.baffleCount > 1) {
-      return `${this.baffleType} x${this.baffleCount}`;
-    } else if (this.baffleType) {
-      return this.baffleType;
-    } else {
-      return ` - `;
-    }
-  }
-  get sprayGunString() {
-    if(this.gunMake && this.gunModel && this.gunCount > 1) {
-      return `${this.gunMake} ${this.gunModel} x${this.gunCount}`;
-    } else if(this.gunMake || this.gunModel){
-      return `${this.gunMake} ${this.gunModel}`;
-    } else {
-      return 'NA';
-    }
-  }
-  get dimensionsInInchesString() {
-    return `${this.metersToInches(this.panDiameter).toFixed(1)} x ${this.metersToInches(this.brimWidth).toFixed(1)}`;
-  }
-  get brimVolumeInLitersString() {
-    return this.m3ToLiters(this.brimVolume).toFixed(0);
-  }
-  get workingVolumeInLitersString() {
-    return `${ this.m3ToLiters(this.minFillVolume).toFixed(0)} - ${ this.m3ToLiters(this.maxFillVolume).toFixed(0)}`;
-  }
-  get diameterInInchesString() {
-    return this.metersToInches(this.panDiameter).toFixed(1);
-  }
-  
   // HELPER FUNCTIONS
-  m3ToLiters(val) {
-    return val * 1000;
-  }
-  metersToInches(val) {
-    return val * 39.3701;
-  }
   calcChordLength(saggita) {
     //brim width... the chord length at the brim height
     //typically close to the full diameter as the brim height is near the center
@@ -206,30 +170,61 @@ export class Pan {
       return center + cone + cone;
       
     }
+  metersToInches(val) {
+    return val * 39.3701;
+  }
+  
+  // formatting function
+  _displayInches(val) {
+    return `${(val * 39.3701).toFixed(2)} in`;
+  }
+  _displayLiters(val) {
+    return `${(val * 1000).toFixed(1)} L`;
+  }
+  _displayVolumeRange(min, max) {
+    return `${(min * 1000).toFixed(1)}  - ${(max * 1000).toFixed(1)} L`;
+  }
   
   toJSON() {
-      return Object.assign({}, this, {
-          panRangeWeightVsFillHeight: this.panRangeWeightVsFillHeight,
-          workingFillWeightVsFillHeight: this.workingFillWeightVsFillHeight,
-          batchWeightVsHeight: this.batchWeightVsHeight,
-          referencePointsWeightVsHeight: this.referencePointsWeightVsHeight,
-          baffleString: this.baffleString,
-          sprayGunString: this.sprayGunString,
-          dimensionsInInchesString: this.dimensionsInInchesString,
-          brimVolumeInLitersString: this.brimVolumeInLitersString,
-          diameterInInchesString: this.diameterInInchesString,
-          radius: this.radius,
-          sideWallSlope: this.sideWallSlope,
-          sideWallLength: this.sideWallLength,
-          brimHeight: this.brimHeight,
-          brimLength: this.brimLength, 
-          brimVolume: this.brimVolume,
-          maxFillHeight: this.maxFillHeight, 
-          maxFillVolume: this.maxFillVolume, 
-          maxFillLength: this.maxFillLength, 
-          minFillHeight: this.minFillHeight, 
-          minFillVolume: this.minFillVolume, 
-          minFillLength: this.minFillLength
-      });
+    return Object.assign( {}, this, 
+      {
+        formatted: {
+          panDiameter: this._displayInches(this.panDiameter),
+          openingDiameter: this._displayInches(this.openingDiameter),
+          brimHeight: this._displayInches(this.brimHeight),
+          brimWidth: this._displayInches(this.brimWidth),
+          baffleHeight: this._displayInches(this.baffleHeight),
+          gunToGunDistance: this._displayInches(this.gunToGunDistance),
+          brimVolume: this._displayLiters(this.brimVolume),
+          maxFillVolume: this._displayLiters(this.maxFillVolume),
+          minFillVolume: this._displayLiters(this.minFillVolume),
+          volumeRange: this._displayVolumeRange(this.minFillVolume, this.maxFillVolume)
+        }
+        
+      }
+    );
   }
 }
+
+
+// panRangeWeightVsFillHeight: this.panRangeWeightVsFillHeight,
+// workingFillWeightVsFillHeight: this.workingFillWeightVsFillHeight,
+// batchWeightVsHeight: this.batchWeightVsHeight,
+// referencePointsWeightVsHeight: this.referencePointsWeightVsHeight,
+// baffleString: this.baffleString,
+// sprayGunString: this.sprayGunString,
+// dimensionsInInchesString: this.dimensionsInInchesString,
+// brimVolumeInLitersString: this.brimVolumeInLitersString,
+// diameterInInchesString: this.diameterInInchesString,
+// radius: this.radius,
+// sideWallSlope: this.sideWallSlope,
+// sideWallLength: this.sideWallLength,
+// brimHeight: this.brimHeight,
+// brimLength: this.brimLength, 
+// brimVolume: this.brimVolume,
+// maxFillHeight: this.maxFillHeight, 
+// maxFillVolume: this.maxFillVolume, 
+// maxFillLength: this.maxFillLength, 
+// minFillHeight: this.minFillHeight, 
+// minFillVolume: this.minFillVolume, 
+// minFillLength: this.minFillLength
