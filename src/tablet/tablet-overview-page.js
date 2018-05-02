@@ -6,6 +6,7 @@ import '../card/card-button.js';
 import '../card/card-info-section.js';
 import '../card/card-info-item.js';
 import '../header/page-header.js';
+import '../header/page-title.js';
 import '../header/page-header-button.js';
 import './tablet-layout.js';
 
@@ -26,6 +27,9 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
         }
         #background-wrapper {
           background: linear-gradient(to bottom, var(--background-color) 0%,var(--background-color) 124px, #000000 124px,var(--white-color) 0%,var(--white-color) 100%);
+        }
+        card-with-toolbar a + a {
+          margin-left: 16px;
         }
         card-info-section + card-info-section {
           border-top: var(--border-line);
@@ -48,28 +52,25 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
           Review the current selected tablet and make changes with the tablet designer
           or load a tablet from the library.
         </p>
-        <a href='#/tablet/designer/description' slot='button'>
-          <page-header-button label='Tablet Designer'></page-header-button>
-        </a>
-        <a href='#/tablet/library' slot='button'>
-          <page-header-button label='Tablet Library'></page-header-button>
-        </a>
       </page-header>
       
       <div id='background-wrapper'>
-        <card-with-toolbar title='General Information'>
-          <a href='#/tablet/designer/description' slot='toolbar'>
+        <card-with-toolbar title='Tablet Description' highlight-title>
+          <a href='#/tablet/designer' slot='toolbar'>
            <card-button label='Edit'></card-button>
           </a>
-          <card-info-section title='Product Information' icon='app-icons:product-info'>
-            <card-info-item wide label='Name' class='capitalize'>[[tablet.productName]]</card-info-item>
+          <a href='#/tablet/library' slot='toolbar'>
+           <card-button label='Load'></card-button>
+          </a>
+          <card-info-section title='Description' icon='app-icons:product-info'>
+            <card-info-item wide label='Product Name' class='capitalize'>[[tablet.productName]]</card-info-item>
             <card-info-item wide label='Active Ingredient' class='capitalize'>[[tablet.activeName]]</card-info-item>
             <card-info-item wide label='Market' class='capitalize'>[[tablet.productType]]</card-info-item>
             <card-info-item wide label='Dosage Form' class='capitalize'>[[tablet.dosageForm]]</card-info-item>
             <card-info-item wide label='Formulation' class='capitalize'>[[tablet.formulationName]]</card-info-item>
           </card-info-section>
           
-          <card-info-section title='Company Information' icon='app-icons:company-info'>
+          <card-info-section title='Contact Infomration' icon='app-icons:company-info'>
             <card-info-item wide label='Company' class='capitalize'>[[tablet.companyName]]</card-info-item>
             <card-info-item wide label='Location' class='capitalize'>[[tablet.companyLocation]]</card-info-item>
             <card-info-item wide label='Contact' class='capitalize'>[[tablet.contactName]]</card-info-item>
@@ -80,9 +81,12 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
       
       
       <card-with-toolbar title='Tablet Information'>
-        <a href='#/tablet/designer/shape' slot='toolbar'>
-         <card-button label='Edit'></card-button>
-        </a>
+          <a href='#/tablet/designer/description' slot='toolbar'>
+           <card-button label='Edit'></card-button>
+          </a>
+          <a href='#/tablet/library' slot='toolbar'>
+           <card-button label='Load'></card-button>
+          </a>
         
         <card-info-section title='Shape & Size' icon='app-icons:ruler'>
           <card-info-item wide label='Shape' class='capitalize'>[[tablet.shape]]</card-info-item>
@@ -109,6 +113,12 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
       </card-with-toolbar>
       
       <card-with-toolbar title='Tooling Information'>
+          <a href='#/tablet/designer/description' slot='toolbar'>
+           <card-button label='Edit'></card-button>
+          </a>
+          <a href='#/tablet/library' slot='toolbar'>
+           <card-button label='Load'></card-button>
+          </a>
         <card-info-section title='Concavity' icon='app-icons:concavity'>
           <card-info-item wide label='Concavity' class='capitalize'>[[tablet.concavity]]</card-info-item>
           <card-info-item wide label='Cup Depth'>[[tablet.formatted.cupDepth]]</card-info-item>

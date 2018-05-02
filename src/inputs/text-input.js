@@ -41,7 +41,7 @@ class TextInput extends PolymerElement {
         }
         
         #input:focus {
-          color: var(--app-primary-color);
+          color: var(--app-accent-color);
         }
         #input:hover {
           cursor: text;

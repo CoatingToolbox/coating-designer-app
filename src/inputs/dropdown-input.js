@@ -89,7 +89,7 @@ class DropdownInput extends PolymerElement {
           background-color: var(--background-color);
         }
         #dropdown .item.iron-selected {
-          color: var(--accent-color);
+          color: var(--app-accent-color);
           font-weight: bold;
         }
         

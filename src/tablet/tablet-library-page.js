@@ -2,6 +2,7 @@
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from '../redux/redux-mixin.js';
 import '../../node_modules/@polymer/iron-icon/iron-icon.js';
+import '../../node_modules/@polymer/paper-input/paper-input.js';
 import '../../node_modules/@polymer/polymer/lib/elements/dom-repeat.js';
 import '../header/page-header.js';
 import '../app-icons.js';
@@ -41,7 +42,7 @@ class TabletLibraryPage extends ReduxMixin(PolymerElement) {
       value: e.model.item
     });
     window.scrollTo(0,0);
-    window.location = '#/tablet/designer/description';
+    window.location = '#/tablet/designer';
   }
   
   _filterLibrary(library, searchTerm) {
@@ -71,18 +72,22 @@ class TabletLibraryPage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
+          background-color: var(--background-color);
+          min-height: 100vh;
         }
         #search-layout {
           display: flex;
           align-items: center;
           justify-content: flex-end;
           margin: 16px 32px 0px;
+          max-width: 1024px;
+          margin: auto;
         }
-        #header #search-icon {
+        #search-layout #search-icon {
           color: var(--text-light-color);
           margin-right: 8px;
         }
-        #header paper-input {
+        #search-layout paper-input {
           color: var(--text-color);
           --paper-input-container-input-color: var(--text-color);
           --paper-input-container-color: var(--text-light-color);
@@ -99,6 +104,7 @@ class TabletLibraryPage extends ReduxMixin(PolymerElement) {
           margin: auto;
           background-color: var(--white-color);
           border-radius: 6px;
+          border: var(--border-line);
         }
         #table .cell {
           display: flex;
@@ -182,8 +188,9 @@ class TabletLibraryPage extends ReduxMixin(PolymerElement) {
           and we can estimate important tablet properties for coating.
         </p>
       </page-header>
+      
       <div id='search-layout'>
-        <iron-icon id='search-icon' icon='my-icons:search'></iron-icon>
+        <iron-icon id='search-icon' icon='app-icons:search'></iron-icon>
         <paper-input value='{{filterTerm}}' placeholder='Search Tablets...' no-label-float></paper-input>
       </div>
       

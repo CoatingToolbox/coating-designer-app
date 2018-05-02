@@ -24,7 +24,7 @@ class TabletDesignerWeight extends PolymerElement {
         }
       </style>
       
-        <card-with-toolbar title='Tablet Weight'>
+        <card-with-toolbar title='Tablet Weight & Density'>
           <p slot='card-description'>
             Provide additional details on the tablet weight.
           </p>

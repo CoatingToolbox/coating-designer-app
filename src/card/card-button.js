@@ -15,13 +15,19 @@ class CardButton extends PolymerElement {
       <style>
         :host {
           display: block;
-          padding: 8px 24px;
-          border-radius: 6px;
-          background-color: var(--app-accent-color);
-          color: var(--white-color);
+          padding: 6px 24px;
+          border-radius: 24px;
+          border: var(--border-line);
+          background-color: var(--background-color);
+          color: var(--text-light-color);
+          cursor: pointer;
+          transition: 0.2s all;
         }
         :host(:hover) {
-          cursor: pointer;
+          border-color: var(--app-accent-color);
+          background-color: var(--app-accent-color);
+          color: var(--white-color);
+          transition: 0.3s all;
         }
         #label {
           font-size: 14px;

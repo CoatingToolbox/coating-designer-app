@@ -18,12 +18,14 @@ class PageHeaderButton extends PolymerElement {
           position: relative;
           padding: 12px 24px;
           border-radius: 6px;
+          border: 2px solid var(--border-color);
           color: var(--text-light-color);
-          background-color: var(--light-gray-color);
+          background-color: var(--white-color);
           transition: 0.2s all;
         }
         :host(:hover) {
           color: var(--white-color);
+          border-color: var(--app-accent-color);
           background-color: var(--app-accent-color);
           transition: 0.3s all;
         }

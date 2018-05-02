@@ -69,8 +69,10 @@ class TabletDesignerCalculate extends ReduxMixin(PolymerElement) {
         card-button + card-button {
           margin-left: 48px;
         }
-        .gray-button {
-          background-color: var(--text-light-color);
+        #save-button {
+          background-color: var(--app-accent-color);
+          border-color: var(--app-accent-color);
+          color: var(--white-color);
         }
         [hidden] {
           display: none;
@@ -87,8 +89,8 @@ class TabletDesignerCalculate extends ReduxMixin(PolymerElement) {
           </p>
           
           <div class='button-layout' wide>
-            <card-button label='Calculate Tablet' on-click='_saveTablet'></card-button>
-            <card-button class='gray-button' label='Cancel Changes' on-click='_cancelTablet'></card-button>
+            <card-button id='save-button' label='Calculate Tablet' on-click='_saveTablet'></card-button>
+            <card-button label='Cancel Changes' on-click='_cancelTablet'></card-button>
           </div>
         </card-info-section>
         

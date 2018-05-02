@@ -3,18 +3,22 @@ import { UnitInput } from './unit-input.js';
 
 class MassInput extends UnitInput {
   
-  ready() {
-    super.ready();
-    this._units = 
-      [
-        {unit: "mg", text: 'mg', multiplier: 0.001 },
-        {unit: "g", text: 'g', multiplier: 1 },
-        {unit: "kg", text: 'kg', multiplier: 1000 },
-        {unit: "oz", text: 'oz', multiplier: 28.3495 },
-        {unit: "lb", text: 'lb', multiplier: 453.592 },
-      ];
-    this.unit = 'mg';
-    this._multiplier = 0.001;
+  static get properties() {
+    return {
+      unit: { type: String, value: 'mg' },
+      _multiplier: { type: Number, value: 0.001 },
+      _units: { type: Array, value: 
+        function() {
+          return [
+            {unit: "mg", text: 'mg', multiplier: 0.001 },
+            {unit: "g", text: 'g', multiplier: 1 },
+            {unit: "kg", text: 'kg', multiplier: 1000 },
+            {unit: "oz", text: 'oz', multiplier: 28.3495 },
+            {unit: "lb", text: 'lb', multiplier: 453.592 },
+          ];
+        }
+      }
+    };
   }
 }
 

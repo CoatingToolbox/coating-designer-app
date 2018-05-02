@@ -26,7 +26,7 @@ class PanLibraryPage extends ReduxMixin(PolymerElement) {
     });
   }
   
-  _loadTablet(e) {
+  _load(e) {
     this.dispatch({
       type: "SET_PAN",
       value: e.model.item
@@ -35,13 +35,13 @@ class PanLibraryPage extends ReduxMixin(PolymerElement) {
     window.location = '#/pan/overview';
   }
   
-  _editTablet(e) {
+  _edit(e) {
     this.dispatch({
       type: "SET_PAN",
       value: e.model.item
     });
     window.scrollTo(0,0);
-    window.location = '#/pan/designer/description';
+    window.location = '#/pan/designer';
   }
   
   _filterLibrary(library, searchTerm) {
@@ -49,10 +49,10 @@ class PanLibraryPage extends ReduxMixin(PolymerElement) {
     return library.filter( 
       pan => { 
         return (
-          pan.manufacturer.toLowerCase().includes(searchTerm.toLowerCase()) || 
-              pan.model.toLowerCase().includes(searchTerm.toLowerCase()) || 
+          pan.manufacturerName.toLowerCase().includes(searchTerm.toLowerCase()) || 
+              pan.modelName.toLowerCase().includes(searchTerm.toLowerCase()) || 
               pan.nickname.toLowerCase().includes(searchTerm.toLowerCase()) || 
-              pan.company.toLowerCase().includes(searchTerm.toLowerCase()) || 
+              pan.companyName.toLowerCase().includes(searchTerm.toLowerCase()) || 
               pan.locationName.toLowerCase().includes(searchTerm.toLowerCase()) 
         );
       }
@@ -66,18 +66,22 @@ class PanLibraryPage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
+          background-color: var(--background-color);
+          min-height: 100vh;
         }
         #search-layout {
           display: flex;
           align-items: center;
           justify-content: flex-end;
           margin: 16px 32px 0px;
+          max-width: 1024px;
+          margin: auto;
         }
-        #header #search-icon {
+        #search-layout #search-icon {
           color: var(--text-light-color);
           margin-right: 8px;
         }
-        #header paper-input {
+        #search-layout paper-input {
           color: var(--text-color);
           --paper-input-container-input-color: var(--text-color);
           --paper-input-container-color: var(--text-light-color);
@@ -87,13 +91,14 @@ class PanLibraryPage extends ReduxMixin(PolymerElement) {
         /*Styles for Table and Cells*/
         #table {
           display: grid;
-          grid-template-columns: 2fr 1fr auto auto auto auto;
+          grid-template-columns: 2fr 1fr 1fr auto auto auto auto;
           grid-template-rows: 48px;
           grid-auto-rows: auto;
           max-width: 1024px;
           margin: auto;
           background-color: var(--white-color);
           border-radius: 6px;
+          border: var(--border-line);
         }
         #table .cell {
           display: flex;
@@ -187,31 +192,32 @@ class PanLibraryPage extends ReduxMixin(PolymerElement) {
         <div class='header cell'>Name</div>
         <div class='header cell'>Equipment</div>
         <div class='header cell'>Location</div>
-        <div class='header cell'>Diameter (in)</div>
-        <div class='header cell'>Brim Volume (l)</div>
+        <div class='header cell'>Diameter</div>
+        <div class='header cell'>Brim Volume</div>
+        <div class='header cell'>Working Volume</div>
         <div class='header cell'></div>
         
         <template is='dom-repeat' items='[[_filterLibrary(firebaseLibrary, filterTerm)]]'>
           <div class='cell'>
-            <div>[[item.nickname]]</div>
+            <div class='item-title'>[[item.nickname]]</div>
           </div>
           <div class='cell'>
-            <div class='subtext'>[[item.manufacturer]]</div>
-            <div class='item-title'>[[item.model]]</div>
+            <div class='item-title'>[[item.modelName]]</div>
+            <div class='subtext'>[[item.manufacturerName]]</div>
           </div>
           <div class='cell'>
-            <div>[[item.company]]</div>
-            <div class='subtext'>[[item.locationName]]</div>
+            <div>[[item.companyName]]</div>
+            <div class='subtext'>[[item.companyLocation]]</div>
           </div>
-          <div class='cell number'>[[item.diameterInInchesString]]</div>
-          <div class='cell number'>[[item.brimVolumeInLitersString]]</div>
-          
+          <div class='cell number'>[[item.formatted.panDiameter]]</div>
+          <div class='cell number'>[[item.formatted.brimVolume]]</div>
+          <div class='cell number'>[[item.formatted.volumeRange]]</div>
           <div class='cell icon-layout'>
             <div class='icon-button' on-click='_load'>
-              <iron-icon icon='my-icons:load'></iron-icon>
+              <iron-icon icon='app-icons:load'></iron-icon>
             </div>
             <div class='icon-button' on-click='_edit'>
-              <iron-icon icon='my-icons:edit'></iron-icon>
+              <iron-icon icon='app-icons:edit'></iron-icon>
             </div>
            
           </div> 

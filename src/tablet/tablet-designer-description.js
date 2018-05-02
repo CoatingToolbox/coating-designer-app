@@ -31,6 +31,8 @@ class TabletDesignerDescription extends PolymerElement {
       <style>
         :host {
           display: block;
+          background: linear-gradient(to bottom, var(--background-color) 0%,var(--background-color) 124px, #000000 124px,var(--white-color) 0%,var(--white-color) 100%);
+        
         }
       </style>
         

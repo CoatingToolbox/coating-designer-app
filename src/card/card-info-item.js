@@ -4,7 +4,8 @@ import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polyme
 class CardInfoItem extends PolymerElement {
   static get properties () {
     return {
-      label: String
+      label: String,
+      capitalize: { type: Boolean, reflectToAttribute: true}
     };
   }
 
@@ -16,6 +17,9 @@ class CardInfoItem extends PolymerElement {
           flex-direction: row;
           align-items: baseline;
           font-size: 14px;
+        }
+        :host([capitalize]) {
+          text-transform: capitalize;
         }
         #label {
           font-weight: bold;

@@ -21,7 +21,7 @@ export class Pan {
     this.gunCount = '';
     this.gunToGunDistance = '';
     this.maxAirflow = '';
-    this.inletType = '';
+    this.airflowType = '';
     this.perforationType = '';
     this.firebaseKey = '';
     

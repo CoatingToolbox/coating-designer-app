@@ -43,6 +43,7 @@ class UnitInput extends PolymerElement {
   }
   
   _toggleDropdown() {
+    if(this._units == null) { return; }
     this.$.dropdown.toggle();
   }
   _userInputValue(e) {
@@ -98,7 +99,7 @@ class UnitInput extends PolymerElement {
             margin: 0;
         }
         #input:focus {
-          color: var(--app-primary-color);
+          color: var(--app-accent-color);
         }
         #input:hover {
           cursor: text;
@@ -143,7 +144,7 @@ class UnitInput extends PolymerElement {
           background-color: var(--background-color);
         }
         #dropdown .item.iron-selected {
-          color: var(--accent-color);
+          color: var(--app-accent-color);
           font-weight: bold;
         }
       </style>

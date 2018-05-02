@@ -68,7 +68,8 @@ class HomePage extends ReduxMixin(PolymerElement) {
         #materials-section .material-layout {
           display: grid;
           grid-template-rows: auto auto;
-          grid-template-columns: 1fr auto;
+          grid-template-columns: 1fr auto auto auto;
+          grid-gap: 0px 16px;
           min-height: 96px;
         }
         #materials-section .material-layout:first-of-type {
@@ -80,16 +81,19 @@ class HomePage extends ReduxMixin(PolymerElement) {
         #materials-section .material-layout .material-label {
           font-size: 18px;
           align-self: end;
+          grid-row: 1 / 2;
+          grid-column: 1 / 2;
         }
         #materials-section .material-layout .material-title {
           font-size: 24px;
           color: var(--app-primary-color);
           align-self: start;
+          grid-row: 2 / 3;
+          grid-column: 1 / 2;
         }
         #materials-section .material-layout card-button,
         #materials-section .material-layout a {
           grid-row: 1 / 3;
-          grid-column: 2 / 3;
           align-self: center;
         }
         
@@ -154,7 +158,13 @@ class HomePage extends ReduxMixin(PolymerElement) {
               <div class='material-label'>Coating Substrate</div>
               <div class='material-title'>[[tablet.productName]]</div>
               <a href='#/tablet/overview'>
-                <card-button label='Details'></card-button>
+                <card-button label='Info'></card-button>
+              </a>
+              <a href='#/tablet/designer'>
+                <card-button label='Edit'></card-button>
+              </a>
+              <a href='#/tablet/library'>
+                <card-button label='Load'></card-button>
               </a>
             </div>
             
@@ -162,7 +172,13 @@ class HomePage extends ReduxMixin(PolymerElement) {
               <div class='material-label'>Coating Pan</div>
               <div class='material-title'>[[pan.manufacturerName]] [[pan.modelName]]</div>
               <a href='#/pan/overview'>
-                <card-button label='Details'></card-button>
+                <card-button label='Info'></card-button>
+              </a>
+              <a href='#/pan/designer'>
+                <card-button label='Edit'></card-button>
+              </a>
+              <a href='#/pan/library'>
+                <card-button label='Load'></card-button>
               </a>
             </div>
             
@@ -170,7 +186,13 @@ class HomePage extends ReduxMixin(PolymerElement) {
               <div class='material-label'>Coating Formula</div>
               <div class='material-title'>[[coating.productName]]</div>
               <a href='#/coating/overview'>
-                <card-button label='Details'></card-button>
+                <card-button label='Info'></card-button>
+              </a>
+              <a href='#/coating/designer'>
+                <card-button label='Edit'></card-button>
+              </a>
+              <a href='#/coating/library'>
+                <card-button label='Load'></card-button>
               </a>
             </div>
           </card-with-toolbar>
@@ -179,7 +201,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
         <section id='parameters-section'>
       
           <card-with-toolbar title='Coating Conditions & Process Parameters'>
-            <card-button slot='toolbar' label='Details'></card-button>
+            <card-button slot='toolbar' label='Edit'></card-button>
             <p slot='card-description'>
               Get recommended coating conditions and process parameters and set
               your target values.
