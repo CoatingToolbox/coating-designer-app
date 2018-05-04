@@ -24,9 +24,6 @@ class PanOverviewPage extends ReduxMixin(PolymerElement) {
         :host {
           display: block;
         }
-        #background-wrapper {
-          background: linear-gradient(to bottom, var(--background-color) 0%,var(--background-color) 124px, #000000 124px,var(--white-color) 0%,var(--white-color) 100%);
-        }
         card-info-section + card-info-section {
           border-top: var(--border-line);
         }
@@ -53,7 +50,6 @@ class PanOverviewPage extends ReduxMixin(PolymerElement) {
         </p>
       </page-header>
       
-      <div id='background-wrapper'>
         <card-with-toolbar title='General Information'>
           <a href='#/pan/designer' slot='toolbar'>
            <card-button label='Edit'></card-button>
@@ -74,8 +70,6 @@ class PanOverviewPage extends ReduxMixin(PolymerElement) {
             <card-info-item wide label='Email'>[[pan.contactEmail]]</card-info-item>
           </card-info-section>
         </card-with-toolbar>
-      </div>
-      
       
       <card-with-toolbar title='Coating Pan Size'>
           <a href='#/pan/designer' slot='toolbar'>

@@ -72,7 +72,6 @@ class TabletLibraryPage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
-          background-color: var(--background-color);
           min-height: 100vh;
         }
         #search-layout {

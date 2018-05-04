@@ -3,15 +3,18 @@ export class Coating {
 
         constructor(parameters={}) {
             // VISCOSITY
+            this.recommendedSolids = 0.2;
+            this.recommendedWG = 0.03;
+            this.recommendProductTemp = 47;
             this.solids = 0.2;
             this.viscosityIntercept = 20;
             this.viscosityExponent = 10;
             // FILM PROPERTIES
-            this.density = 1100000;
+            this.filmDensity = 1100000;
+            this.filmOpacity = 1;
             // DESCRIPTION
             this.productName = '';
             this.formulaName = '';
-            this.type = '';
             this.color = '';
             this.firebaseKey = '';
             
@@ -39,8 +42,13 @@ export class Coating {
                     formatted: 
                         {
                             solids: `${(this.solids * 100).toFixed(1)}%`,
-                            density: `${(this.density * 1e-6).toFixed(2)} g/ml`,
-                            viscosity: `${this.viscosity.toFixed(0)} cps`
+                            recommendProductTemp: `${this.recommendProductTemp.toFixed(1)}C`,
+                            recommendedWG: `${(this.recommendedWG * 100).toFixed(1)}%`,
+                            recommendedSolids: `${(this.recommendedSolids * 100).toFixed(1)}%`,
+                            filmDensity: `${(this.filmDensity * 1e-6).toFixed(2)} g/ml`,
+                            viscosity: `${this.viscosity.toFixed(0)} cps`,
+                            filmOpacity: `${(this.filmOpacity * 100).toFixed(0)}%`
+                            
                         }
                 }
             );

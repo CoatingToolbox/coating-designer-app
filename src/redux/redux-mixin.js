@@ -13,6 +13,7 @@ function tabletReducer(state = {}, action) {
     let tablet = new Tablet(state);
     switch(action.type) {
         case "SET_TABLET": tablet = new Tablet(action.value); break;
+        case "SET_TABLET_BULK_DENSITY": tablet.bulkDensity = action.value; break;
     }
     return Object.assign({}, state, tablet.toJSON());
 }

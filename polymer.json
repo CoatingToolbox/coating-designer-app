@@ -10,7 +10,11 @@
         "src/pages/pan-pages.js",
         "src/pan/pan-overview-page.js",
         "src/pan/pan-designer-page.js",
-        "src/pan/pan-library-page.js"
+        "src/pan/pan-library-page.js",
+        "src/pages/coating-pages.js",
+        "src/coating/coating-overview-page.js",
+        "src/coating/coating-designer-page.js",
+        "src/coating/coating-library-page.js"
     ],
     "sources": [
         "src/**/*",
@@ -21,7 +25,8 @@
         "manifest/manifest.json",
         "node_modules/redux/dist/redux.min.js",
         "node_modules/@webcomponents/webcomponentsjs/**",
-        "node_modules/firebase/firebase.js"
+        "node_modules/firebase/firebase.js",
+        "node_modules/d3/dist/d3.js"
     ],
     "builds": [{
         "preset": "es6-unbundled",
@@ -30,7 +35,8 @@
             "minify": {
                 "exclude": [
                     "node_modules/redux/dist/redux.min.js", 
-                    "node_modules/firebase/firebase.js"
+                    "node_modules/firebase/firebase.js",
+                    "node_modules/d3/dist/d3.js"
                 ]
             }
         }

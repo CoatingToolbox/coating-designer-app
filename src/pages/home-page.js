@@ -61,10 +61,6 @@ class HomePage extends ReduxMixin(PolymerElement) {
         page-header {
           padding-top: 96px;
         }
-        
-        #materials-section {
-          background: linear-gradient(to bottom, var(--background-color) 0%, var(--background-color) 72px, #000000 72px,var(--white-color) 0%,var(--white-color) 100%);
-        }
         #materials-section .material-layout {
           display: grid;
           grid-template-rows: auto auto;
@@ -170,7 +166,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
             
             <div class='material-layout'>
               <div class='material-label'>Coating Pan</div>
-              <div class='material-title'>[[pan.manufacturerName]] [[pan.modelName]]</div>
+              <div class='material-title'>[[pan.nickname]]</div>
               <a href='#/pan/overview'>
                 <card-button label='Info'></card-button>
               </a>

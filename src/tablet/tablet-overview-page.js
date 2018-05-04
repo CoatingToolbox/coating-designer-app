@@ -25,9 +25,6 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
         :host {
           display: block;
         }
-        #background-wrapper {
-          background: linear-gradient(to bottom, var(--background-color) 0%,var(--background-color) 124px, #000000 124px,var(--white-color) 0%,var(--white-color) 100%);
-        }
         card-with-toolbar a + a {
           margin-left: 16px;
         }
@@ -54,30 +51,28 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
         </p>
       </page-header>
       
-      <div id='background-wrapper'>
-        <card-with-toolbar title='Tablet Description' highlight-title>
-          <a href='#/tablet/designer' slot='toolbar'>
-           <card-button label='Edit'></card-button>
-          </a>
-          <a href='#/tablet/library' slot='toolbar'>
-           <card-button label='Load'></card-button>
-          </a>
-          <card-info-section title='Description' icon='app-icons:product-info'>
-            <card-info-item wide label='Product Name' class='capitalize'>[[tablet.productName]]</card-info-item>
-            <card-info-item wide label='Active Ingredient' class='capitalize'>[[tablet.activeName]]</card-info-item>
-            <card-info-item wide label='Market' class='capitalize'>[[tablet.productType]]</card-info-item>
-            <card-info-item wide label='Dosage Form' class='capitalize'>[[tablet.dosageForm]]</card-info-item>
-            <card-info-item wide label='Formulation' class='capitalize'>[[tablet.formulationName]]</card-info-item>
-          </card-info-section>
-          
-          <card-info-section title='Contact Infomration' icon='app-icons:company-info'>
-            <card-info-item wide label='Company' class='capitalize'>[[tablet.companyName]]</card-info-item>
-            <card-info-item wide label='Location' class='capitalize'>[[tablet.companyLocation]]</card-info-item>
-            <card-info-item wide label='Contact' class='capitalize'>[[tablet.contactName]]</card-info-item>
-            <card-info-item wide label='Email'>[[tablet.contactEmail]]</card-info-item>
-          </card-info-section>
-        </card-with-toolbar>
-      </div>
+      <card-with-toolbar title='Tablet Description' highlight-title>
+        <a href='#/tablet/designer' slot='toolbar'>
+         <card-button label='Edit'></card-button>
+        </a>
+        <a href='#/tablet/library' slot='toolbar'>
+         <card-button label='Load'></card-button>
+        </a>
+        <card-info-section title='Description' icon='app-icons:product-info'>
+          <card-info-item wide label='Product Name' class='capitalize'>[[tablet.productName]]</card-info-item>
+          <card-info-item wide label='Active Ingredient' class='capitalize'>[[tablet.activeName]]</card-info-item>
+          <card-info-item wide label='Market' class='capitalize'>[[tablet.productType]]</card-info-item>
+          <card-info-item wide label='Dosage Form' class='capitalize'>[[tablet.dosageForm]]</card-info-item>
+          <card-info-item wide label='Formulation' class='capitalize'>[[tablet.formulationName]]</card-info-item>
+        </card-info-section>
+        
+        <card-info-section title='Contact Infomration' icon='app-icons:company-info'>
+          <card-info-item wide label='Company' class='capitalize'>[[tablet.companyName]]</card-info-item>
+          <card-info-item wide label='Location' class='capitalize'>[[tablet.companyLocation]]</card-info-item>
+          <card-info-item wide label='Contact' class='capitalize'>[[tablet.contactName]]</card-info-item>
+          <card-info-item wide label='Email'>[[tablet.contactEmail]]</card-info-item>
+        </card-info-section>
+      </card-with-toolbar>
       
       
       <card-with-toolbar title='Tablet Information'>

@@ -13,9 +13,10 @@
 module.exports = {
   staticFileGlobs: [
     "node_modules/redux/dist/redux.min.js",
+    "node_modules/d3/dist/d3.js",
     "node_modules/@webcomponents/webcomponentsjs/**",
     "node_modules/firebase/firebase.js",
-    'manifest/*',
+    'manifest/*'
   ],
   runtimeCaching: [
     {

@@ -7,6 +7,7 @@ import '../node_modules/@polymer/iron-pages/iron-pages.js';
 import './pages/home-page.js';
 import './pages/tablet-pages.js';
 import './pages/pan-pages.js';
+import './pages/coating-pages.js';
 
 class AppShell extends ReduxMixin(PolymerElement) {
   
@@ -83,6 +84,7 @@ class AppShell extends ReduxMixin(PolymerElement) {
         <home-page page='home'></home-page>
         <tablet-pages page='tablet'></tablet-pages>
         <pan-pages page='pan'></pan-pages>
+        <coating-pages page='coating'></coating-pages>
       </iron-pages>
         
     `;

@@ -6,7 +6,7 @@ import '../../node_modules/@polymer/polymer/lib/elements/dom-repeat.js';
 import '../header/page-header.js';
 import '../app-icons.js';
 
-class PanLibraryPage extends ReduxMixin(PolymerElement) {
+class CoatingLibraryPage extends ReduxMixin(PolymerElement) {
   static get properties () {
     return {
       filterTerm: String,
@@ -232,4 +232,4 @@ class PanLibraryPage extends ReduxMixin(PolymerElement) {
 
 // Register the element with the browser.
 /* global customElements */
-customElements.define('pan-library-page', PanLibraryPage);
+customElements.define('coating-library-page', CoatingLibraryPage);

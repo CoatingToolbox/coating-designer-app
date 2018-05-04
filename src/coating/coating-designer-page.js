@@ -1,7 +1,7 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from '../redux/redux-mixin.js';
-import { Pan } from '../redux/pan.js';
+import { Coating } from '../redux/coating.js';
 import '../header/page-header.js';
 import '../card/card-with-toolbar.js';
 import '../card/card-info-section.js';
@@ -10,9 +10,8 @@ import '../inputs/text-input.js';
 import '../inputs/length-input.js';
 import '../inputs/dropdown-input.js';
 import '../app-icons.js';
-import "./pan-layout.js";
 
-class PanDesignerPage extends ReduxMixin(PolymerElement) {
+class CoatingDesignerPage extends ReduxMixin(PolymerElement) {
   static get properties () {
     return {
       pan: {type: Object,  computed: '_computePan(_pan)'},
@@ -170,7 +169,6 @@ class PanDesignerPage extends ReduxMixin(PolymerElement) {
            
           </card-with-toolbar>
         
-        
         <card-with-toolbar title='Coating Pan Size'>
           <p slot='card-description'>
             Provide dimensions of the pan to calculate the volume.
@@ -326,4 +324,4 @@ class PanDesignerPage extends ReduxMixin(PolymerElement) {
 
 // Register the element with the browser.
 /* global customElements */
-customElements.define('pan-designer-page', PanDesignerPage);
+customElements.define('coating-designer-page', CoatingDesignerPage);
