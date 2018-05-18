@@ -7,6 +7,7 @@ import '../card/card-info-section.js';
 import '../card/card-info-item.js';
 import '../header/page-header.js';
 import '../header/page-header-button.js';
+import './coating-viscosity-chart.js';
 
 class CoatingOverviewPage extends ReduxMixin(PolymerElement) {
   static get properties () {
@@ -83,7 +84,7 @@ class CoatingOverviewPage extends ReduxMixin(PolymerElement) {
           <card-info-item wide label='Opacity'>[[coating.formatted.filmOpacity]]</card-info-item>
         </card-info-section>
         <card-info-section title='Viscosity Profile' icon='app-icons:ruler'>
-          <coating-viscosity-graph viscosity='[[coating.data.viscosity]]'></coating-viscosity-graph>
+          <coating-viscosity-chart viscosity='[[coating.data.viscosity]]'></coating-viscosity-chart>
         </card-info-section>
       </card-with-toolbar>
     `;

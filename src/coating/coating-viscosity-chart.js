@@ -4,7 +4,7 @@ import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polyme
 import { GestureEventListeners } from '../../node_modules/@polymer/polymer/lib/mixins/gesture-event-listeners.js';
 
 
-class BulkDensityChart extends GestureEventListeners(PolymerElement) {
+class CoatingViscosityChart extends GestureEventListeners(PolymerElement) {
     
     ready() {
         super.ready();
@@ -12,7 +12,6 @@ class BulkDensityChart extends GestureEventListeners(PolymerElement) {
         this._setChartDimensions();
     }
     _setChartDimensions() {
-        console.log("chart resize")
         if(!this.$.chart) {
             return;
         }
@@ -207,6 +206,7 @@ class BulkDensityChart extends GestureEventListeners(PolymerElement) {
         return (val / 1e-6) ;
     }
             
+    
     static get template() {
         return html`
             
@@ -217,7 +217,6 @@ class BulkDensityChart extends GestureEventListeners(PolymerElement) {
                     flex-grow: 1;
                     height: 100%;
                     margin-top: 48px;
-                    min-height: 196px;
                   }
                   
                   #chart {
@@ -291,8 +290,9 @@ class BulkDensityChart extends GestureEventListeners(PolymerElement) {
         `;
     }
     
+    
 }
 
-customElements.define('bulk-density-chart', BulkDensityChart);
+customElements.define('coating-viscosity-chart', CoatingViscosityChart);
 
         

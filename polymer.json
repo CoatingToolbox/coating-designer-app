@@ -3,15 +3,15 @@
     "shell": "src/app-shell.js",
     "fragments": [
         "src/pages/home-page.js",
-        "src/pages/tablet-pages.js",
+        "src/tablet/tablet-pages.js",
         "src/tablet/tablet-overview-page.js",
         "src/tablet/tablet-designer-page.js",
         "src/tablet/tablet-library-page.js",
-        "src/pages/pan-pages.js",
+        "src/pan/pan-pages.js",
         "src/pan/pan-overview-page.js",
         "src/pan/pan-designer-page.js",
         "src/pan/pan-library-page.js",
-        "src/pages/coating-pages.js",
+        "src/coating/coating-pages.js",
         "src/coating/coating-overview-page.js",
         "src/coating/coating-designer-page.js",
         "src/coating/coating-library-page.js"

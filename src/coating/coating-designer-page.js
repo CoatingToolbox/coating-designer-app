@@ -1,7 +1,7 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from '../redux/redux-mixin.js';
-import { Coating } from '../redux/coating.js';
+import { Coating } from './coating-class.js';
 import '../header/page-header.js';
 import '../card/card-with-toolbar.js';
 import '../card/card-info-section.js';
@@ -14,8 +14,8 @@ import '../app-icons.js';
 class CoatingDesignerPage extends ReduxMixin(PolymerElement) {
   static get properties () {
     return {
-      pan: {type: Object,  computed: '_computePan(_pan)'},
-      _pan: { type: Object, statePath: 'pan'},
+      coaitng: {type: Object,  computed: '_computeCoating(_coating)'},
+      _coating: { type: Object, statePath: 'coating'},
       isAdmin: { type: Boolean, statePath: 'app.isAdmin'},
       lengthUnits: { type: String, value: 'in'},
       perforationOptions: { type: Array, value: function() {
@@ -37,44 +37,40 @@ class CoatingDesignerPage extends ReduxMixin(PolymerElement) {
     };
   }
   
-  _computePan(pan) {
+  _computeCoating(coating) {
     // we create a copy to prevent data binding and direct changes to the redux state
-    return Object.assign({}, pan);
+    return new Coating(coating);
   }
   _save() {
     this.dispatch({
-      type: "SET_PAN", 
-      value: this.pan
+      type: "SET_COATING", 
+      value: this.coating.toJSON()
     });
-    window.location = '#/pan/overview';
+    window.location = '#/coating/overview';
   }
   
   _cancel() {
     this.dispatch({
-      type: "RESET_PAN"
+      type: "RESET_COATING"
     });
-    window.location = '#/pan/overview';
+    window.location = '#/coating/overview';
   }
   
   _saveToFirebase() {
     if(!this.isAdmin) { return; }
-    let pan = new Pan(this.pan).toJSON();
-    /*global firebase */
-    pan.firebaseKey = firebase.database().ref('pans/').push().key;
-    firebase.database().ref(`pans/${pan.firebaseKey}`).set(pan);
-    window.location = '#/pan/library';
+    this.dispatch({
+      type: "SAVE_COATING_TO_FIREBASE",
+      coating: this.coating.toJSON()
+    });
+    window.location = '#/coating/library';
   }
   _replaceOnFirebase() {
     if(!this.isAdmin) { return; }
-    let pan = new Pan(this.pan).toJSON();
-    if(pan.firebaseKey) {
-      /*global firebase */
-      firebase.database().ref(`pans/${pan.firebaseKey}`).set(pan);
-    } else {
-      console.log('could not replace firebase so loaded as new');
-      this._saveToFirebase();
-    }
-    window.location = '#/pan/library';
+    this.dispatch({
+      type: "REPLACE_COATING_ON_FIREBASE",
+      coating: this.coating.toJSON()
+    });
+    window.location = '#/coating/library';
   }
   
   

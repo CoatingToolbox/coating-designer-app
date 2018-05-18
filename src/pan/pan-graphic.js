@@ -1,7 +1,7 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
 import '../../node_modules/@polymer/polymer/lib/elements/dom-if.js';
-import { Pan } from '../redux/pan.js';
+import { Pan } from './pan-class.js';
 
 class PanGraphic extends PolymerElement {
     

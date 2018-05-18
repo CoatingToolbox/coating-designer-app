@@ -1,46 +1,13 @@
 
 import PolymerRedux from '../../node_modules/polymer-redux/polymer-redux.js';
-import { Tablet } from './tablet.js';
-import { Pan } from './pan.js';
+import { tabletReducer } from '../tablet/tablet-reducer.js';
+import { panReducer } from '../pan/pan-reducer.js';
+import { coatingReducer } from '../coating/coating-reducer.js';
 import { Batch } from './batch.js';
 import { CoatingAmount } from './coating-amount.js';
-import { Coating } from './coating.js';
 import { Parameters } from './parameters.js';
 
 // REDUCERS
-function tabletReducer(state = {}, action) {
-    
-    let tablet = new Tablet(state);
-    switch(action.type) {
-        case "SET_TABLET": tablet = new Tablet(action.value); break;
-        case "SET_TABLET_BULK_DENSITY": tablet.bulkDensity = action.value; break;
-    }
-    return Object.assign({}, state, tablet.toJSON());
-}
-function panReducer(state = {}, action) {
-    
-    let pan = new Pan(state);
-    switch(action.type) {
-            case "SET_PAN": pan = new Pan(action.value); break;
-    }
-    return Object.assign({}, state, pan.toJSON());
-}
-function coatingReducer(state = {}, action) {
-    
-    let coat = new Coating(state);
-    switch(action.type) {
-        case "SET_COATING_PRODUCT_NAME": coat.productName = action.value; break;
-        case "SET_COATING_FORMULA_NAME": coat.formulaName = action.value; break;
-        case "SET_COATING_COLOR": coat.color = action.value; break;
-        case "SET_COATING_TYPE": coat.type = action.value; break;
-        case "SET_COATING_DENSITY": coat.density = action.value; break;
-        case "SET_COATING_VISCOSITY_INTERCEPT": coat.viscosityIntercept = action.value; break;
-        case "SET_COATING_VISCOSITY_EXPONENT": coat.viscosityExponent = action.value; break;
-        case "SET_COATING_SOLIDS": coat.solids = action.value; break;
-        case "LOAD_COATING_FROM_LIBRARY": coat = new Coating(action.value); break;
-    }
-    return Object.assign({}, state, coat.toJSON());
-}
 function batchReducer(state = {}, action, pan , tablet) {
     
     let batch = new Batch(Object.assign({}, state, pan));
@@ -123,7 +90,7 @@ function rootReducer(state = {}, action) {
 // INITIAL STATE
 const app = { isAdmin: false};
 const storedState = JSON.parse(sessionStorage.getItem('coating-designer-state')) || {};
-const tablet = storedState.tablet || new Tablet({
+const tablet = storedState.tablet || {
         shape: 'round',
         length: 0.01,
         width: 0.0075,
@@ -136,8 +103,8 @@ const tablet = storedState.tablet || new Tablet({
         formulationName: 'Placebo WP2',
         companyName: 'Colorcon',
         contactName: 'Jason Hansell'
-    });
-const pan = storedState.pan || new Pan({
+    };
+const pan = storedState.pan || {
         panDiameter: 1.2192,
         openingDiameter: 0.4826,
         wallWidth: 0.508,
@@ -158,8 +125,8 @@ const pan = storedState.pan || new Pan({
         perforationType: 'Fully',
         inletType: 'Upper Right Plenum',
         firebaseKey: ''
-    });
-const coating = storedState.coating || new Coating({
+    };
+const coating = storedState.coating || {
     productName: 'Opadry II 85F Series',
     formulaName: '85F18422',
     type: 'Immediate',
@@ -175,7 +142,7 @@ const coating = storedState.coating || new Coating({
     tabletWeight: 0.4,
     batchWeight: 120000,
     tabletArea: 0.01,
-});
+};
 const batch = storedState.batch || new Batch(pan);
 const coatingAmount = storedState.coatingAmount || new CoatingAmount();
 const parameters = storedState.parameters || new Parameters();

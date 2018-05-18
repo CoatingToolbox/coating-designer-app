@@ -1,7 +1,7 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from '../redux/redux-mixin.js';
-import { Pan } from '../redux/pan.js';
+import { Pan } from './pan-class.js';
 import '../header/page-header.js';
 import '../card/card-with-toolbar.js';
 import '../card/card-info-section.js';
@@ -13,6 +13,7 @@ import '../app-icons.js';
 import "./pan-layout.js";
 
 class PanDesignerPage extends ReduxMixin(PolymerElement) {
+  
   static get properties () {
     return {
       pan: {type: Object,  computed: '_computePan(_pan)'},
@@ -40,44 +41,37 @@ class PanDesignerPage extends ReduxMixin(PolymerElement) {
   
   _computePan(pan) {
     // we create a copy to prevent data binding and direct changes to the redux state
-    return Object.assign({}, pan);
+    return new Pan(pan);
   }
   _save() {
     this.dispatch({
       type: "SET_PAN", 
-      value: this.pan
+      value: this.pan.toJSON()
     });
     window.location = '#/pan/overview';
   }
-  
   _cancel() {
     this.dispatch({
       type: "RESET_PAN"
     });
     window.location = '#/pan/overview';
   }
-  
   _saveToFirebase() {
     if(!this.isAdmin) { return; }
-    let pan = new Pan(this.pan).toJSON();
-    /*global firebase */
-    pan.firebaseKey = firebase.database().ref('pans/').push().key;
-    firebase.database().ref(`pans/${pan.firebaseKey}`).set(pan);
+    this.dispatch({
+      type: "SAVE_PAN_TO_FIREBASE",
+      pan: this.pan
+    });
     window.location = '#/pan/library';
   }
   _replaceOnFirebase() {
     if(!this.isAdmin) { return; }
-    let pan = new Pan(this.pan).toJSON();
-    if(pan.firebaseKey) {
-      /*global firebase */
-      firebase.database().ref(`pans/${pan.firebaseKey}`).set(pan);
-    } else {
-      console.log('could not replace firebase so loaded as new');
-      this._saveToFirebase();
-    }
+    this.dispatch({
+      type: "REPLACE_PAN_ON_FIREBASE",
+      pan: this.pan
+    });
     window.location = '#/pan/library';
   }
-  
   
   static get template () {
     // Template getter must return an instance of HTMLTemplateElement.

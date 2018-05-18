@@ -1,7 +1,7 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from '../redux/redux-mixin.js';
-import { Tablet } from '../redux/tablet.js';
+import { Tablet } from './tablet-class.js';
 import '../../node_modules/@polymer/iron-selector/iron-selector.js';
 import '../../node_modules/@polymer/iron-icon/iron-icon.js';
 import '../header/page-header.js';
@@ -18,6 +18,7 @@ import './tablet-layout.js';
 import './bulk-density-chart.js';
 
 class TabletDesignerPage extends ReduxMixin(PolymerElement) {
+  
   static get properties () {
     return {
       tablet: {type: Object,  computed: '_computeTablet(_tablet)'},
@@ -43,44 +44,37 @@ class TabletDesignerPage extends ReduxMixin(PolymerElement) {
   _computeIsRound(shape) {
     return shape === 'round';
   }
-  
   _computeTablet(tablet) {
     // we create a copy to prevent data binding and direct changes to the redux state
     return Object.assign({}, tablet);
   }
   _saveTablet() {
     this.dispatch({
-      type: "SET_TABLET", 
-      value: this.tablet
+      type: "SET_TABLET",
+      tablet: this.tablet
     });
     window.location = '#/tablet/overview';
   }
-  
   _cancelTablet() {
     this.dispatch({
       type: "RESET_TABLET"
     });
     window.location = '#/tablet/overview';
   }
-  
   _saveToFirebase() {
     if(!this.isAdmin) { return; }
-    let tab = new Tablet(this.tablet).toJSON();
-    /*global firebase */
-    tab.firebaseKey = firebase.database().ref('tablets/').push().key;
-    firebase.database().ref(`tablets/${tab.firebaseKey}`).set(tab);
+    this.dispatch({
+      type: "SAVE_TABLET_TO_FIREBASE",
+      tablet: this.tablet
+    });
     window.location = '#/tablet/library';
   }
   _replaceOnFirebase() {
     if(!this.isAdmin) { return; }
-    let tab = new Tablet(this.tablet).toJSON();
-    if(tab.firebaseKey) {
-      /*global firebase */
-      firebase.database().ref(`tablets/${tab.firebaseKey}`).set(tab);
-    } else {
-      console.log('could not replace firebase so loaded as new');
-      this._saveToFirebase();
-    }
+    this.dispatch({
+      type: "REPLACE_TABLET_ON_FIREBASE",
+      tablet: this.tablet
+    });
     window.location = '#/tablet/library';
   }
   
@@ -308,7 +302,7 @@ class TabletDesignerPage extends ReduxMixin(PolymerElement) {
               unit='g/ml'>
             </density-input>
             
-            <bulk-density-chart wide bulk-density='[[tablet.bulkDensity]]'></bulk-density-chart>
+            <bulk-density-chart id='chart' wide bulk-density='[[tablet.bulkDensity]]'></bulk-density-chart>
           </card-info-section>
           
         </card-with-toolbar>

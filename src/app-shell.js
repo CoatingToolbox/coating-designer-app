@@ -5,9 +5,9 @@ import '../node_modules/@polymer/app-route/app-location.js';
 import '../node_modules/@polymer/app-route/app-route.js';
 import '../node_modules/@polymer/iron-pages/iron-pages.js';
 import './pages/home-page.js';
-import './pages/tablet-pages.js';
-import './pages/pan-pages.js';
-import './pages/coating-pages.js';
+import './tablet/tablet-pages.js';
+import './pan/pan-pages.js';
+import './coating/coating-pages.js';
 
 class AppShell extends ReduxMixin(PolymerElement) {
   

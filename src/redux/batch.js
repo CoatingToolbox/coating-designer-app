@@ -1,4 +1,4 @@
-import { Pan } from './pan.js';
+import { Pan } from '../pan/pan-class.js';
 
 export class Batch extends Pan { 
   

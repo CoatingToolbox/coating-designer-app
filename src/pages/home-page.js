@@ -128,7 +128,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
         <app-header slot='header' fixed effects='waterfall'>
           <app-toolbar>
             <div class='icon'></div>
-            <page-title>Coating Designer</page-title>
+            <page-title>Coating Guide</page-title>
             <div class='icon'></div>
             <div id='user-name'>[[user.email]]</div>
           </app-toolbar>
@@ -137,7 +137,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
         <page-header>
           <div slot='title'>Let's setup your coating process.</div>
           <p slot='description'>
-            Use the Colorcon Coating Designer to get recommendations on coating conditions and process
+            Use the Colorcon Coating Guide to get recommendations on coating conditions and process
             parameters. Or audit your coating process with key coating metrics.
           </p>
         </page-header>

@@ -1,19 +1,19 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import { ReduxMixin } from '../redux/redux-mixin.js';
 
-class TextInput extends PolymerElement {
+class TextInput extends ReduxMixin(PolymerElement) {
   static get properties () {
     return {
       label: String,
-      value: { type: String, notify: true }
+      value: { type: String, notify: true },
     };
   }
-
-  static get template () {
-    // Template getter must return an instance of HTMLTemplateElement.
-    // The html helper function makes this easy.
-    return html`
+  
+  static get template() {
+    return html` 
       <style>
+    
         :host {
           display: block;
         }
