@@ -12,7 +12,6 @@ class BulkDensityChart extends GestureEventListeners(PolymerElement) {
         this._setChartDimensions();
     }
     _setChartDimensions() {
-        console.log("chart resize")
         if(!this.$.chart) {
             return;
         }
