@@ -3,18 +3,15 @@
     "shell": "src/app-shell.js",
     "fragments": [
         "src/pages/home-page.js",
-        "src/tablet/tablet-pages.js",
-        "src/tablet/tablet-overview-page.js",
-        "src/tablet/tablet-designer-page.js",
-        "src/tablet/tablet-library-page.js",
-        "src/pan/pan-pages.js",
-        "src/pan/pan-overview-page.js",
-        "src/pan/pan-designer-page.js",
-        "src/pan/pan-library-page.js",
-        "src/coating/coating-pages.js",
-        "src/coating/coating-overview-page.js",
-        "src/coating/coating-designer-page.js",
-        "src/coating/coating-library-page.js"
+        "src/pages/tablet-overview-page.js",
+        "src/pages/tablet-designer-page.js",
+        "src/pages/tablet-library-page.js",
+        "src/pages/pan-overview-page.js",
+        "src/pages/pan-designer-page.js",
+        "src/pages/pan-library-page.js",
+        "src/pages/coating-overview-page.js",
+        "src/pages/coating-designer-page.js",
+        "src/pages/coating-library-page.js"
     ],
     "sources": [
         "src/**/*",

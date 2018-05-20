@@ -12,6 +12,7 @@
     "@polymer/iron-dropdown": "^3.0.0-pre.12",
     "@polymer/iron-icon": "^3.0.0-pre.12",
     "@polymer/iron-iconset-svg": "^3.0.0-pre.12",
+    "@polymer/iron-media-query": "^3.0.0-pre.19",
     "@polymer/iron-pages": "^3.0.0-pre.12",
     "@polymer/iron-selector": "^3.0.0-pre.12",
     "@polymer/lit-element": "^0.5.1",

@@ -1,14 +1,14 @@
 
 import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
-import { ReduxMixin } from '../redux/redux-mixin.js';
+import { ReduxMixin } from '../redux-mixin.js';
 import '../../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js';
 import '../../node_modules/@polymer/app-layout/app-header/app-header.js';
 import '../../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
 import '../../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js';
-import '../header/page-header.js';
-import '../header/page-title.js';
-import '../card/card-with-toolbar.js';
-import '../card/card-button.js';
+import '../components/header/page-header.js';
+import '../components/header/page-title.js';
+import '../components/card/card-with-toolbar.js';
+import '../components/card/card-button.js';
 
 
 class HomePage extends ReduxMixin(PolymerElement) {
@@ -40,26 +40,8 @@ class HomePage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
-        }
-        
-        app-header {
-          background-color: var(--white-color);
-          color: var(--text-color);
-        }
-        app-header #user-name {
-          font-size: 16px;
-          color: var(--text-light-color);
-        }
-        app-header .icon {
-          margin: 8px;
-          border-radius: 50%;
-          height: 24px;
-          width: 24px;
-          border: 2px solid var(--app-dark-color);
-          background-color: var(--app-light-color);
-        }
-        page-header {
-          padding-top: 96px;
+          max-width: var(--page-width);
+          margin: auto;
         }
         #materials-section .material-layout {
           display: grid;
@@ -123,17 +105,6 @@ class HomePage extends ReduxMixin(PolymerElement) {
         
       </style>
       
-      <app-header-layout fullbleed>
-      
-        <app-header slot='header' fixed effects='waterfall'>
-          <app-toolbar>
-            <div class='icon'></div>
-            <page-title>Coating Guide</page-title>
-            <div class='icon'></div>
-            <div id='user-name'>[[user.email]]</div>
-          </app-toolbar>
-        </app-header>
-      
         <page-header>
           <div slot='title'>Let's setup your coating process.</div>
           <p slot='description'>
@@ -153,13 +124,13 @@ class HomePage extends ReduxMixin(PolymerElement) {
             <div class='material-layout'>
               <div class='material-label'>Coating Substrate</div>
               <div class='material-title'>[[tablet.productName]]</div>
-              <a href='#/tablet/overview'>
+              <a href='#/tablet-overview'>
                 <card-button label='Info'></card-button>
               </a>
-              <a href='#/tablet/designer'>
+              <a href='#/tablet-designer'>
                 <card-button label='Edit'></card-button>
               </a>
-              <a href='#/tablet/library'>
+              <a href='#/tablet-library'>
                 <card-button label='Load'></card-button>
               </a>
             </div>
@@ -167,13 +138,13 @@ class HomePage extends ReduxMixin(PolymerElement) {
             <div class='material-layout'>
               <div class='material-label'>Coating Pan</div>
               <div class='material-title'>[[pan.nickname]]</div>
-              <a href='#/pan/overview'>
+              <a href='#/pan-overview'>
                 <card-button label='Info'></card-button>
               </a>
-              <a href='#/pan/designer'>
+              <a href='#/pan-designer'>
                 <card-button label='Edit'></card-button>
               </a>
-              <a href='#/pan/library'>
+              <a href='#/pan-library'>
                 <card-button label='Load'></card-button>
               </a>
             </div>
@@ -181,13 +152,13 @@ class HomePage extends ReduxMixin(PolymerElement) {
             <div class='material-layout'>
               <div class='material-label'>Coating Formula</div>
               <div class='material-title'>[[coating.productName]]</div>
-              <a href='#/coating/overview'>
+              <a href='#/coating-overview'>
                 <card-button label='Info'></card-button>
               </a>
-              <a href='#/coating/designer'>
+              <a href='#/coating-designer'>
                 <card-button label='Edit'></card-button>
               </a>
-              <a href='#/coating/library'>
+              <a href='#/coating-library'>
                 <card-button label='Load'></card-button>
               </a>
             </div>
@@ -246,8 +217,6 @@ class HomePage extends ReduxMixin(PolymerElement) {
             </div>
           </card-with-toolbar>
         </section>
-        
-      </app-header-layout>
       
     `;
   }

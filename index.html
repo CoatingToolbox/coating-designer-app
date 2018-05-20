@@ -43,6 +43,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     --app-dark-color: #5B81B6;
     --app-light-color: #AECAF0;
     --app-accent-color: #ED5D5D;
+    
     --background-color: #ececee;
     --border-color: #dcdcdf;
     
@@ -63,6 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
     --border-line: 1px solid var(--border-color);
     --card-margin: 24px;
+    --page-width: 750px;
     
     margin: 0px;
     font-family: 'Roboto', 'Noto', sans-serif;
@@ -70,6 +72,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     color: var(--text-color);
     min-height: 100vh;
     background-color: var(--background-color);
+  }
+  
+  @media(min-width: 1200px) {
+    body {
+      --page-width: 900px;
+    }
   }
 </style>
 <body>
