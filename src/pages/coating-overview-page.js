@@ -80,7 +80,7 @@ class CoatingOverviewPage extends ReduxMixin(PolymerElement) {
           <card-info-item wide label='Opacity'>[[coating.formatted.filmOpacity]]</card-info-item>
         </card-info-section>
         <card-info-section title='Viscosity Profile' icon='app-icons:ruler'>
-          <coating-viscosity-chart viscosity='[[coating.data.viscosity]]'></coating-viscosity-chart>
+          <coating-viscosity-chart wide viscosity='[[coating.data.viscosity]]'></coating-viscosity-chart>
         </card-info-section>
       </card-with-toolbar>
     `;

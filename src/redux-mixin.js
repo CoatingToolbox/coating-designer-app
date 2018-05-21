@@ -3,6 +3,7 @@ import PolymerRedux from '../node_modules/polymer-redux/polymer-redux.js';
 import { tabletReducer } from './reducers/tablet.js';
 import { panReducer } from './reducers/pan.js';
 import { coatingReducer } from './reducers/coating.js';
+import { appReducer } from './reducers/app.js';
 import { Batch } from './classes/batch.js';
 import { CoatingAmount } from './classes/coating-amount.js';
 import { Parameters } from './classes/parameters.js';
@@ -59,16 +60,6 @@ function parametersReducer(state = {}, action, pan) {
     }
     return Object.assign({}, state, params.toJSON());
 }
-function appReducer(state = {}, action) {
-    switch(action.type) {
-        case "SET_USER":
-            return Object.assign({}, state, {user: action.value}); break;
-        case "SET_ADMIN":
-            return Object.assign({}, state, {isAdmin: action.value}); break;
-        default: 
-            return state;
-    }
-}  
 function rootReducer(state = {}, action) {
         const app = appReducer(state.app, action);
         const tablet = tabletReducer(state.tablet, action);
@@ -88,7 +79,7 @@ function rootReducer(state = {}, action) {
 }
 
 // INITIAL STATE
-const app = { isAdmin: false};
+const app = { isAdmin: false, page: 'home' };
 const storedState = JSON.parse(sessionStorage.getItem('coating-designer-state')) || {};
 const tablet = storedState.tablet || {
         shape: 'round',

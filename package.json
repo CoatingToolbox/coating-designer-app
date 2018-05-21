@@ -5,7 +5,8 @@
   "repository": "https://github.com/jhans3br/coating-designer-app.git",
   "author": "Jason Hansell <jasonhansell@gmail.com>",
   "license": "MIT",
-  "flat": true,
+  "moduleResolution": "node",
+  "npm": true,
   "dependencies": {
     "@polymer/app-layout": "^3.0.0-pre.12",
     "@polymer/app-route": "^3.0.0-pre.12",

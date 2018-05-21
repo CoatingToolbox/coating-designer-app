@@ -4,23 +4,18 @@ import { ReduxMixin } from './redux-mixin.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 import '../node_modules/@polymer/app-route/app-location.js';
 import '../node_modules/@polymer/app-route/app-route.js';
+import '../node_modules/@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
+import '../node_modules/@polymer/app-layout/app-drawer/app-drawer.js';
 import '../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js';
 import '../node_modules/@polymer/app-layout/app-header/app-header.js';
 import '../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
 import '../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '../node_modules/@polymer/iron-pages/iron-pages.js';
-import './components/nav-drawer/nav-drawer.js';
+import './components/header/page-title.js';
 import './components/app-icons.js';
-import './pages/home-page.js';
-import './pages/tablet-overview-page.js';
-import './pages/tablet-designer-page.js';
-import './pages/tablet-library-page.js';
-import './pages/pan-overview-page.js';
-import './pages/pan-designer-page.js';
-import './pages/pan-library-page.js';
-import './pages/coating-overview-page.js';
-import './pages/coating-designer-page.js';
-import './pages/coating-library-page.js';
+import './components/nav-drawer/nav-item.js';
+import './components/nav-drawer/nav-icon.js';
+import './components/nav-drawer/nav-section.js';
 
 class AppShell extends ReduxMixin(PolymerElement) {
   
@@ -28,8 +23,9 @@ class AppShell extends ReduxMixin(PolymerElement) {
     return {
       route: Object,
       routeData: Object,
-      page: String,
-      user: Object,
+      page: { type: String, statePath: 'app.page' },
+      user: { type: Object, statePath: 'app.user' },
+      isDrawerOpened: { type: Boolean, statePath: 'app.isDrawerOpened' }
     };
   }
   
@@ -43,18 +39,11 @@ class AppShell extends ReduxMixin(PolymerElement) {
     super.ready();
     firebase.auth().onAuthStateChanged(user => {
       if (user != null) {
-        this.user = user;
         this.dispatch({
           type: "SET_USER",
-          value: this.user
-        });
-        
-        this.dispatch({
-          type: "SET_ADMIN",
-          value: (this.user.email === 'jhansell@colorcon.com')
+          value: user
         });
       } 
-      
     });
   }
   
@@ -67,12 +56,16 @@ class AppShell extends ReduxMixin(PolymerElement) {
   _routePageChanged(page) {
     window.scrollTo(0, 0);
     // Load page import on demand.
-    this.page = page || 'home';
-    // Load page import on demand. Show 404 page if fails
+    this.dispatch({
+      type: "SET_PAGE",
+      value: page
+    });
   }
   
   _toggleDrawer() {
-    this.$.drawer.toggle();
+    this.dispatch({
+      type: "TOGGLE_DRAWER"
+    });
   }
 
   static get template () {
@@ -102,12 +95,9 @@ class AppShell extends ReduxMixin(PolymerElement) {
           border: 2px solid var(--app-dark-color);
           background-color: var(--app-light-color);
         }
-        #content-layout {
-          display: flex;
-        }
-        iron-pages {
-          flex-grow: 1;
-          overflow: auto;
+        app-drawer app-toolbar {
+          background-color: var(--app-primary-color);
+          color: white;
         }
       </style>
       
@@ -122,40 +112,68 @@ class AppShell extends ReduxMixin(PolymerElement) {
           data="{{routeData}}">
       </app-route>
       
-      <app-header-layout fullbleed>
+      <app-drawer-layout fullbleed force-narrow>
+      
+        <app-drawer slot='drawer'>
+          <app-toolbar>Menu</app-toolbar>
+          <nav-item link='#/home' label='Overview'></nav-item>
+      
+          <nav-section label='Materials & Equipment'></nav-section>
+          
+          <nav-item link='#/tablet-overview' label='Tablet' sub-item>
+            <nav-icon link='#/tablet-designer' icon='app-icons:edit'></nav-icon>
+            <nav-icon link='#/tablet-library' icon='app-icons:library'></nav-icon>
+          </nav-item>
+          
+          <nav-item link='#/pan-overview' label='Pan' sub-item>
+            <nav-icon link='#/pan-designer' icon='app-icons:edit'></nav-icon>
+            <nav-icon link='#/pan-library' icon='app-icons:library'></nav-icon>
+          </nav-item>
+          
+          <nav-item link='#/coating-overview' label='Coating' sub-item>
+            <nav-icon link='#/coating-designer' icon='app-icons:edit'></nav-icon>
+            <nav-icon link='#/coating-library' icon='app-icons:library'></nav-icon>
+          </nav-item>
+            
+          <nav-section label='Trial Setup'></nav-section>
+          <nav-item link='#/home' label='Coating Amount' sub-item></nav-item>
+          <nav-item link='#/home' label='Disperson' sub-item></nav-item>
+          <nav-item link='#/home' label='Batch Size' sub-item></nav-item>
+          
+          <nav-item link='#/home' label='Process Parameters'></nav-item>
+       </app-drawer>
+      
+      <app-header-layout>
       
         <app-header slot='header' fixed effects='waterfall'>
           <app-toolbar>
-            <paper-icon-button icon='app-icons:menu' on-click='_toggleDrawer'></paper-icon-button>
+            <paper-icon-button icon='app-icons:menu' drawer-toggle></paper-icon-button>
             <page-title>Colorcon Coating Guide</page-title>
             <div class='icon'></div>
             <div id='user-name'>[[user.email]]</div>
           </app-toolbar>
         </app-header>
       
-        <div id='content-layout'>
-          <nav-drawer id='drawer'></nav-drawer>
-          <iron-pages  selected='[[page]]' attr-for-selected='page' fallback-selection='home'>
-          
-            <home-page page='home'></home-page>
-            
-            <tablet-overview-page page='tablet-overview'></tablet-overview-page>
-            <tablet-library-page page='tablet-library'></tablet-library-page>
-            <tablet-designer-page page='tablet-designer'></tablet-designer-page>
-            
-            <pan-overview-page page='pan-overview'></pan-overview-page>
-            <pan-library-page page='pan-library'></pan-library-page>
-            <pan-designer-page page='pan-designer'></pan-designer-page>
-            
-            <coating-overview-page page='coating-overview'></coating-overview-page>
-            <coating-library-page page='coating-library'></coating-library-page>
-            <coating-designer-page page='coating-designer'></coating-designer-page>
-          </iron-pages>
+        <iron-pages  selected='[[page]]' attr-for-selected='page' fallback-selection='home'>
         
-        </div>
+          <home-page page='home'></home-page>
+          
+          <tablet-overview-page page='tablet-overview'></tablet-overview-page>
+          <tablet-library-page page='tablet-library'></tablet-library-page>
+          <tablet-designer-page page='tablet-designer'></tablet-designer-page>
+          
+          <pan-overview-page page='pan-overview'></pan-overview-page>
+          <pan-library-page page='pan-library'></pan-library-page>
+          <pan-designer-page page='pan-designer'></pan-designer-page>
+          
+          <coating-overview-page page='coating-overview'></coating-overview-page>
+          <coating-library-page page='coating-library'></coating-library-page>
+          <coating-designer-page page='coating-designer'></coating-designer-page>
+        </iron-pages>
         
       </app-header-layout>
         
+    </app-drawer-layout>    
     `;
   }
 }

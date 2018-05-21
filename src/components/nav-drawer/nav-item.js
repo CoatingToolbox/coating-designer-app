@@ -5,7 +5,8 @@ class NavItem extends PolymerElement {
   static get properties () {
     return {
       link: String,
-      label: String
+      label: String,
+      subItem: { type: Boolean, reflectToAttribute: true }
     };
   }
   _gotoLink() {
@@ -19,6 +20,10 @@ class NavItem extends PolymerElement {
           padding: 0px 0px 0px 16px;
           font-size: 16px;
           cursor: pointer;
+        }
+        :host([sub-item]) {
+          margin-left: 16px;
+          color: var(--text-light-color);
         }
         :host(:hover) {
           background-color: var(--light-gray-color);

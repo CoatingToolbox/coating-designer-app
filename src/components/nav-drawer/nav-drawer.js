@@ -1,11 +1,12 @@
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@polymer/iron-media-query/iron-media-query.js';
+import { ReduxMixin } from '../../redux-mixin.js';
 import './nav-item.js';
 import './nav-icon.js';
 import './nav-collapse-item.js';
 
-class NavDrawer extends PolymerElement {
+class NavDrawer extends ReduxMixin(PolymerElement) {
   
   ready() {
     super.ready();
@@ -17,7 +18,7 @@ class NavDrawer extends PolymerElement {
   }
   static get properties () {
     return {
-      opened: { type: Boolean, value: false, reflectToAttribute: true },
+      opened: { type: Boolean, statePath: 'app.isDrawerOpened', reflectToAttribute: true },
       smallScreen: { type: Boolean, value: false, reflectToAttribute: true }
     };
   }
@@ -27,7 +28,9 @@ class NavDrawer extends PolymerElement {
   }
   
   toggle() {
-      this.opened = !this.opened;
+    this.dispatch({
+      type: "TOGGLE_DRAWER",
+    });
   }
 
   static get template () {
