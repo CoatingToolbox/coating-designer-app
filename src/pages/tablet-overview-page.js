@@ -1,13 +1,13 @@
 
-import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from '../redux-mixin.js';
+import '../components/page-elements/page-layout.js';
 import '../components/card/card-with-toolbar.js';
 import '../components/card/card-button.js';
 import '../components/card/card-info-section.js';
 import '../components/card/card-info-item.js';
-import '../components/header/page-header.js';
-import '../components/header/page-title.js';
-import '../components/header/page-header-button.js';
+import '../components/page-elements/page-header.js';
+import '../components/page-elements/page-header-button.js';
 import '../components/graphics/tablet-layout.js';
 
 class TabletOverviewPage extends ReduxMixin(PolymerElement) {
@@ -24,8 +24,6 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
-          max-width: var(--page-width);
-          margin: auto;
         }
         card-with-toolbar a + a {
           margin-left: 16px;
@@ -44,6 +42,7 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
         }
       </style>
       
+      <page-layout>
       
       <page-header>
         <div slot='title'>Tablet Core Overview</div>
@@ -121,6 +120,8 @@ class TabletOverviewPage extends ReduxMixin(PolymerElement) {
           <card-info-item wide label='Cup Volume'>[[tablet.formatted.cupVolume]]</card-info-item>
         </card-info-section>
       </card-with-toolbar>
+      
+      </page-layout>
     `;
   }
 }

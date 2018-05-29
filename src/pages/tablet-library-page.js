@@ -1,10 +1,11 @@
 
-import { PolymerElement, html } from '../../../node_modules/@polymer/polymer/polymer-element.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from '../redux-mixin.js';
-import '../../../node_modules/@polymer/iron-icon/iron-icon.js';
-import '../../../node_modules/@polymer/paper-input/paper-input.js';
-import '../../../node_modules/@polymer/polymer/lib/elements/dom-repeat.js';
-import '../components/header/page-header.js';
+import '@polymer/iron-icon/iron-icon.js';
+import '@polymer/paper-input/paper-input.js';
+import '@polymer/polymer/lib/elements/dom-repeat.js';
+import '../components/page-elements/page-layout.js';
+import '../components/page-elements/page-header.js';
 import '../components/app-icons.js';
 
 class TabletLibraryPage extends ReduxMixin(PolymerElement) {
@@ -72,11 +73,9 @@ class TabletLibraryPage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
-          min-height: 100vh;
-          margin: auto;
-          
-          --max-width: 1024px;
-          max-width: var(--max-width);
+        }
+        page-layout {
+          max-width: 1024px;
         }
         #search-layout {
           display: flex;
@@ -184,6 +183,8 @@ class TabletLibraryPage extends ReduxMixin(PolymerElement) {
         }
       </style>
       
+      <page-layout>
+      
       <page-header>
         <div slot='title'>Tablet Core Library</div>
         <p slot='description'>
@@ -235,6 +236,7 @@ class TabletLibraryPage extends ReduxMixin(PolymerElement) {
           
       </div>
       
+      </page-layout>
     `;
   }
 }

@@ -1,10 +1,11 @@
 
-import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from '../redux-mixin.js';
 import '../components/card/card-with-toolbar.js';
 import '../components/card/card-button.js';
 import '../components/card/card-info-section.js';
 import '../components/card/card-info-item.js';
+import '../components/header/page-layout.js';
 import '../components/header/page-header.js';
 import '../components/header/page-header-button.js';
 import '../components/graphics/pan-layout.js';
@@ -23,8 +24,6 @@ class PanOverviewPage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
-          max-width: var(--page-width);
-          margin: auto;
         }
         card-info-section + card-info-section {
           border-top: var(--border-line);
@@ -43,6 +42,7 @@ class PanOverviewPage extends ReduxMixin(PolymerElement) {
         }
       </style>
       
+      <page-layout>
       
       <page-header>
         <div slot='title'>Coating Pan Overview</div>
@@ -116,6 +116,7 @@ class PanOverviewPage extends ReduxMixin(PolymerElement) {
           <card-info-item wide label='Distance Between'>[[pan.formatted.gunToGunDistance]]</card-info-item>
         </card-info-section>
       </card-with-toolbar>
+      </page-layout>
     `;
   }
 }

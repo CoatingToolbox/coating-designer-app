@@ -1,17 +1,16 @@
 
-import { PolymerElement, html } from '../node_modules/@polymer/polymer/polymer-element.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from './redux-mixin.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
-import '../node_modules/@polymer/app-route/app-location.js';
-import '../node_modules/@polymer/app-route/app-route.js';
-import '../node_modules/@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
-import '../node_modules/@polymer/app-layout/app-drawer/app-drawer.js';
-import '../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js';
-import '../node_modules/@polymer/app-layout/app-header/app-header.js';
-import '../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
-import '../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js';
-import '../node_modules/@polymer/iron-pages/iron-pages.js';
-import './components/header/page-title.js';
+import '@polymer/app-route/app-location.js';
+import '@polymer/app-route/app-route.js';
+import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
+import '@polymer/app-layout/app-drawer/app-drawer.js';
+import '@polymer/app-layout/app-header-layout/app-header-layout.js';
+import '@polymer/app-layout/app-header/app-header.js';
+import '@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
+import '@polymer/app-layout/app-toolbar/app-toolbar.js';
+import '@polymer/iron-pages/iron-pages.js';
 import './components/app-icons.js';
 import './components/nav-drawer/nav-item.js';
 import './components/nav-drawer/nav-icon.js';
@@ -79,25 +78,21 @@ class AppShell extends ReduxMixin(PolymerElement) {
         app-header {
           background-color: var(--white-color);
           color: var(--text-color);
-          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-                    0 1px 5px 0 rgba(0, 0, 0, 0.12),
-                    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        app-toolbar {
+          background-color: var(--app-primary-color);
+          color: var(--white-color);
         }
         app-header #user-name {
           font-size: 16px;
-          color: var(--text-light-color);
         }
         app-header .icon {
           margin: 8px;
           border-radius: 50%;
           height: 24px;
           width: 24px;
-          border: 2px solid var(--app-dark-color);
-          background-color: var(--app-light-color);
-        }
-        app-drawer app-toolbar {
-          background-color: var(--app-primary-color);
-          color: white;
+          border: 2px solid var(--white-color);
+          background-color: var(--app-dark-color);
         }
       </style>
       
@@ -148,7 +143,7 @@ class AppShell extends ReduxMixin(PolymerElement) {
         <app-header slot='header' fixed effects='waterfall'>
           <app-toolbar>
             <paper-icon-button icon='app-icons:menu' drawer-toggle></paper-icon-button>
-            <page-title>Colorcon Coating Guide</page-title>
+            <div main-title>Colorcon Coating Guide</div>
             <div class='icon'></div>
             <div id='user-name'>[[user.email]]</div>
           </app-toolbar>

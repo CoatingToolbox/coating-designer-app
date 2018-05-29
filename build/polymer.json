@@ -3,18 +3,15 @@
   "shell": "src/app-shell.js",
   "fragments": [
     "src/pages/home-page.js",
-    "src/pages/tablet-pages.js",
-    "src/tablet/tablet-overview-page.js",
-    "src/tablet/tablet-designer-page.js",
-    "src/tablet/tablet-library-page.js",
-    "src/pages/pan-pages.js",
-    "src/pan/pan-overview-page.js",
-    "src/pan/pan-designer-page.js",
-    "src/pan/pan-library-page.js",
-    "src/pages/coating-pages.js",
-    "src/coating/coating-overview-page.js",
-    "src/coating/coating-designer-page.js",
-    "src/coating/coating-library-page.js"
+    "src/pages/tablet-overview-page.js",
+    "src/pages/tablet-designer-page.js",
+    "src/pages/tablet-library-page.js",
+    "src/pages/pan-overview-page.js",
+    "src/pages/pan-designer-page.js",
+    "src/pages/pan-library-page.js",
+    "src/pages/coating-overview-page.js",
+    "src/pages/coating-designer-page.js",
+    "src/pages/coating-library-page.js"
   ],
   "sources": [
     "src/**/*",
@@ -23,18 +20,15 @@
     "index.html",
     "src/app-shell.js",
     "src/pages/home-page.js",
-    "src/pages/tablet-pages.js",
-    "src/tablet/tablet-overview-page.js",
-    "src/tablet/tablet-designer-page.js",
-    "src/tablet/tablet-library-page.js",
-    "src/pages/pan-pages.js",
-    "src/pan/pan-overview-page.js",
-    "src/pan/pan-designer-page.js",
-    "src/pan/pan-library-page.js",
-    "src/pages/coating-pages.js",
-    "src/coating/coating-overview-page.js",
-    "src/coating/coating-designer-page.js",
-    "src/coating/coating-library-page.js"
+    "src/pages/tablet-overview-page.js",
+    "src/pages/tablet-designer-page.js",
+    "src/pages/tablet-library-page.js",
+    "src/pages/pan-overview-page.js",
+    "src/pages/pan-designer-page.js",
+    "src/pages/pan-library-page.js",
+    "src/pages/coating-overview-page.js",
+    "src/pages/coating-designer-page.js",
+    "src/pages/coating-library-page.js"
   ],
   "extraDependencies": [
     "bower_components/webcomponentsjs/*.js",
@@ -46,10 +40,9 @@
   ],
   "builds": [
     {
-      "name": "es6-unbundled",
+      "name": "es6-bundled",
       "browserCapabilities": [
-        "es2015",
-        "push"
+        "es2015"
       ],
       "js": {
         "minify": {
@@ -59,7 +52,8 @@
             "node_modules/d3/dist/d3.js"
           ]
         },
-        "compile": false
+        "compile": "es2015",
+        "transformModulesToAmd": true
       },
       "css": {
         "minify": true
@@ -67,13 +61,11 @@
       "html": {
         "minify": true
       },
-      "bundle": false,
+      "bundle": true,
       "addServiceWorker": true,
-      "addPushManifest": true,
-      "preset": "es6-unbundled"
+      "addPushManifest": false,
+      "preset": "es6-bundled"
     }
   ],
-  "npm": true,
-  "componentDir": "node_modules/",
   "moduleResolution": "node"
 }

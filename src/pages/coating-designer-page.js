@@ -1,6 +1,7 @@
 
-import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from '../redux-mixin.js';
+import '../components/header/page-layout.js';
 import '../components/header/page-header.js';
 import '../components/card/card-with-toolbar.js';
 import '../components/card/card-info-section.js';
@@ -80,8 +81,6 @@ class CoatingDesignerPage extends ReduxMixin(PolymerElement) {
       <style>
         :host {
           display: block;
-          max-width: var(--page-width);
-          margin: auto;
         }
         card-info-section + card-info-section {
           border-top: var(--border-line);
@@ -105,6 +104,8 @@ class CoatingDesignerPage extends ReduxMixin(PolymerElement) {
           display: none;
         }
       </style>
+      
+      <page-layout>
       
       <page-header>
         <div slot='title'>Coating Pan Designer</div>
@@ -315,6 +316,7 @@ class CoatingDesignerPage extends ReduxMixin(PolymerElement) {
           
       </card-with-toolbar>
       
+      </page-layout>
     `;
   }
 }

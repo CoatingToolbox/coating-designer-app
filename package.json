@@ -24,7 +24,7 @@
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "d3": "^5.4.0",
     "firebase": "^5.0.3",
-    "polymer-redux": "https://github.com/tur-nr/polymer-redux.git#polymer-3",
+    "polymer-redux": "git+https://github.com/tur-nr/polymer-redux.git#polymer-3",
     "redux": "^3.7.2"
   },
   "scripts": {

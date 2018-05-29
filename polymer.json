@@ -25,19 +25,18 @@
         "node_modules/firebase/firebase.js",
         "node_modules/d3/dist/d3.js"
     ],
-    "builds": [{
-        "preset": "es5-bundled",
-        "addServiceWorker": true,
-        "js": {
-            "minify": {
-                "exclude": [
-                    "node_modules/redux/dist/redux.min.js", 
-                    "node_modules/firebase/firebase.js",
-                    "node_modules/d3/dist/d3.js"
-                ]
+    "builds": [
+        { 
+            "preset": "es6-bundled",
+            "js": {
+                "minify": {
+                    "exclude": [
+                        "node_modules/redux/dist/redux.min.js", 
+                        "node_modules/firebase/firebase.js",
+                        "node_modules/d3/dist/d3.js"
+                    ]
+                }
             }
         }
-    }],
-    "moduleResolution": "node",
-    "npm": true
+    ]
 }

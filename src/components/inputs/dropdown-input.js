@@ -1,9 +1,9 @@
 
-import { PolymerElement, html } from '../../../node_modules/@polymer/polymer/polymer-element.js';
-import '../../../node_modules/@polymer/polymer/lib/elements/dom-repeat.js';
-import '../../../node_modules/@polymer/iron-dropdown/iron-dropdown.js';
-import '../../../node_modules/@polymer/iron-selector/iron-selector.js';
-import '../../../node_modules/@polymer/iron-icon/iron-icon.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/polymer/lib/elements/dom-repeat.js';
+import '@polymer/iron-dropdown/iron-dropdown.js';
+import '@polymer/iron-selector/iron-selector.js';
+import '@polymer/iron-icon/iron-icon.js';
 import '../app-icons.js';
 
 class DropdownInput extends PolymerElement {

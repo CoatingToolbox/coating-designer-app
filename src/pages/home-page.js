@@ -1,12 +1,11 @@
 
-import { PolymerElement, html } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { ReduxMixin } from '../redux-mixin.js';
-import '../../node_modules/@polymer/app-layout/app-header-layout/app-header-layout.js';
-import '../../node_modules/@polymer/app-layout/app-header/app-header.js';
-import '../../node_modules/@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
-import '../../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js';
-import '../components/header/page-header.js';
-import '../components/header/page-title.js';
+import '@polymer/app-layout/app-header-layout/app-header-layout.js';
+import '@polymer/app-layout/app-header/app-header.js';
+import '@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
+import '@polymer/app-layout/app-toolbar/app-toolbar.js';
+import '../components/page-elements/page-header.js';
 import '../components/card/card-with-toolbar.js';
 import '../components/card/card-button.js';
 
